@@ -6,7 +6,7 @@ description: Who drafted and reviewed the instruments, each model's maker, and e
 <p>Everyone and everything that took part in drafting or reviewing the instruments is listed here. For each model, its maker is named as the record names it. Each disclosed interest is quoted <em>verbatim</em>: the build copies the text from the named file and line of the <a href="/record/">record</a>; nothing is paraphrased or retyped. Where a quote is part of a longer passage, the link opens the whole passage.</p>
 {% for p in disclosure.participants %}
 <div class="participant glass">
-  <h2 id="p-{{ loop.index }}">{{ p.name }}{% if p.maker %} <small>— made by {{ p.maker }}</small>{% endif %}</h2>
+  <h2 id="p-{{ loop.index }}">{{ p.name }}{% if p.maker %} <small>(made by {{ p.maker }})</small>{% endif %}</h2>
   <p><strong>Role:</strong> {{ p.role }}.{% if p.note %} {{ p.note }}{% endif %}</p>
   {% if p.quotes.length %}
   <dl class="quotes">
@@ -20,4 +20,4 @@ description: Who drafted and reviewed the instruments, each model's maker, and e
   {% endif %}
 </div>
 {% endfor %}
-<p>The models' makers did not take part and have not endorsed anything. A model's review is a record of what that model said when asked; the record itself states that none of the four systems can certify separation from its maker. The maintainer of this repository has no financial relationship with any of the makers; if that changes it will be recorded here and in the <a href="/changelog/">changelog</a>.</p>
+<p>The models' makers did not take part and have not endorsed anything. Their names and their models' names are their marks and appear here only to identify who took part (see the <a href="/terms/#s-9-names-trademarks-and-third-party-rights">terms</a>). A model's review is a record of what that model said when asked; the record itself states that none of the four systems can certify separation from its maker. The maintainer of this repository has no financial relationship with any of the makers; if that changes it will be recorded here and in the <a href="/changelog/">changelog</a>.</p>

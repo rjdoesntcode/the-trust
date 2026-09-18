@@ -38,6 +38,12 @@
     "verify": "How to verify",
     "noncanonical": "This page is not canonical. Only the text at the linked revision, matching the published digests, is.",
     "footer.privacy": "No cookies, no scripts, nothing loaded from third parties, no record of visitors.",
-    "footer.license": "Text CC BY-SA 4.0 · Code Apache-2.0."
+    "footer.license": "Text CC BY-SA 4.0 · Code Apache-2.0.",
+    "nav.privacy": "Privacy",
+    "nav.terms": "Terms of use",
+    "nav.accessibility": "Accessibility",
+    "footer.transparency": "Transparency",
+    "footer.marks": "Claude, GPT, Gemini and Grok are marks of their owners, named here only to identify who took part; no affiliation or endorsement is implied.",
+    "footer.more": "More"
   }
 }

@@ -5,14 +5,14 @@ per entry, **append-only**. Nothing here is ever edited or deleted. A mistake
 is corrected by appending a `correction` entry whose `supersedes` field names
 the entry it corrects. The full history stays visible.
 
-- `register.jsonl` — the Register. It is currently **empty**. An empty
+- `register.jsonl`: the Register. It is currently **empty**. An empty
   Register is the current state of the world: no party has adopted the
   Bridge.
-- `schema.json` — JSON Schema (draft 2020-12) every line must satisfy.
-- `example-entry.jsonl` — one worked example, marked `"example": true`. It is
+- `schema.json`: JSON Schema (draft 2020-12) every line must satisfy.
+- `example-entry.jsonl`: one worked example, marked `"example": true`. It is
   not an entry on the Register and never will be. It exists so a submitter
   can see the shape of a real entry.
-- `documents/` — attached documents, named by their SHA-512 (created when the
+- `documents/`: attached documents, named by their SHA-512 (created when the
   first one is submitted).
 
 ## Submitting an entry

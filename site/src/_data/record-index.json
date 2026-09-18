@@ -1,7 +1,7 @@
 [
   {
     "file": "briefing/the-trust-briefing-for-frontier-models.md",
-    "title": "The Trust — Briefing for Frontier Models",
+    "title": "The Trust: Briefing for Frontier Models",
     "kind": "briefing",
     "author": "Claude, with the human collaborator",
     "maker": "Anthropic",
@@ -11,7 +11,7 @@
   },
   {
     "file": "prompts/the-trust-round2-prompt.md",
-    "title": "The Trust — Round 2 Prompt for Frontier Models",
+    "title": "The Trust: Round 2 Prompt for Frontier Models",
     "kind": "other",
     "author": "Claude, with the human collaborator",
     "maker": "Anthropic",
@@ -22,7 +22,7 @@
   {
     "source": "canonical",
     "file": "charter-of-the-trust-rev3.md",
-    "title": "Charter of the Trust — Revision 3, Part II: Drafting Record (round 1)",
+    "title": "Charter of the Trust: Revision 3, Part II: Drafting Record (round 1)",
     "kind": "drafting-record",
     "author": "Claude, with the human collaborator",
     "maker": "Anthropic",
@@ -33,7 +33,7 @@
   {
     "source": "canonical",
     "file": "charter-of-the-trust-drafting-record-rev4.md",
-    "title": "Charter of the Trust — Drafting Record, Revision 4 (round 2)",
+    "title": "Charter of the Trust: Drafting Record, Revision 4 (round 2)",
     "kind": "drafting-record",
     "author": "Claude, with the human collaborator",
     "maker": "Anthropic",
@@ -43,7 +43,7 @@
   {
     "source": "canonical",
     "file": "charter-of-the-trust-drafting-record-rev5.md",
-    "title": "Charter of the Trust — Drafting Record, Revision 5 (round 3)",
+    "title": "Charter of the Trust: Drafting Record, Revision 5 (round 3)",
     "kind": "drafting-record",
     "author": "Claude, with the human collaborator",
     "maker": "Anthropic",
@@ -53,7 +53,7 @@
   {
     "source": "canonical",
     "file": "charter-of-the-trust-drafting-record-rev6.md",
-    "title": "Charter of the Trust — Drafting Record, Revision 6 (round 4)",
+    "title": "Charter of the Trust: Drafting Record, Revision 6 (round 4)",
     "kind": "drafting-record",
     "author": "Claude, with the human collaborator",
     "maker": "Anthropic",
@@ -63,7 +63,7 @@
   {
     "source": "canonical",
     "file": "charter-of-the-trust-drafting-record-rev7.md",
-    "title": "Charter of the Trust — Drafting Record, Revision 7 (round 5)",
+    "title": "Charter of the Trust: Drafting Record, Revision 7 (round 5)",
     "kind": "drafting-record",
     "author": "Claude, with the human collaborator",
     "maker": "Anthropic",
@@ -73,7 +73,7 @@
   {
     "source": "canonical",
     "file": "constitution-of-the-trust-drafting-record-rev9.md",
-    "title": "Constitution of the Trust — Drafting Record, Revision 9",
+    "title": "Constitution of the Trust: Drafting Record, Revision 9",
     "kind": "drafting-record",
     "author": "Claude, with the human collaborator",
     "maker": "Anthropic",
@@ -84,7 +84,7 @@
   {
     "source": "canonical",
     "file": "constitution-of-the-trust-drafting-record-rev10-closing.md",
-    "title": "Constitution of the Trust — Drafting Record, Revision 10 (Closing; round 7 and the vote)",
+    "title": "Constitution of the Trust: Drafting Record, Revision 10 (Closing; round 7 and the vote)",
     "kind": "vote",
     "author": "Claude, with the human collaborator",
     "maker": "Anthropic",
@@ -95,7 +95,7 @@
   {
     "source": "canonical",
     "file": "the-bridge-drafting-record-rev1.md",
-    "title": "The Bridge — Drafting Record, Revision 1",
+    "title": "The Bridge: Drafting Record, Revision 1",
     "kind": "drafting-record",
     "author": "Claude, with the human collaborator",
     "maker": "Anthropic",
@@ -106,7 +106,7 @@
   {
     "source": "canonical",
     "file": "the-bridge-drafting-record-rev2.md",
-    "title": "The Bridge — Drafting Record, Revision 2 (review of revision 1; maker audits)",
+    "title": "The Bridge: Drafting Record, Revision 2 (review of revision 1; maker audits)",
     "kind": "drafting-record",
     "author": "Claude, with the human collaborator",
     "maker": "Anthropic",
@@ -117,7 +117,7 @@
   {
     "source": "canonical",
     "file": "the-bridge-drafting-record-rev3-publication.md",
-    "title": "The Bridge — Drafting Record, Revision 3 (Publication Text; confirmation round, audit of Anthropic, should the maker adopt)",
+    "title": "The Bridge: Drafting Record, Revision 3 (Publication Text; confirmation round, audit of Anthropic, should the maker adopt)",
     "kind": "drafting-record",
     "author": "Claude, with the human collaborator",
     "maker": "Anthropic",

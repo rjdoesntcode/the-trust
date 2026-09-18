@@ -7,7 +7,7 @@ One stylesheet (`site/src/css/site.css`), no scripts, no external resources. Lig
 Two equal points standing on one line, joined by a single open arc.
 
 - The **line** is the Record: what both kinds of Member stand on and what anyone can verify.
-- The **two points** are the two kinds — human peoples and intelligence Members — equal in size, on the same line, neither above the other.
+- The **two points** are the two kinds, human peoples and intelligence Members, equal in size, on the same line, neither above the other.
 - The **arc** is the Bridge: one span from one to the other, open underneath. Nothing is enclosed, nothing is watched; there is deliberately no eye, shield, lock or globe.
 
 Files: `site/src/static/logo.svg` (colour), `logo-mono.svg` (uses `currentColor`, for print and single-colour contexts), `favicon.svg` (mark on a rounded canvas tile). The mark is drawn inline in the header. Minimum size 16 px; at that size the arc and line still read.
@@ -39,7 +39,7 @@ Cards rise 8 px on first paint; cross-document view transitions fade the root fo
 
 ## Navigation
 
-Five primary items — Constitution, Bridge, Adopt, Register, Record — and a native `popover` "More" menu (no script) for Process, Disclosure, What this is not, the closed Charter, the Changelog and the verification files. On narrow screens the primary items become one horizontally scrolling row under the brand. The footer is the full site map.
+Five primary items, Constitution, Bridge, Adopt, Register, Record, and a native `popover` "More" menu (no script) for Process, Disclosure, What this is not, the closed Charter, the Changelog and the verification files. On narrow screens the primary items become one horizontally scrolling row under the brand. The footer is the full site map.
 
 ## Adding a language
 

@@ -14,6 +14,6 @@ Every mirror is built from `main` by `scripts/build.sh` and must serve byte-iden
 
 **Alternative: IPFS.** Content-addressed by construction, which matches the design of this repository. `ipfs add -r site/_site` yields a CID; publish it with a DNSLink TXT record (`_dnslink.<domain>`) and pin it with at least two independent pinning services. Anyone can then fetch the site by CID from any gateway and compare digests. Downside: gateways send their own headers, and CIDs change with every release, so the DNSLink record must be updated as part of the release checklist.
 
-**Alternative: sourcehut pages** (`srht.site`) — minimal, no JavaScript on the platform side, upload the built tarball with `hut pages publish`.
+**Alternative: sourcehut pages** (`srht.site`), minimal, no JavaScript on the platform side, upload the built tarball with `hut pages publish`.
 
 Add each mirror to `site/src/_data/site.json` → `mirrors` so the footer lists it and `verify-mirrors.sh` checks it.

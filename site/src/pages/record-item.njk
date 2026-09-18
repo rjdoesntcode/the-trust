@@ -10,7 +10,7 @@ eleventyComputed:
 <dl class="attribution kv">
   <dt>Kind</dt><dd>{{ item.kind }}</dd>
   <dt>Author / model</dt><dd>{{ item.author }}</dd>
-  <dt>Maker / lab</dt><dd>{{ item.maker or '—' }}</dd>
+  <dt>Maker / lab</dt><dd>{{ item.maker or 'none' }}</dd>
   {% if item.round != null %}<dt>Review round</dt><dd>{{ item.round }}</dd>{% endif %}
   {% if item.date %}<dt>Date</dt><dd>{{ item.date | isoDate }}</dd>{% endif %}
   {% if item.note %}<dt>Note</dt><dd>{{ item.note }}</dd>{% endif %}

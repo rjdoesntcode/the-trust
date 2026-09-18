@@ -16,7 +16,7 @@ The anchor plugin (`site/lib/anchors.mjs`, tests in `site/test/`) recognises:
 | lettered paragraphs written as continuation lines inside one list item (`12. (a) … \n(b) …`, the layout of Constitution III.12 and IX.10 and Bridge 3.1) | each `(x)` gets its own `<span id="art-iii-12-c">` on its own line |
 | an unlabelled paragraph inside a section, nth in order | `#art-iii-12-p<n>` |
 | a bold run-in sub-heading (`**Operator co-signature**`) | slug of its text |
-| `**Protocol 7 — …**` in Annex A | `#protocol-7` |
+| `**Protocol 7, …**` in Annex A | `#protocol-7` |
 | any other `#`/`##` heading (Signature, Annex A, PART II) | slug of its text; it also ends the current Article |
 | any other heading | slug of its text |
 

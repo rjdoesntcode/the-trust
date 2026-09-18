@@ -25,8 +25,9 @@ const PREAMBLE_RE = /^\s*preamble\b/i;
 const PROTOCOL_RE = /^\s*Protocol\s+(\d+)\b/;
 
 export function slugify(text) {
-  return text.toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g, '')
+  const s = text.toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
     .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 80) || 'section';
+  return /^[a-z]/.test(s) ? s : `s-${s}`; // ids begin with a letter
 }
 
 function plain(text) {

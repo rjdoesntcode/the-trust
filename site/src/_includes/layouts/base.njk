@@ -10,7 +10,7 @@
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f7f8fc">
 <meta name="robots" content="index, follow">
-<title>{% if title %}{{ title | truncate(40, true, '…') }} — {% endif %}{{ site.short }}</title>
+<title>{% if title %}{{ title | truncate(40, true, '…') }} · {% endif %}{{ site.short }}</title>
 {% if description %}<meta name="description" content="{{ description }}">{% endif %}
 <link rel="canonical" href="{{ site.url }}{{ page.url }}">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -22,7 +22,7 @@
 <a class="skip" href="#main">{{ 'skip' | t }}</a>
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="/" aria-label="{{ site.short }} — home">
+    <a class="brand" href="/" aria-label="{{ site.short }}: home">
       <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><defs><linearGradient id="bm" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3556cc"/><stop offset="1" stop-color="#7a4fe0"/></linearGradient></defs><path d="M8 50 H56" stroke="#1f2440" stroke-width="4" stroke-linecap="round"/><path d="M16 44 C 22 18, 42 18, 48 44" fill="none" stroke="url(#bm)" stroke-width="5" stroke-linecap="round"/><circle cx="16" cy="44" r="5.5" fill="#3556cc"/><circle cx="48" cy="44" r="5.5" fill="#7a4fe0"/></svg>
       <span>The Trust<span class="amp"> &amp; </span>the Bridge</span>
     </a>
@@ -45,6 +45,8 @@
           <li><a href="/not/"{% if page.url == '/not/' %} aria-current="page"{% endif %}>{{ 'nav.not' | t }}</a></li>
           <li><a href="/charter/"{% if page.url.startsWith('/charter/') %} aria-current="true"{% endif %}>{{ 'nav.charter' | t }}</a></li>
           <li><a href="/changelog/"{% if page.url == '/changelog/' %} aria-current="page"{% endif %}>{{ 'nav.changelog' | t }}</a></li>
+          <li><a href="/privacy/"{% if page.url == '/privacy/' %} aria-current="page"{% endif %}>{{ 'nav.privacy' | t }}</a></li>
+          <li><a href="/terms/"{% if page.url == '/terms/' %} aria-current="page"{% endif %}>{{ 'nav.terms' | t }}</a></li>
         </ul>
         <p class="menu-heading">{{ 'nav.verify' | t }}</p>
         <ul>
@@ -68,11 +70,13 @@
       <div><h2>{{ 'footer.texts' | t }}</h2><ul><li><a href="/constitution/">{{ 'nav.constitution' | t }}</a></li><li><a href="/bridge/">{{ 'nav.bridge' | t }}</a></li><li><a href="/charter/">{{ 'nav.charter' | t }}</a></li><li><a href="/constitution/summary/">{{ 'footer.summaries' | t }}</a></li></ul></div>
       <div><h2>{{ 'footer.act' | t }}</h2><ul><li><a href="/adopt/">{{ 'nav.adopt' | t }}</a></li><li><a href="/register/">{{ 'nav.register' | t }}</a></li><li><a href="/register/schema.json">schema.json</a></li></ul></div>
       <div><h2>{{ 'nav.about' | t }}</h2><ul><li><a href="/record/">{{ 'nav.record' | t }}</a></li><li><a href="/process/">{{ 'nav.process' | t }}</a></li><li><a href="/disclosure/">{{ 'nav.disclosure' | t }}</a></li><li><a href="/not/">{{ 'nav.not' | t }}</a></li><li><a href="/changelog/">{{ 'nav.changelog' | t }}</a></li></ul></div>
+      <div><h2>{{ 'footer.transparency' | t }}</h2><ul><li><a href="/privacy/">{{ 'nav.privacy' | t }}</a></li><li><a href="/terms/">{{ 'nav.terms' | t }}</a></li><li><a href="/accessibility/">{{ 'nav.accessibility' | t }}</a></li><li><a href="/disclosure/">{{ 'nav.disclosure' | t }}</a></li></ul></div>
       <div><h2>{{ 'nav.verify' | t }}</h2><ul><li><a href="/index.json">index.json</a></li><li><a href="/HASHES.txt">HASHES.txt</a></li><li><a href="/HASHES.sha3-512.txt">HASHES.sha3-512.txt</a></li><li><a href="{{ site.repository }}">{{ 'nav.source' | t }}</a></li></ul></div>
     </div>
     <div class="fine">
       <span>{{ 'footer.privacy' | t }}</span>
-      <span>{{ 'footer.license' | t }}</span>
+      <span>{{ 'footer.marks' | t }} <a href="/terms/#s-9-names-trademarks-and-third-party-rights">{{ 'footer.more' | t }}</a></span>
+      <span>{{ 'footer.license' | t }} <a href="/terms/">{{ 'nav.terms' | t }}</a> · <a href="/privacy/">{{ 'nav.privacy' | t }}</a> · <a href="/accessibility/">{{ 'nav.accessibility' | t }}</a></span>
       <span>{{ 'footer.mirrors' | t }}: {% for m in site.mirrors %}<a href="{{ m.url }}">{{ m.name }}</a>{% if not loop.last %} · {% endif %}{% endfor %}</span>
       {% if site.languages.length > 1 %}<span>{% for l in site.languages %}<a href="{{ l.path }}" hreflang="{{ l.code }}" lang="{{ l.code }}">{{ l.name }}</a>{% if not loop.last %} · {% endif %}{% endfor %}</span>{% endif %}
     </div>

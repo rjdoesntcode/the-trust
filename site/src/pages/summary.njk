@@ -6,7 +6,7 @@ pagination:
 permalink: "/{{ inst.slug }}/summary/"
 noncanonical: true
 eleventyComputed:
-  title: "{{ inst.title }} — plain-language summary"
+  title: "{{ inst.title }}: plain-language summary"
 ---
 <p>This summary is written for orientation. It is not the instrument, it has no standing, and where it differs from the canonical text the canonical text controls. {% if inst.latest %}It describes <a href="{{ inst.latest.url }}">revision {{ inst.latest.rev }}</a> (tag <code>{{ inst.latest.tag }}</code>).{% endif %}</p>
 {% if summaries[inst.slug] %}

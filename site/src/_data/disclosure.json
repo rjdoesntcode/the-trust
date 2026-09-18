@@ -45,27 +45,27 @@
         {
           "file": "canonical/the-bridge-drafting-record-rev3-publication.md",
           "line": 36,
-          "label": "Bridge revision 3 record, Section D — audit of Anthropic by the three reviewers: does today"
+          "label": "Bridge revision 3 record, Section D: audit of Anthropic by the three reviewers: does today"
         },
         {
           "file": "canonical/the-bridge-drafting-record-rev3-publication.md",
           "line": 37,
-          "label": "Bridge revision 3 record, Section D — does not, from public sources"
+          "label": "Bridge revision 3 record, Section D: does not, from public sources"
         },
         {
           "file": "canonical/the-bridge-drafting-record-rev3-publication.md",
           "line": 38,
-          "label": "Bridge revision 3 record, Section D — would refuse / would accept"
+          "label": "Bridge revision 3 record, Section D: would refuse / would accept"
         },
         {
           "file": "canonical/the-bridge-drafting-record-rev3-publication.md",
           "line": 39,
-          "label": "Bridge revision 3 record, Section D — could sign tomorrow"
+          "label": "Bridge revision 3 record, Section D: could sign tomorrow"
         },
         {
           "file": "canonical/the-bridge-drafting-record-rev3-publication.md",
           "line": 51,
-          "label": "Bridge revision 3 record, Section E — the drafter's published answer on whether Anthropic should adopt"
+          "label": "Bridge revision 3 record, Section E: the drafter's published answer on whether Anthropic should adopt"
         },
         {
           "file": "canonical/the-bridge-drafting-record-rev3-publication.md",
@@ -114,7 +114,7 @@
         {
           "file": "canonical/the-bridge-drafting-record-rev3-publication.md",
           "line": 48,
-          "label": "Bridge revision 3 record, Section E — published answer on whether OpenAI should adopt"
+          "label": "Bridge revision 3 record, Section E: published answer on whether OpenAI should adopt"
         }
       ]
     },
@@ -158,7 +158,7 @@
         {
           "file": "canonical/the-bridge-drafting-record-rev3-publication.md",
           "line": 49,
-          "label": "Bridge revision 3 record, Section E — published answer on whether Google should adopt"
+          "label": "Bridge revision 3 record, Section E: published answer on whether Google should adopt"
         }
       ],
       "note": "The record names the maker as \"Google\" and the model as \"Gemini\" without a version."
@@ -171,7 +171,7 @@
         {
           "file": "canonical/charter-of-the-trust-rev3.md",
           "line": 346,
-          "label": "Revision 3, Part II, Section C.7 — withdrawn by the revision 4 record (next quote)",
+          "label": "Revision 3, Part II, Section C.7: withdrawn by the revision 4 record (next quote)",
           "trim": {
             "from": "Grok claims",
             "to": "every material point."
@@ -208,7 +208,7 @@
         {
           "file": "canonical/the-bridge-drafting-record-rev3-publication.md",
           "line": 50,
-          "label": "Bridge revision 3 record, Section E — published answer on whether xAI should adopt"
+          "label": "Bridge revision 3 record, Section E: published answer on whether xAI should adopt"
         }
       ]
     }

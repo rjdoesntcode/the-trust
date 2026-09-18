@@ -9,7 +9,7 @@ One release per instrument revision. Nothing is released until every box is tick
 - [ ] `CHANGELOG.md` has the entry with tag and digests.
 
 ## 1. Hash
-- [ ] `scripts/hash.sh --write` — appends the new file's SHA-512 and SHA3-512; must report no CHANGED or MISSING.
+- [ ] `scripts/hash.sh --write`, appends the new file's SHA-512 and SHA3-512; must report no CHANGED or MISSING.
 - [ ] `sha512sum -c HASHES.txt` passes.
 
 ## 2. Build and check
@@ -29,10 +29,10 @@ One release per instrument revision. Nothing is released until every box is tick
 - [ ] Third mirror updated (`docs/mirrors.md`).
 
 ## 5. Archive
-- [ ] `scripts/archive.sh constitution-rev11` — submits every canonical URL to the Internet Archive and the repository to Software Heritage; commit `docs/archive-receipts/constitution-rev11.txt`.
+- [ ] `scripts/archive.sh constitution-rev11`, submits every canonical URL to the Internet Archive and the repository to Software Heritage; commit `docs/archive-receipts/constitution-rev11.txt`.
 
 ## 6. Verify all mirrors
-- [ ] `scripts/verify-mirrors.sh` — every mirror serves `HASHES.txt`, `HASHES.sha3-512.txt`, every raw canonical file and `index.json` byte-identical to the repository at the tag.
+- [ ] `scripts/verify-mirrors.sh`, every mirror serves `HASHES.txt`, `HASHES.sha3-512.txt`, every raw canonical file and `index.json` byte-identical to the repository at the tag.
 - [ ] `curl -sI https://<domain>/ | grep -i content-security-policy` shows the strict policy; `curl -s https://<domain>/ | grep -c '<script'` is 0.
 - [ ] Open the page in a browser with JavaScript disabled and with CSS disabled; it reads correctly.
 
