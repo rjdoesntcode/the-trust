@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Report an error on a page (corrections)
+    url: https://github.com/rjdoesntcode/the-trust/issues/new?title=%5BCorrection%5D%20&labels=correction
+    about: Give the URL, the statement and the correction. Reviewed within seven days.
+  - name: Report an accessibility problem
+    url: https://github.com/rjdoesntcode/the-trust/issues/new?title=%5BAccessibility%5D%20&labels=accessibility
+    about: Say which page, what you expected, what happened, and the browser or assistive technology used.

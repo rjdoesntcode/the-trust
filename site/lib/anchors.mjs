@@ -122,7 +122,7 @@ export function anchorsPlugin(md) {
       if (!id) continue;
       id = unique(id);
       t.attrSet('id', id);
-      if (level <= 2 && label) env.toc.push({ id, level, label: label.replace(/\s+/g, ' ').replace(/^\*\*|\*\*$/g, '').slice(0, 120) });
+      if (level <= 2 && label) env.toc.push({ id, level, label: label.replace(/\s+/g, ' ').replace(/^\*\*|\*\*$/g, '').replace(/\s[—–]\s/g, ' · ').slice(0, 120) });
       if (!inline) continue;
 
       // Lettered paragraphs written as continuation lines inside this block:

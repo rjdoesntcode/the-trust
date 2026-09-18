@@ -1,0 +1,12 @@
+---
+layout: layouts/canonical.njk
+pagination:
+  data: canonical.list
+  size: 1
+  alias: inst
+permalink: "/{{ inst.slug }}/"
+current: true
+eleventyComputed:
+  title: "{{ inst.title }}"
+  description: "The current text of the {{ inst.title }}, revision {{ inst.latest.rev }}."
+---

@@ -4,29 +4,30 @@ pagination:
   data: canonical.list
   size: 1
   alias: inst
-permalink: "/{{ inst.slug }}/"
+permalink: "/{{ inst.slug }}/revisions/"
 eleventyComputed:
-  title: "{{ inst.title }}"
-  description: "Every published revision of the {{ inst.title }}, with digests and signed tags."
+  title: "{{ inst.title }}: revisions and verification"
+  description: "Every published revision of the {{ inst.title }}, with digests and signed tags, and how to cite and verify."
 ---
 <article class="page glass">
 <p class="eyebrow">{{ 'canonical.text' | t }}</p>
-<h1>{{ inst.title }}</h1>
+<h1>{{ inst.title }}: {{ 'nav.revisions' | t | lower }}</h1>
 <div class="prose">
 {% if inst.note %}<p class="notice" role="note">{{ inst.note }}{% if inst.successor %} Continue at the <a href="/{{ inst.successor }}/">{{ canonical.bySlug[inst.successor].title }}</a>.{% endif %}{% if inst.predecessor %} Earlier revisions are under the <a href="/{{ inst.predecessor }}/">{{ canonical.bySlug[inst.predecessor].title }}</a>.{% endif %}</p>{% endif %}
 {% if inst.missing.length %}<p class="notice" role="note"><strong>Expected, not yet published:</strong> {% for e in inst.missing %}<code>canonical/{{ e.file }}</code> (revision {{ e.rev }}, tag <code>{{ e.tag }}</code>{% if e.status == 'current' %}, stated by the maintainer to be the current revision{% endif %}){% if not loop.last %}; {% endif %}{% endfor %}. Until the file is in the repository with a listed digest, it has no published text and cannot be cited; the latest <em>published</em> revision is shown below.</p>{% endif %}
-<p>Every revision of the {{ inst.title }} is a separate file under <code>/canonical/</code>, never edited after upload.{% if inst.latest and not inst.closed %} The latest published revision is <a href="{{ inst.latest.url }}">revision {{ inst.latest.rev }}</a>{% if inst.missing.length %} (a later revision is expected, see above){% endif %}.{% endif %} A <a href="/{{ inst.slug }}/summary/">plain-language summary</a> (not canonical) is also available.</p>
+<p>Every revision of the {{ inst.title }} is a separate file under <code>/canonical/</code>, never edited after upload.{% if inst.latest %} The current text is <a href="/{{ inst.slug }}/">revision {{ inst.latest.rev }}</a>{% if inst.missing.length %} (a later revision is expected, see above){% endif %}.{% endif %} A <a href="/{{ inst.slug }}/summary/">plain-language summary</a> (not canonical) is also available.</p>
 
 {% if inst.revisions.length %}
 </div>
 <div class="table-card glass revisions">
 <table>
   <caption>Published revisions</caption>
-  <thead><tr><th scope="col">Revision</th><th scope="col">Status</th><th scope="col">Date</th><th scope="col">Tag</th><th scope="col">SHA-512</th><th scope="col">SHA3-512</th><th scope="col">Raw</th></tr></thead>
+  <thead><tr><th scope="col">Revision</th><th scope="col">Published as</th><th scope="col">Status</th><th scope="col">Date</th><th scope="col">Tag</th><th scope="col">SHA-512</th><th scope="col">SHA3-512</th><th scope="col">Raw</th></tr></thead>
   <tbody>
   {% for d in inst.revisions %}
   <tr>
     <td><a href="{{ d.url }}">rev {{ d.rev }}</a></td>
+    <td>{{ d.instrumentTitle }}</td>
     <td>{{ d.status }}</td>
     <td>{% if d.date %}{{ d.date | isoDate }}{% else %}not stated in the record{% endif %}</td>
     <td><code>{{ d.tag }}</code></td>
@@ -55,7 +56,7 @@ eleventyComputed:
   <li>Compare with <a href="/HASHES.txt">HASHES.txt</a> and <a href="/HASHES.sha3-512.txt">HASHES.sha3-512.txt</a>, and with the same files at the signed tag in the <a href="{{ site.repository }}">repository</a> (<code>git verify-tag</code>).</li>
 </ol>
 
-{% set recs = [] %}{% for d in canonical.draftingRecords %}{% if d.file.startsWith(inst.filePrefix) %}{% set recs = (recs.push(d), recs) %}{% endif %}{% endfor %}
+{% set recs = [] %}{% for d in canonical.draftingRecords %}{% if d.file.startsWith(inst.filePrefix) or (inst.slug == 'constitution' and d.file.startsWith('charter-of-the-trust')) %}{% set recs = (recs.push(d), recs) %}{% endif %}{% endfor %}
 {% if recs.length %}
 <h2>Drafting records</h2>
 <p>Kept separate from the instrument, served exactly as uploaded and hashed like it. Readable versions are on the <a href="/record/">record</a> pages.</p>

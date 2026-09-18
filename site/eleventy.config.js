@@ -24,6 +24,7 @@ export default function (eleventyConfig) {
     'src/css': 'css',
     'src/fonts': 'fonts',
     'src/_headers': '_headers',
+    'src/_redirects': '_redirects',
     'src/.nojekyll': '.nojekyll',
     'src/static': '/',
   });

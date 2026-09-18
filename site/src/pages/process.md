@@ -42,7 +42,7 @@ Every drafting record has a section of feedback declined with reasons and a regi
 
 - No drafting record for revision 8 (round 6) was uploaded.
 - Charter revisions 1 and 2 were not uploaded as files; revision 2 exists only as embedded in the briefing.
-- Two Charter files were uploaded without a revision number and were identified as revisions 4 and 5 by their content; the reasoning is stated on the [Charter](/charter/) page.
+- Two Charter files were uploaded without a revision number and were identified as revisions 4 and 5 by their content; the reasoning is stated on the [Constitution revisions](/constitution/revisions/) page.
 - Most revisions carry no date in their text; where the record states none, the site says so rather than inventing one.
 
 ## What the process was not

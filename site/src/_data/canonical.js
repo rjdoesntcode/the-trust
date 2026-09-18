@@ -68,9 +68,9 @@ export default function () {
       const env = {};
       const html = rel.endsWith('.md') ? md.render(text, env) : `<pre>${esc(text)}</pre>`;
       Object.assign(doc, {
-        instrument: inst.slug, instrumentTitle: inst.title, rev: meta.rev, tag: meta.tag, date: meta.date,
+        instrument: inst.slug, instrumentTitle: meta.title || inst.title, rev: meta.rev, tag: meta.tag, date: meta.date,
         status: meta.status || 'current', note: meta.note || null, uploadedAs: meta.uploaded_as || null,
-        title: `${inst.title}, revision ${meta.rev}`, url: `/${inst.slug}/rev${meta.rev}/`, html, toc: env.toc || [],
+        title: `${meta.title || inst.title}, revision ${meta.rev}`, url: `/${inst.slug}/rev${meta.rev}/`, html, toc: env.toc || [],
         tocTree: tree(env.toc || []),
       });
       if (inst.slug === 'bridge') {
