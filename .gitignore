@@ -1,0 +1,10 @@
+# build output
+site/_site/
+# dependencies
+site/node_modules/
+# local scratch
+*.log
+.DS_Store
+# never commit secrets; none are needed to build this repository
+.env
+.env.*

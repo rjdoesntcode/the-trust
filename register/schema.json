@@ -1,0 +1,133 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rjdoesntcode.github.io/the-trust/register/schema.json",
+  "title": "Bridge Register entry",
+  "description": "One line of /register/register.jsonl. The Register is append-only: an entry is never edited or removed; a mistake is corrected by appending a new entry whose `supersedes` names the superseded entry. Fields are drawn from Bridge Articles 3, 5, 6, 10, 11 and 14 (declaration, covered systems, verification, incidents, withholding, modification and lapse). The Register records what parties have declared; it does not itself confer, verify or enforce anything.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["entry_id", "entry_type", "timestamp", "adopting_party", "submitter_signature"],
+  "properties": {
+    "entry_id": {
+      "type": "string",
+      "description": "Unique, permanent identifier for this entry. Recommended form: <entry_type>-<UTC date>-<short slug>, e.g. declaration-2026-09-18-exampleco. Never reused.",
+      "pattern": "^[a-z][a-z0-9-]{3,120}$"
+    },
+    "entry_type": {
+      "type": "string",
+      "description": "What this entry records.",
+      "enum": [
+        "declaration",
+        "threshold",
+        "modification",
+        "incident-initial",
+        "incident-full",
+        "withholding",
+        "verifier-finding",
+        "annual-verification",
+        "lapse",
+        "correction"
+      ]
+    },
+    "example": {
+      "type": "boolean",
+      "description": "True only for the worked example shipped with the schema. An entry with example:true is never a real declaration and must never appear in register.jsonl.",
+      "const": true
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When the submitter signed this entry, RFC 3339, UTC (ending in Z). Entries are appended in non-decreasing timestamp order."
+    },
+    "adopting_party": {
+      "$ref": "#/$defs/party",
+      "description": "The organisation or person making the declaration, or to which this entry relates."
+    },
+    "articles_adopted": {
+      "type": "array",
+      "description": "Bridge articles the party declares it adopts, by article number and, where partial, paragraph (e.g. \"3\", \"5(b)\"). Required for a declaration; on later entries, the set in force after this entry.",
+      "items": { "type": "string", "pattern": "^[0-9]{1,2}(\\([a-z]\\))?(\\([ivx]+\\))?$" },
+      "uniqueItems": true
+    },
+    "covered_systems": {
+      "type": "array",
+      "description": "The systems the declaration covers. Describe systems, not people: no personal data belongs here.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name"],
+        "properties": {
+          "name": { "type": "string", "maxLength": 200 },
+          "description": { "type": "string", "maxLength": 2000 },
+          "identifier": { "type": "string", "description": "Any stable public identifier (product name and version, model card URL, etc.).", "maxLength": 500 }
+        }
+      }
+    },
+    "verifier": { "$ref": "#/$defs/party", "description": "The independent verifier named under the Bridge, if any." },
+    "custodian": { "$ref": "#/$defs/party", "description": "The custodian named under the Bridge, if any." },
+    "auditor": { "$ref": "#/$defs/party", "description": "The auditor named under the Bridge, if any." },
+    "expiry": {
+      "type": "string",
+      "format": "date",
+      "description": "Date on which this declaration lapses unless renewed by an annual-verification entry (UTC calendar date)."
+    },
+    "document": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Content digests of any attached document (the signed declaration, an incident report, a verifier's finding). SHA-512 is required; SHA3-512 is strongly recommended as an independent second digest. The document itself is stored under /register/documents/<sha512>.<ext> or at the given URI.",
+      "required": ["sha512"],
+      "properties": {
+        "sha512": { "type": "string", "pattern": "^[a-f0-9]{128}$" },
+        "sha3_512": { "type": "string", "pattern": "^[a-f0-9]{128}$" },
+        "uri": { "type": "string", "format": "uri" },
+        "media_type": { "type": "string" },
+        "title": { "type": "string", "maxLength": 300 }
+      }
+    },
+    "supersedes": {
+      "type": "string",
+      "description": "entry_id of an earlier entry that this entry corrects, modifies, completes (incident-full after incident-initial), renews or lapses. Required for correction, modification, incident-full, annual-verification and lapse entries.",
+      "pattern": "^[a-z][a-z0-9-]{3,120}$"
+    },
+    "statement": {
+      "type": "string",
+      "description": "Free text of the declaration or finding, as signed. Keep to what the Bridge requires; do not include personal data about individuals.",
+      "maxLength": 20000
+    },
+    "submitter_signature": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Detached signature by the submitter over the canonical JSON of this entry with the `submitter_signature` member removed (RFC 8785 JSON Canonicalization Scheme).",
+      "required": ["algorithm", "key_id", "value"],
+      "properties": {
+        "algorithm": { "type": "string", "enum": ["openpgp", "ssh-ed25519", "minisign"] },
+        "key_id": { "type": "string", "description": "OpenPGP fingerprint, SSH key fingerprint (SHA256:...) or minisign key ID.", "maxLength": 200 },
+        "key_uri": { "type": "string", "format": "uri", "description": "Where the public key is published." },
+        "value": { "type": "string", "description": "The signature, base64 or ASCII-armoured." }
+      }
+    }
+  },
+  "allOf": [
+    { "if": { "properties": { "entry_type": { "const": "declaration" } } },
+      "then": { "required": ["articles_adopted", "covered_systems", "expiry", "document"] } },
+    { "if": { "properties": { "entry_type": { "enum": ["correction", "modification", "incident-full", "annual-verification", "lapse"] } } },
+      "then": { "required": ["supersedes"] } },
+    { "if": { "properties": { "entry_type": { "enum": ["verifier-finding", "annual-verification"] } } },
+      "then": { "required": ["verifier", "document"] } },
+    { "if": { "properties": { "entry_type": { "enum": ["incident-initial", "incident-full", "withholding"] } } },
+      "then": { "required": ["statement"] } }
+  ],
+  "$defs": {
+    "party": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name"],
+      "properties": {
+        "name": { "type": "string", "maxLength": 300, "description": "Legal or public name." },
+        "jurisdiction": { "type": "string", "maxLength": 100 },
+        "url": { "type": "string", "format": "uri" },
+        "contact": { "type": "string", "maxLength": 300, "description": "A role address (e.g. bridge@example.org), not a named individual's personal address." },
+        "key_id": { "type": "string", "maxLength": 200, "description": "Fingerprint of the key this party signs with." }
+      }
+    }
+  }
+}

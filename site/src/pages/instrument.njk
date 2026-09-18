@@ -1,0 +1,11 @@
+---
+layout: layouts/canonical.njk
+pagination:
+  data: canonical.instrumentDocs
+  size: 1
+  alias: doc
+permalink: "{{ doc.url }}"
+eleventyComputed:
+  title: "{{ doc.title }}"
+  description: "Canonical text of the {{ doc.instrumentTitle }}, revision {{ doc.rev }}, tag {{ doc.tag }}."
+---

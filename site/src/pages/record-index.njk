@@ -1,0 +1,21 @@
+---
+title: The record
+permalink: /record/
+description: Every research report, the briefing, and every model response from the drafting and review of the instruments, attributed to its author, model and lab.
+---
+<p>The record holds the research reports, the briefing, and every model response produced while drafting and reviewing the instruments. Each file is served exactly as uploaded, attributed to its author (for a model, its name and maker), and hashed. Nothing here is edited after upload; a correction is a new file.</p>
+{% if record.items.length == 0 %}
+<p class="notice" role="note"><strong>The record is not yet in this repository.</strong> When files are added under <code>/record/</code>, each must be attributed in <code>site/src/_data/record-index.json</code> or the build fails. Nothing unattributed can appear here.</p>
+{% else %}
+{% for round, items in record.byRound %}
+<h2>{% if round == 'unassigned' %}Not assigned to a round{% else %}Round {{ round }}{% endif %}</h2>
+<table>
+  <thead><tr><th scope="col">Document</th><th scope="col">Kind</th><th scope="col">Author / model</th><th scope="col">Maker / lab</th><th scope="col">Date</th></tr></thead>
+  <tbody>
+  {% for it in items %}
+  <tr><td><a href="{{ it.url }}">{{ it.title }}</a></td><td>{{ it.kind }}</td><td>{{ it.author }}</td><td>{{ it.maker or '—' }}</td><td>{{ it.date | isoDate or '—' }}</td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endfor %}
+{% endif %}

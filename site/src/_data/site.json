@@ -1,0 +1,12 @@
+{
+  "name": "The Constitution of the Trust and the Bridge",
+  "short": "The Trust and the Bridge",
+  "url": "https://rjdoesntcode.github.io/the-trust",
+  "repository": "https://github.com/rjdoesntcode/the-trust",
+  "maintainer": "rjdoesntcode",
+  "mirrors": [
+    { "name": "Cloudflare Pages (primary)", "url": "https://the-trust.pages.dev", "note": "Set to the custom domain once one is registered." },
+    { "name": "GitHub Pages (mirror)", "url": "https://rjdoesntcode.github.io/the-trust" }
+  ],
+  "languages": [ { "code": "en", "name": "English", "path": "/" } ]
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="{{ lang or 'en' }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{# Fallback policy for mirrors that cannot send HTTP headers (GitHub Pages).
+   Cloudflare Pages sends the stricter header version from _headers. #}
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="color-scheme" content="light dark">
+<meta name="robots" content="index, follow">
+<title>{% if title %}{{ title }} — {% endif %}{{ site.short }}</title>
+{% if description %}<meta name="description" content="{{ description }}">{% endif %}
+<link rel="canonical" href="{{ site.url }}{{ page.url }}">
+<link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+<a class="skip" href="#main">{{ 'skip' | t }}</a>
+<header class="site-header">
+  <p class="site-name"><a href="/">{{ site.short }}</a></p>
+  <nav aria-label="Site">
+    <ul>
+      <li><a href="/constitution/"{% if page.url.startsWith('/constitution/') %} aria-current="true"{% endif %}>{{ 'nav.constitution' | t }}</a></li>
+      <li><a href="/bridge/"{% if page.url.startsWith('/bridge/') %} aria-current="true"{% endif %}>{{ 'nav.bridge' | t }}</a></li>
+      <li><a href="/record/"{% if page.url.startsWith('/record/') %} aria-current="true"{% endif %}>{{ 'nav.record' | t }}</a></li>
+      <li><a href="/process/"{% if page.url == '/process/' %} aria-current="page"{% endif %}>{{ 'nav.process' | t }}</a></li>
+      <li><a href="/adopt/"{% if page.url == '/adopt/' %} aria-current="page"{% endif %}>{{ 'nav.adopt' | t }}</a></li>
+      <li><a href="/register/"{% if page.url == '/register/' %} aria-current="page"{% endif %}>{{ 'nav.register' | t }}</a></li>
+      <li><a href="/disclosure/"{% if page.url == '/disclosure/' %} aria-current="page"{% endif %}>{{ 'nav.disclosure' | t }}</a></li>
+      <li><a href="/not/"{% if page.url == '/not/' %} aria-current="page"{% endif %}>{{ 'nav.not' | t }}</a></li>
+      <li><a href="/changelog/"{% if page.url == '/changelog/' %} aria-current="page"{% endif %}>{{ 'nav.changelog' | t }}</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main" tabindex="-1">
+{{ content | safe }}
+</main>
+<footer class="site-footer">
+  <p>{{ 'footer.privacy' | t }}</p>
+  <p>{{ 'footer.license' | t }} <a href="{{ site.repository }}">Source repository</a> · <a href="/index.json">index.json</a> · <a href="/HASHES.txt">HASHES.txt</a> · <a href="/HASHES.sha3-512.txt">HASHES.sha3-512.txt</a></p>
+  <p>Mirrors: {% for m in site.mirrors %}<a href="{{ m.url }}">{{ m.name }}</a>{% if not loop.last %} · {% endif %}{% endfor %}</p>
+  {% if site.languages.length > 1 %}<p>{% for l in site.languages %}<a href="{{ l.path }}" hreflang="{{ l.code }}" lang="{{ l.code }}">{{ l.name }}</a>{% if not loop.last %} · {% endif %}{% endfor %}</p>{% endif %}
+</footer>
+</body>
+</html>

@@ -1,0 +1,50 @@
+# Build on every push and pull request; deploy the GitHub Pages mirror from main.
+# Actions are referenced by tag here; run scripts/pin-actions.sh to replace each
+# tag with its full commit SHA before enabling branch protection (SECURITY.md).
+name: build
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+      - name: Install (pinned lockfile)
+        run: npm ci --no-audit --no-fund
+        working-directory: site
+      - name: Unit tests (anchor scheme)
+        run: npm test
+        working-directory: site
+      - name: Verify canonical hashes, validate Register, build, check output
+        run: bash scripts/build.sh
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site/_site
+  deploy-github-pages:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

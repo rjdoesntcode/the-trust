@@ -1,0 +1,27 @@
+---
+layout: layouts/base.njk
+---
+<div class="canonical-wrap">
+  <aside class="toc" aria-labelledby="toc-heading">
+    <h2 id="toc-heading">{{ 'contents' | t }}</h2>
+    {% if doc.toc.length %}
+    <ol class="toc-list">
+      {% for e in doc.toc %}<li class="toc-l{{ e.level }}"><a href="#{{ e.id }}">{{ e.label }}</a></li>{% endfor %}
+    </ol>
+    {% else %}<p>No headings found.</p>{% endif %}
+  </aside>
+  <article class="canonical" aria-labelledby="doc-title">
+    <header class="doc-header">
+      <h1 id="doc-title">{{ doc.instrumentTitle }} <span class="rev">revision {{ doc.rev }}</span></h1>
+      <p class="doc-meta">
+        {% if doc.status != 'current' %}<strong>Superseded revision.</strong> {% endif %}
+        Canonical text, rendered byte-for-byte from <a href="{{ doc.raw }}">{{ doc.file }}</a>. Git tag <code>{{ doc.tag }}</code>.
+        {% if doc.date %}Revision date {{ doc.date | isoDate }}.{% else %}<em>Revision date not yet recorded.</em>{% endif %}
+      </p>
+    </header>
+    {{ doc.html | safe }}
+    <footer class="doc-footer">
+      {% include "partials/integrity.njk" %}
+    </footer>
+  </article>
+</div>

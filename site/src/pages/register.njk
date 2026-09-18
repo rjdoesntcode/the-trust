@@ -1,0 +1,49 @@
+---
+title: The Register
+permalink: /register/
+description: The Bridge Register — every declaration of adoption and every later entry, append-only, rendered from register.jsonl.
+---
+<p>The Register is the only evidence of adoption of the Bridge. It is an append-only file, <a href="/register/register.jsonl"><code>register.jsonl</code></a>, one entry per line, validated against <a href="/register/schema.json"><code>schema.json</code></a>. No entry is ever edited or removed; a mistake is corrected by a later entry that names the one it supersedes.</p>
+
+{% if register.empty %}
+<p class="notice" role="note"><strong>The Register is empty.</strong> No party has adopted the Bridge. An empty Register is the current state of the world: any claim of adoption or endorsement that is not on this page is false.</p>
+{% else %}
+<p>{{ register.entries.length }} entries. Superseded entries remain listed and are marked.</p>
+<table>
+  <thead><tr><th scope="col">Entry</th><th scope="col">Type</th><th scope="col">Timestamp (UTC)</th><th scope="col">Party</th><th scope="col">Articles</th><th scope="col">Expiry</th><th scope="col">Supersedes</th><th scope="col">Document</th></tr></thead>
+  <tbody>
+  {% for e in register.entries %}
+  <tr{% if e.entry_id in register.superseded %} class="superseded"{% endif %}>
+    <td><code id="{{ e.entry_id }}">{{ e.entry_id }}</code>{% if e.entry_id in register.superseded %} (superseded){% endif %}</td>
+    <td>{{ e.entry_type }}</td>
+    <td>{{ e.timestamp }}</td>
+    <td>{{ e.adopting_party.name }}{% if e.adopting_party.url %} (<a href="{{ e.adopting_party.url }}">site</a>){% endif %}</td>
+    <td>{{ e.articles_adopted | join(', ') if e.articles_adopted else '—' }}</td>
+    <td>{{ e.expiry or '—' }}</td>
+    <td>{% if e.supersedes %}<a href="#{{ e.supersedes }}">{{ e.supersedes }}</a>{% else %}—{% endif %}</td>
+    <td>{% if e.document %}<code class="hash">{{ e.document.sha512 }}</code>{% else %}—{% endif %}</td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endif %}
+
+<h2 id="example">Worked example (not an entry)</h2>
+<p>The following is shipped with the schema so that a submitter can see the shape of a real entry. It is marked <code>"example": true</code>, names no real party, carries no real signature, and is not on the Register.</p>
+{% for e in register.examples %}
+<pre>{{ e | json }}</pre>
+{% endfor %}
+
+<h2>Entry types</h2>
+<dl>
+  <dt>declaration</dt><dd>A party adopts named articles for named systems.</dd>
+  <dt>threshold</dt><dd>A party records that a threshold the Bridge defines has been reached.</dd>
+  <dt>modification</dt><dd>A change to an earlier declaration (articles, systems, verifier, custodian or auditor).</dd>
+  <dt>incident-initial / incident-full</dt><dd>Initial notice of an incident, followed by the full account that completes it.</dd>
+  <dt>withholding</dt><dd>A party records that it is withholding something the Bridge would otherwise require, and why.</dd>
+  <dt>verifier-finding</dt><dd>A finding by the named verifier.</dd>
+  <dt>annual-verification</dt><dd>Renewal of a declaration by annual verification; resets the expiry.</dd>
+  <dt>lapse</dt><dd>A declaration has lapsed.</dd>
+  <dt>correction</dt><dd>Corrects an earlier entry, which stays visible and is marked superseded.</dd>
+</dl>
+<p>See <a href="/adopt/">how to adopt</a> for the submission steps.</p>

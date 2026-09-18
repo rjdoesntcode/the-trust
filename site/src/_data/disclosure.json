@@ -1,0 +1,10 @@
+{
+  "note": "Every 'disclosed_interest' must be quoted verbatim from a file in /record/, with 'source' naming that file. Until the record is in the repository these are null and the page says so.",
+  "participants": [
+    { "role": "Drafter (human)", "name": "One human collaborator — the repository maintainer", "maker": null, "disclosed_interest": null, "source": null },
+    { "role": "Drafter (model)", "name": "Claude", "maker": "Anthropic", "disclosed_interest": null, "source": null },
+    { "role": "Reviewer", "name": "GPT-5.6 Sol", "maker": "OpenAI", "disclosed_interest": null, "source": null },
+    { "role": "Reviewer", "name": "Gemini", "maker": "Google DeepMind", "disclosed_interest": null, "source": null, "note": "Exact model version to be taken from the record." },
+    { "role": "Reviewer", "name": "Grok 4.6", "maker": "xAI", "disclosed_interest": null, "source": null }
+  ]
+}

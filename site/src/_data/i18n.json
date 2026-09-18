@@ -1,0 +1,25 @@
+{
+  "en": {
+    "skip": "Skip to content",
+    "nav.constitution": "Constitution",
+    "nav.bridge": "Bridge",
+    "nav.record": "Record",
+    "nav.process": "Process",
+    "nav.adopt": "Adopt",
+    "nav.register": "Register",
+    "nav.disclosure": "Disclosure",
+    "nav.not": "What this is not",
+    "nav.changelog": "Changelog",
+    "contents": "Contents",
+    "integrity": "Integrity",
+    "sha512": "SHA-512",
+    "sha3": "SHA3-512",
+    "tag": "Git tag",
+    "date": "Revision date",
+    "raw": "Raw file",
+    "verify": "How to verify",
+    "noncanonical": "This page is not canonical. Only the text at the linked revision, matching the published digests, is.",
+    "footer.privacy": "This site sets no cookies, runs no scripts, loads nothing from third parties, and keeps no record of visitors.",
+    "footer.license": "Text: CC BY-SA 4.0. Code: Apache-2.0."
+  }
+}

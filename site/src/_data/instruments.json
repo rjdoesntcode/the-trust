@@ -1,0 +1,4 @@
+{
+  "constitution": { "slug": "constitution", "title": "Constitution of the Trust", "short": "Constitution", "filePrefix": "constitution-of-the-trust", "tagPrefix": "constitution" },
+  "bridge":       { "slug": "bridge",       "title": "The Bridge",                "short": "Bridge",       "filePrefix": "the-bridge",                "tagPrefix": "bridge" }
+}

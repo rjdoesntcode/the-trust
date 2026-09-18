@@ -1,0 +1,50 @@
+---
+pagination:
+  data: canonical.list
+  size: 1
+  alias: inst
+permalink: "/{{ inst.slug }}/"
+eleventyComputed:
+  title: "{{ inst.title }}"
+  description: "Every published revision of the {{ inst.title }}, with digests and signed tags."
+---
+<p>Every revision of the {{ inst.title }} is a separate file under <code>/canonical/</code>, never edited after publication. The latest revision is the one in force for citation. A <a href="/{{ inst.slug }}/summary/">plain-language summary</a> (not canonical) is also available.</p>
+
+{% if inst.revisions.length %}
+<table>
+  <caption>Published revisions</caption>
+  <thead><tr><th scope="col">Revision</th><th scope="col">Date</th><th scope="col">Tag</th><th scope="col">SHA-512</th><th scope="col">SHA3-512</th><th scope="col">Files</th></tr></thead>
+  <tbody>
+  {% for d in inst.revisions %}
+  <tr>
+    <td><a href="{{ d.url }}">rev {{ d.rev }}</a>{% if d.status != 'current' %} (superseded){% endif %}</td>
+    <td>{% if d.date %}{{ d.date | isoDate }}{% else %}not yet recorded{% endif %}</td>
+    <td><code>{{ d.tag }}</code></td>
+    <td><code class="hash">{{ d.sha512 }}</code></td>
+    <td><code class="hash">{{ d.sha3_512 }}</code></td>
+    <td><a href="{{ d.raw }}">raw</a></td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<p class="notice" role="note"><strong>No revision of the {{ inst.title }} has been placed in this repository yet.</strong>
+{% if inst.expected.length %}Expected: {% for e in inst.expected %}<code>canonical/{{ e.file }}</code> (tag <code>{{ e.tag }}</code>){% if not loop.last %}, {% endif %}{% endfor %}.{% endif %}
+Until a file is present under <code>/canonical/</code> with a listed digest and a signed tag, there is no published text to cite.</p>
+{% endif %}
+
+<h2>How to cite</h2>
+<p>Cite by revision and digest, not by URL alone: <q>{{ inst.title }}, revision N, tag <code>{{ inst.tagPrefix }}-revN</code>, SHA-512 <code>…</code></q>, with the article and paragraph anchor (for example <code>#art-iii-12-c</code>). The digest, not the site, is the authority.</p>
+
+<h2>How to verify</h2>
+<ol>
+  <li>Download the raw file linked above.</li>
+  <li>Run <code>sha512sum &lt;file&gt;</code> and <code>openssl dgst -sha3-512 &lt;file&gt;</code>.</li>
+  <li>Compare with <a href="/HASHES.txt">HASHES.txt</a> and <a href="/HASHES.sha3-512.txt">HASHES.sha3-512.txt</a>, and with the same files at the signed tag in the <a href="{{ site.repository }}">repository</a> (<code>git verify-tag</code>).</li>
+</ol>
+
+{% if canonical.draftingRecords.length %}
+<h2>Drafting records</h2>
+<p>Other files under <code>/canonical/</code>, served exactly as uploaded and hashed like the instruments:</p>
+<ul>{% for d in canonical.draftingRecords %}<li><a href="{{ d.raw }}">{{ d.file }}</a> — SHA-512 <code class="hash">{{ d.sha512 }}</code></li>{% endfor %}</ul>
+{% endif %}

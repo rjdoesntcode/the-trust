@@ -1,0 +1,6 @@
+[
+  { "file": "constitution-of-the-trust-rev10.md", "instrument": "constitution", "rev": 10, "tag": "constitution-rev10", "date": null, "status": "current",
+    "note": "Revision date must be filled in from the record before release." },
+  { "file": "the-bridge-rev1.md", "instrument": "bridge", "rev": 1, "tag": "bridge-rev1", "date": null, "status": "current",
+    "note": "Revision date must be filled in from the record before release." }
+]

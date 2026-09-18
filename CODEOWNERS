@@ -1,0 +1,7 @@
+# Every change to the repository requires review by the maintainer.
+# The canonical texts and the record are immutable (see README.md);
+# changes there are new files only, never edits.
+*                 @rjdoesntcode
+/canonical/       @rjdoesntcode
+/record/          @rjdoesntcode
+/register/        @rjdoesntcode

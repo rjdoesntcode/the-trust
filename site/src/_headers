@@ -1,0 +1,24 @@
+# Served by Cloudflare Pages. GitHub Pages cannot send headers; the HTML
+# carries a <meta> CSP and referrer policy as the fallback there.
+/*
+  Content-Security-Policy: default-src 'none'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests
+  Referrer-Policy: no-referrer
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Cross-Origin-Opener-Policy: same-origin
+  Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=(), interest-cohort=(), browsing-topics=()
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  Cache-Control: public, max-age=600
+/canonical/*
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+/record/*
+  Access-Control-Allow-Origin: *
+/register/*
+  Access-Control-Allow-Origin: *
+/index.json
+  Access-Control-Allow-Origin: *
+/HASHES.txt
+  Access-Control-Allow-Origin: *
+/HASHES.sha3-512.txt
+  Access-Control-Allow-Origin: *

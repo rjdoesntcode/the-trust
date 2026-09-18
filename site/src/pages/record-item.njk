@@ -1,0 +1,22 @@
+---
+pagination:
+  data: record.items
+  size: 1
+  alias: item
+permalink: "{{ item.url }}"
+eleventyComputed:
+  title: "{{ item.title }}"
+---
+<dl class="attribution">
+  <dt>Kind</dt><dd>{{ item.kind }}</dd>
+  <dt>Author / model</dt><dd>{{ item.author }}</dd>
+  <dt>Maker / lab</dt><dd>{{ item.maker or '—' }}</dd>
+  {% if item.round != null %}<dt>Review round</dt><dd>{{ item.round }}</dd>{% endif %}
+  {% if item.date %}<dt>Date</dt><dd>{{ item.date | isoDate }}</dd>{% endif %}
+  {% if item.note %}<dt>Note</dt><dd>{{ item.note }}</dd>{% endif %}
+  <dt>File</dt><dd><a href="{{ item.raw }}">{{ item.file }}</a> ({{ item.bytes }} bytes)</dd>
+  <dt>SHA-512</dt><dd><code class="hash">{{ item.sha512 }}</code></dd>
+  <dt>SHA3-512</dt><dd><code class="hash">{{ item.sha3_512 }}</code></dd>
+</dl>
+<hr>
+{% if item.html %}{{ item.html | safe }}{% else %}<p>This record is not rendered inline. <a href="{{ item.raw }}">Open the file</a>.</p>{% endif %}

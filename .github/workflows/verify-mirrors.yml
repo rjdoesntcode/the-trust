@@ -1,0 +1,16 @@
+# Weekly and on demand: confirm every mirror serves byte-identical canonical files.
+name: verify-mirrors
+on:
+  schedule:
+    - cron: "17 6 * * 1"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - run: bash scripts/verify-mirrors.sh

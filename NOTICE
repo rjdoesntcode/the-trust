@@ -1,0 +1,26 @@
+The Constitution of the Trust and the Bridge
+============================================
+
+Text (everything under /canonical/, /record/, /register/, and the prose of
+the site) is licensed under the Creative Commons Attribution-ShareAlike 4.0
+International License (CC BY-SA 4.0). See LICENSE-TEXT.
+
+Code (everything under /site/ other than prose content, /scripts/, and the
+repository configuration) is licensed under the Apache License, Version 2.0.
+See LICENSE.
+
+NO REPRESENTATION OF ADOPTION OR ENDORSEMENT
+--------------------------------------------
+
+No party may represent that it has adopted the Bridge, or that it is
+endorsed by, affiliated with, or acting on behalf of the Trust, unless a
+declaration to that effect has been published on the Register maintained
+in this repository at /register/register.jsonl and rendered at /register/.
+
+An entry on the Register is the only evidence of adoption. Absence of an
+entry means no adoption. The licenses above permit copying and adaptation
+of the texts; they do not permit any statement of adoption or endorsement
+that the Register does not support.
+
+The instruments published here are not a treaty, not a government, not in
+force, and cannot compel anyone. See /not/ on the site.

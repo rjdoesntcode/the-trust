@@ -1,0 +1,28 @@
+---
+permalink: /index.json
+eleventyExcludeFromCollections: true
+layout: false
+---
+{
+  "site": "{{ site.url }}",
+  "repository": "{{ site.repository }}",
+  "manifests": { "sha512": "/HASHES.txt", "sha3_512": "/HASHES.sha3-512.txt" },
+  "documents": [{% for d in canonical.documents %}
+    {
+      "path": "{{ d.path }}",
+      "raw": "{{ d.raw }}",
+      "kind": "{{ d.kind }}",
+      {% if d.kind == 'instrument' %}"instrument": "{{ d.instrument }}",
+      "title": "{{ d.instrumentTitle }}",
+      "revision": {{ d.rev }},
+      "tag": "{{ d.tag }}",
+      "date": {% if d.date %}"{{ d.date | isoDate }}"{% else %}null{% endif %},
+      "status": "{{ d.status }}",
+      "url": "{{ d.url }}",
+      {% endif %}"bytes": {{ d.bytes }},
+      "sha512": "{{ d.sha512 }}",
+      "sha3_512": "{{ d.sha3_512 }}"
+    }{% if not loop.last %},{% endif %}{% endfor %}
+  ],
+  "register": { "path": "/register/register.jsonl", "schema": "/register/schema.json", "entries": {{ register.entries.length }} }
+}

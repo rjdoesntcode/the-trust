@@ -1,0 +1,11 @@
+<section class="integrity" aria-label="{{ 'integrity' | t }}">
+  <h2>{{ 'integrity' | t }}</h2>
+  <dl>
+    <dt>{{ 'tag' | t }}</dt><dd><code>{{ doc.tag }}</code></dd>
+    <dt>{{ 'date' | t }}</dt><dd>{% if doc.date %}{{ doc.date | isoDate }}{% else %}not yet recorded{% endif %}</dd>
+    <dt>{{ 'raw' | t }}</dt><dd><a href="{{ doc.raw }}">{{ doc.path }}</a> ({{ doc.bytes }} bytes)</dd>
+    <dt>{{ 'sha512' | t }}</dt><dd><code class="hash">{{ doc.sha512 }}</code></dd>
+    <dt>{{ 'sha3' | t }}</dt><dd><code class="hash">{{ doc.sha3_512 }}</code></dd>
+  </dl>
+  <p class="verify"><strong>{{ 'verify' | t }}:</strong> download the raw file and run <code>sha512sum {{ doc.file }}</code> and <code>openssl dgst -sha3-512 {{ doc.file }}</code>; compare with <a href="/HASHES.txt">HASHES.txt</a> and <a href="/HASHES.sha3-512.txt">HASHES.sha3-512.txt</a> at tag <code>{{ doc.tag }}</code> in the <a href="{{ site.repository }}">repository</a> (<code>git verify-tag {{ doc.tag }}</code>).</p>
+</section>
