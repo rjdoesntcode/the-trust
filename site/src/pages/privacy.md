@@ -16,8 +16,8 @@ This is not only a design choice. The Constitution's Article III.6 states *"Powe
 
 The site is served by two hosts, each of which handles the network connection and may process your IP address transiently to deliver the page and to defend against abuse. Neither is given anything by this site beyond the request your browser makes.
 
-- **Cloudflare** serves `trust.forum` as a static-asset Worker. Like any host, Cloudflare processes standard technical log data, including visitor IP addresses, to deliver the site and defend it, under its own [privacy policy](https://www.cloudflare.com/privacypolicy/). Per-request invocation logging for this Worker is switched **off** in the deployment configuration (`wrangler.toml`, public in the repository); only aggregate counts without identifiers are kept.
-- **GitHub Pages** serves the mirror at `rjdoesntcode.github.io/the-trust`. GitHub may collect logs of visitor IP addresses for security and legal compliance, under its [privacy statement](https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement).
+- **Cloudflare** serves `trust.forum`. Like any host, Cloudflare processes standard technical log data, including visitor IP addresses, to deliver the site and defend it, under its own [privacy policy](https://www.cloudflare.com/privacypolicy/). Per-request logging for this site is switched **off** in its deployment configuration, which is public in the repository; only aggregate counts without identifiers are kept.
+- **GitHub** serves the mirror. GitHub may collect logs of visitor IP addresses for security and legal compliance, under its [privacy statement](https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement).
 
 The publisher does not receive, store or use this data.
 

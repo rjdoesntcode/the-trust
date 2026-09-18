@@ -1,6 +1,7 @@
 ---
 layout: layouts/base.njk
 ---
+{% if current %}{% set doc = inst.latest %}{% endif %}
 <div class="canonical-wrap">
   <aside class="toc glass" aria-labelledby="toc-heading">
     <h2 id="toc-heading">{{ 'contents' | t }}</h2>
@@ -17,8 +18,7 @@ layout: layouts/base.njk
     <header class="doc-header">
       <p class="eyebrow">{{ 'canonical.text' | t }} · {{ doc.instrumentTitle }} · {{ 'revision' | t }} {{ doc.rev }} {% if doc.status == 'current' %}<span class="chip ok">{{ 'status.current' | t }}</span>{% elif doc.status == 'closed' %}<span class="chip muted">{{ 'status.closed' | t }}</span>{% else %}<span class="chip muted">{{ 'status.superseded' | t }}</span>{% endif %}</p>
       <p class="meta">
-        {{ 'rendered.from' | t }} <a href="{{ doc.raw }}">{{ doc.file }}</a> · {{ 'tag' | t }} <code>{{ doc.tag }}</code> ·
-        {% if doc.date %}{{ doc.date | isoDate }}{% else %}{{ 'date.unstated' | t }}{% endif %}
+        <a href="/{{ doc.instrument }}/revisions/">{{ 'kicker.all' | t }}</a> · <a href="/{{ doc.instrument }}/revisions/#how-to-verify">{{ 'kicker.verify' | t }}</a> · <a href="/{{ doc.instrument }}/summary/">summary</a> · {{ 'tag' | t }} <code>{{ doc.tag }}</code>
       </p>
     </header>
     {{ doc.html | safe }}

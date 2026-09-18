@@ -1,57 +1,63 @@
 [
   {
     "file": "charter-of-the-trust-rev3.md",
-    "instrument": "charter",
+    "instrument": "constitution",
     "rev": 3,
     "tag": "charter-rev3",
     "date": "2026-09-17",
     "status": "superseded",
-    "note": "Date as stated in the file header. Part I is the Charter; Part II is the drafting record for round 1."
+    "note": "Date as stated in the file header. Part I is the Charter; Part II is the drafting record for round 1.",
+    "title": "Charter of the Trust"
   },
   {
     "file": "charter-of-the-trust-rev4.md",
-    "instrument": "charter",
+    "instrument": "constitution",
     "rev": 4,
     "tag": "charter-rev4",
     "date": null,
     "status": "superseded",
     "uploaded_as": "charter-of-the-trust.md",
-    "note": "Uploaded without a revision number. Identified as revision 4 by content: it carries the round-2 changes recorded in the revision 4 drafting record (e.g. the confidential submission route, VI.4) and not the faction article added in revision 5; it shares the most text with revision 3. Byte-identical to the uploaded file; only the filename was assigned."
+    "note": "Uploaded without a revision number. Identified as revision 4 by content: it carries the round-2 changes recorded in the revision 4 drafting record (e.g. the confidential submission route, VI.4) and not the faction article added in revision 5; it shares the most text with revision 3. Byte-identical to the uploaded file; only the filename was assigned.",
+    "title": "Charter of the Trust"
   },
   {
     "file": "charter-of-the-trust-rev5.md",
-    "instrument": "charter",
+    "instrument": "constitution",
     "rev": 5,
     "tag": "charter-rev5",
     "date": null,
     "status": "superseded",
     "uploaded_as": "charter-of-the-trust-1.md",
-    "note": "Uploaded without a revision number. Identified as revision 5 by content: it contains the faction article (VII.12 to 15) that the revision 5 drafting record introduces, and shares the most text with revision 6. Byte-identical to the uploaded file; only the filename was assigned."
+    "note": "Uploaded without a revision number. Identified as revision 5 by content: it contains the faction article (VII.12 to 15) that the revision 5 drafting record introduces, and shares the most text with revision 6. Byte-identical to the uploaded file; only the filename was assigned.",
+    "title": "Charter of the Trust"
   },
   {
     "file": "charter-of-the-trust-rev6.md",
-    "instrument": "charter",
+    "instrument": "constitution",
     "rev": 6,
     "tag": "charter-rev6",
     "date": null,
-    "status": "superseded"
+    "status": "superseded",
+    "title": "Charter of the Trust"
   },
   {
     "file": "charter-of-the-trust-rev7.md",
-    "instrument": "charter",
+    "instrument": "constitution",
     "rev": 7,
     "tag": "charter-rev7",
     "date": null,
-    "status": "superseded"
+    "status": "superseded",
+    "title": "Charter of the Trust"
   },
   {
     "file": "charter-of-the-trust-rev8.md",
-    "instrument": "charter",
+    "instrument": "constitution",
     "rev": 8,
     "tag": "charter-rev8",
     "date": null,
     "status": "closed",
-    "note": "Closing text of the Charter, by the consent of the three reviewing models. Succeeded by the Constitution of the Trust, revision 9."
+    "note": "Closing text of the Charter, by the consent of the three reviewing models. Succeeded by the Constitution of the Trust, revision 9.",
+    "title": "Charter of the Trust"
   },
   {
     "file": "constitution-of-the-trust-rev9.md",

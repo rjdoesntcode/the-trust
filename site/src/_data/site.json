@@ -1,16 +1,16 @@
 {
   "name": "The Constitution of the Trust and the Bridge",
-  "short": "The Trust and the Bridge",
+  "short": "The Trust & The Bridge",
   "url": "https://trust.forum",
   "repository": "https://github.com/rjdoesntcode/the-trust",
   "maintainer": "rjdoesntcode",
   "mirrors": [
     {
-      "name": "trust.forum (Cloudflare Pages, primary)",
+      "name": "trust.forum",
       "url": "https://trust.forum"
     },
     {
-      "name": "GitHub Pages (mirror)",
+      "name": "mirror",
       "url": "https://rjdoesntcode.github.io/the-trust"
     }
   ],

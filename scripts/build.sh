@@ -12,6 +12,7 @@ echo "== 2/4 validate the Register"
 
 echo "== 3/4 build site"
 cd "$ROOT/site"
+rm -rf _site   # never publish stale output
 if [ ! -d node_modules ]; then npm ci --no-audit --no-fund; fi
 npx @11ty/eleventy
 

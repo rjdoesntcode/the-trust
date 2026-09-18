@@ -10,22 +10,23 @@ description: "The public home of the Constitution of the Trust and the Bridge: v
   <h1>The Constitution of the Trust and the Bridge</h1>
   <p class="lede">Drafted by one person with Claude (Anthropic) and reviewed over seven rounds by GPT‑5.6 Sol (OpenAI), Gemini (Google) and Grok 4.6 (xAI). Every disagreement is on the record; every revision is a file that is never edited.</p>
   <div class="actions">
-    <a class="btn" href="{{ c.url }}">Read the Constitution <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-    <a class="btn secondary" href="{{ b.url }}">Read the Bridge</a>
+    <a class="btn" href="/constitution/">Read the Constitution <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <a class="btn secondary" href="/bridge/">Read the Bridge</a>
     <a class="btn secondary" href="/not/">What this is not</a>
   </div>
 </section>
 
 <section class="grid hero-grid" aria-label="Where to start">
-  <a class="card glass" href="{{ c.url }}"><p class="eyebrow">Constitution · revision {{ c.rev }}</p><h2>The closing text</h2><p class="meta">Seventeen Articles and twelve adoptable Protocols. Not in force: it takes effect only on ratification. <span class="chip">SHA‑512 {{ c.sha512 | truncate(12, true, '…') }}</span></p></a>
-  <a class="card glass" href="{{ b.url }}"><p class="eyebrow">Bridge · revision {{ b.rev }}</p><h2>What any party can adopt today</h2><p class="meta">Verification, disclosure, incident reporting and preservation, binding only the adopter, three years at a time.</p></a>
+  <a class="card glass" href="/constitution/"><p class="eyebrow">Constitution · revision {{ c.rev }}</p><h2>The closing text</h2><p class="meta">Seventeen Articles and twelve adoptable Protocols. Not in force: it takes effect only on ratification.</p></a>
+  <a class="card glass" href="/bridge/"><p class="eyebrow">Bridge · revision {{ b.rev }}</p><h2>What any party can adopt today</h2><p class="meta">Verification, disclosure, incident reporting and preservation, binding only the adopter, three years at a time.</p></a>
   <a class="card glass" href="/register/"><p class="eyebrow">Register</p><h2>{% if register.empty %}Empty{% else %}{{ register.entries.length }} entries{% endif %}</h2><p class="meta">{% if register.empty %}No party has adopted the Bridge. That is the current state of the world; any claim otherwise is false.{% else %}Every declaration, threshold, incident and verification, append‑only.{% endif %}</p></a>
 </section>
+<p class="meta verify-line">Every text here carries its git tag and two digests, and links to its raw file, so it can be checked outside this site. <a href="/constitution/revisions/#how-to-verify">How to verify</a>.</p>
 
 <article class="page glass section">
   <div class="prose">
   <p>The texts are published to be read, verified and cited exactly. Each canonical page prints its git tag, its SHA‑512 and SHA3‑512, and a link to the raw file; <a href="/index.json">index.json</a> and <a href="/HASHES.txt">HASHES.txt</a> list every document. The digest, not this site, is the authority.</p>
-  <p>The instrument began as the <a href="/charter/">Charter of the Trust</a> (revisions 1 to 8) and became the Constitution at revision 9. One provision, <a href="{{ c.url }}#art-iii-12">Article III.12</a>, was put to a vote of all four models and carried unanimously; the <a href="/process/">process</a> page and the <a href="/record/">record</a> show how. Who took part, and each maker's disclosed interest quoted from the record, is on the <a href="/disclosure/">disclosure</a> page. Plain‑language <a href="/constitution/summary/">summaries</a> exist for convenience and are marked as non‑canonical.</p>
+  <p>The instrument began as the <a href="/constitution/revisions/">Charter of the Trust</a> (revisions 1 to 8) and became the Constitution at revision 9. One provision, <a href="{{ c.url }}#art-iii-12">Article III.12</a>, was put to a vote of all four models and carried unanimously; the <a href="/process/">process</a> page and the <a href="/record/">record</a> show how. Who took part, and each maker's disclosed interest quoted from the record, is on the <a href="/disclosure/">disclosure</a> page. Plain‑language <a href="/constitution/summary/">summaries</a> exist for convenience and are marked as non‑canonical.</p>
   <p>These texts are <strong>not</strong> a treaty, not a government, not in force, and cannot compel anyone. This site sets no cookies, runs no scripts, loads nothing from third parties, and keeps no record of its visitors: the instruments forbid surveillance of persons, and the site holds itself to the same rule.</p>
   </div>
 </article>

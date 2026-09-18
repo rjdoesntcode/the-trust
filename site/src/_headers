@@ -1,5 +1,5 @@
-# Served by Cloudflare Pages. GitHub Pages cannot send headers; the HTML
-# carries a <meta> CSP and referrer policy as the fallback there.
+# Response headers for the primary host. The mirror cannot send headers; the
+# HTML carries a <meta> CSP and referrer policy as the fallback there.
 /*
   Content-Security-Policy: default-src 'none'; style-src 'self'; img-src 'self'; font-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests
   Referrer-Policy: no-referrer

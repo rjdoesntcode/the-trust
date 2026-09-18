@@ -1,0 +1,74 @@
+name: Register entry (Bridge Declaration of Adoption)
+description: Submit a declaration of adoption, or a later Register entry, for the maintainer to validate and append to register/register.jsonl.
+title: "[Register] <adopting party>: <entry type>"
+labels: ["register"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This form is the submission path for the Bridge Register. What you enter here becomes a public, permanent, append-only entry; it is recorded exactly as submitted or declined, never edited. Read the Bridge (Articles 3, 5, 6, 7, 10, 11 and 14) and the submission policy on the legal notice before filing. Use role addresses, not a named person's address.
+  - type: dropdown
+    id: entry_type
+    attributes:
+      label: Entry type
+      options: [declaration, threshold, modification, incident-initial, incident-full, withholding, verifier-finding, annual-verification, lapse, correction]
+    validations: { required: true }
+  - type: input
+    id: party
+    attributes: { label: Adopting party (legal name), placeholder: Example Organisation }
+    validations: { required: true }
+  - type: input
+    id: party_url
+    attributes: { label: Adopting party public URL }
+  - type: input
+    id: contact
+    attributes: { label: Role contact address (not a personal address), placeholder: bridge@example.org }
+  - type: input
+    id: articles
+    attributes: { label: Articles adopted, description: "A declaration must include 1 to 7, 10, 11, 13 and 14; say whether 8 and 9 are adopted.", placeholder: "1, 2, 3, 4, 5, 6, 7, 10, 11, 13, 14" }
+  - type: textarea
+    id: systems
+    attributes: { label: Covered systems, description: "One per line: name; stable public identifier. Describe systems, not people." }
+  - type: input
+    id: verifier
+    attributes: { label: Verifier (name; URL; terms of engagement URL) }
+  - type: input
+    id: weight_custodian
+    attributes: { label: Weight custodian (name; URL) }
+  - type: input
+    id: key_custodian
+    attributes: { label: Key custodian (name; URL) }
+  - type: input
+    id: auditor
+    attributes: { label: Auditor (name; URL) }
+  - type: input
+    id: expiry
+    attributes: { label: Expiry (UTC date, within three years of the declaration), placeholder: "2029-09-18" }
+  - type: input
+    id: supersedes
+    attributes: { label: Supersedes (entry_id of the earlier entry, for corrections, modifications, incident-full, renewals and lapses) }
+  - type: textarea
+    id: statement
+    attributes: { label: Statement (the declaration, report or finding, as signed) }
+  - type: input
+    id: doc_sha512
+    attributes: { label: SHA-512 of the attached signed document }
+  - type: input
+    id: doc_sha3
+    attributes: { label: SHA3-512 of the attached signed document }
+  - type: textarea
+    id: signature
+    attributes: { label: Submitter signature, description: "Algorithm (openpgp, ssh-ed25519 or minisign), key fingerprint, URL where the key is published, and the signature over the canonical JSON of the entry without the submitter_signature member (RFC 8785)." }
+  - type: checkboxes
+    id: representations
+    attributes:
+      label: Representations
+      options:
+        - label: I am authorised to act for the party named.
+          required: true
+        - label: The entry is accurate and not misleading, and does not state that any person or organisation has adopted or endorsed any instrument unless that is true.
+          required: true
+        - label: The submission infringes no rights and breaks no law, and I license it under CC BY-SA 4.0.
+          required: true
+        - label: I understand the entry is public, permanent and append-only, and will be recorded exactly as submitted or declined.
+          required: true

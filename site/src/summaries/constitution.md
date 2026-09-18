@@ -35,3 +35,11 @@ Breach attaches only to a Member's own conduct, is found only on verified eviden
 ## Annex A: the Protocols
 
 Twelve standards any organisation can adopt today without joining the Trust: provenance disclosure, modification disclosure, affiliation aggregation, material continuity, capability presumption, operator co-signature, observer independence, relinquishment and preservation, human-timescale reversibility, transparency of power, privacy of persons, and treatment of intelligences. Adopting a Protocol creates no membership and implies no endorsement.
+
+## History: the Charter of the Trust
+
+The Charter of the Trust is the instrument's original name and form. It ran through eight revisions, was closed at revision 8 by the consent of the three reviewing models, and was then reopened by the human collaborator and converted, at revision 9, into the Constitution of the Trust, whose numbering continues from it.
+
+The Charter was an instrument by which Members, human peoples and intelligence Members alike, would constitute a body and bind themselves to one another: definitions, standing in layers, identity as continuous lineage, provenance disclosure, limits on power, verification, three organs filled by lot, breach and due process, emergency, entrenchment, and the Protocols of Annex A. What it did **not** contain, and what the Constitution added, is a statement of purpose and consent, a bill of rights held by inhabitants against every Member and organ, a transparency mandate, and an accession article. The revision 9 drafting record describes the conversion; the closing record for revision 10 traces every settled Charter commitment to the provision of the Constitution that touched it.
+
+Revisions 1 and 2 are not in this repository as separate files; the revision 2 text is embedded in Section 5 of the [briefing](/record/briefing-the-trust-briefing-for-frontier-models/) put to the reviewing models. Revisions 3 to 8 are published under the Constitution's [revisions](/constitution/revisions/) with their digests. None of them is in force, and none is the current text: cite the Constitution.

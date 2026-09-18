@@ -1,16 +1,18 @@
 {
-  "charter": {
-    "slug": "charter", "title": "Charter of the Trust", "short": "Charter", "filePrefix": "charter-of-the-trust", "tagPrefix": "charter",
-    "closed": true, "successor": "constitution",
-    "note": "The Charter is the instrument's first name. It ran from revision 1 to revision 8 and was closed at revision 8 by the consent of the three reviewing models. Revision 9 reopened it as the Constitution of the Trust; the revision numbers continue."
-  },
   "constitution": {
-    "slug": "constitution", "title": "Constitution of the Trust", "short": "Constitution", "filePrefix": "constitution-of-the-trust", "tagPrefix": "constitution",
-    "predecessor": "charter",
-    "note": "Revisions 1 to 8 of this instrument are the Charter of the Trust. Revision 9 converted the Charter into a constitution at the human collaborator's direction; revision 10 is the closing text."
+    "slug": "constitution",
+    "title": "Constitution of the Trust",
+    "short": "Constitution",
+    "filePrefix": "constitution-of-the-trust",
+    "tagPrefix": "constitution",
+    "note": "Revisions 1 to 8 of this instrument were published as the Charter of the Trust and closed at revision 8 by the consent of the three reviewing models. Revision 9 reopened it as the Constitution at the human collaborator's direction; revision 10 is the closing text. The numbering is continuous."
   },
   "bridge": {
-    "slug": "bridge", "title": "The Bridge", "short": "Bridge", "filePrefix": "the-bridge", "tagPrefix": "bridge",
+    "slug": "bridge",
+    "title": "The Bridge",
+    "short": "Bridge",
+    "filePrefix": "the-bridge",
+    "tagPrefix": "bridge",
     "note": "A transitional instrument toward the Constitution, adoptable unilaterally by any party."
   }
 }
