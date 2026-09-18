@@ -28,3 +28,12 @@ All GitHub-side settings (description, default branch, Dependabot, secret scanni
 ## Third mirror
 
 See `docs/mirrors.md`.
+
+## Working the repository only through Claude Code sessions
+
+Every change lands by pull request into `main`; the ruleset has no bypass. Two consequences:
+
+- **Merge with "Squash and merge".** The squash commit is created and signed by GitHub, so it satisfies the signed-commit rule and keeps history linear. A merge commit would carry the branch's own commits onto `main` (they must all be *Verified*); a rebase merge rewrites them unsigned and is rejected.
+- **Release tags are signed by the session's key** (`git tag -s`), and the tag ruleset requires a verified signature. The commit and tag author is the `claude` GitHub account the sessions run as; if GitHub does not show *Verified* on its commits, the tag push will be refused and a key must be registered on that account first.
+
+Uploads through the GitHub web interface are committed and signed by GitHub and pass both rules.

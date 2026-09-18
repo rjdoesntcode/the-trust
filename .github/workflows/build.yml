@@ -1,6 +1,6 @@
 # Build on every push and pull request; deploy the GitHub Pages mirror from main.
-# Actions are referenced by tag here; run scripts/pin-actions.sh to replace each
-# tag with its full commit SHA before enabling branch protection (SECURITY.md).
+# Actions are pinned to full commit SHAs (the tag is kept as a comment). Dependabot
+# proposes bumps; scripts/pin-actions.sh re-resolves tags to SHAs if one slips in.
 name: build
 on:
   push:
@@ -13,10 +13,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           persist-credentials: false
-      - uses: actions/setup-node@v7
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
         with:
           node-version-file: .node-version
           cache: npm
@@ -29,7 +29,7 @@ jobs:
         working-directory: site
       - name: Verify canonical hashes, validate Register, build, check output
         run: bash scripts/build.sh
-      - uses: actions/upload-pages-artifact@v5
+      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5
         with:
           path: site/_site
   # Deploys the mirror. Fails until GitHub Pages is enabled for the repository
@@ -50,8 +50,8 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/configure-pages@v5
+      - uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
         with:
           enablement: true
       - id: deployment
-        uses: actions/deploy-pages@v5
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5
