@@ -28,7 +28,7 @@ Review before first release. Items are in order of importance.
 ## Could not do from this environment
 
 18. **Registrar lookup for domains.** Every RDAP/WHOIS/registrar host was blocked by the egress proxy. `docs/domain-research.md` has DNS and search evidence only, plus the exact commands for you to run.
-19. **Pin GitHub Actions to commit SHAs.** Reading other repositories was out of this session's GitHub scope; workflows reference `@v4`/`@v3` tags. Run `scripts/pin-actions.sh` (needs `gh`) before enabling branch protection; SECURITY.md promises SHA pins.
+19. **GitHub Actions are pinned to commit SHAs** (resolved from this repository's own workflow logs). Dependabot bumps arrive as tag references; `scripts/pin-actions.sh` re-pins them.
 20. **GitHub settings** that only the owner can set: run `scripts/github-setup.sh` once with the GitHub CLI (description, default branch `main`, Dependabot, secret scanning, Pages from Actions, `main` ruleset, immutable release-tag ruleset, scaffold-branch cleanup). The session had no tool for these.
 21. **Cloudflare Pages project** and custom domain, DNSSEC, and keeping Web Analytics off (an edge-injected beacon would violate the no-scripts rule; see `docs/deploy.md`).
 22. **Signing.** Commits made in this session are signed by the session's SSH key, not yours. Set your own signing key before the first release tag; tags must be yours (`git tag -s`).
