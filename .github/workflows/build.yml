@@ -9,9 +9,6 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
-concurrency:
-  group: pages
-  cancel-in-progress: false
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -35,10 +32,17 @@ jobs:
       - uses: actions/upload-pages-artifact@v5
         with:
           path: site/_site
+  # Deploys the mirror. Fails until GitHub Pages is enabled for the repository
+  # (Settings -> Pages -> Source: GitHub Actions, or scripts/github-setup.sh);
+  # the Actions token cannot enable it. The `build` job above is the required
+  # status check and is unaffected.
   deploy-github-pages:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     needs: build
     runs-on: ubuntu-latest
+    concurrency:
+      group: github-pages
+      cancel-in-progress: false
     permissions:
       pages: write
       id-token: write
