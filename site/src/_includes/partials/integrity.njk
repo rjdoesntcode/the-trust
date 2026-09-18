@@ -1,8 +1,8 @@
-<section class="integrity" aria-label="{{ 'integrity' | t }}">
+<section class="integrity glass" aria-label="{{ 'integrity' | t }}">
   <h2>{{ 'integrity' | t }}</h2>
   <dl>
     <dt>{{ 'tag' | t }}</dt><dd><code>{{ doc.tag }}</code></dd>
-    <dt>{{ 'date' | t }}</dt><dd>{% if doc.date %}{{ doc.date | isoDate }}{% else %}not yet recorded{% endif %}</dd>
+    <dt>{{ 'date' | t }}</dt><dd>{% if doc.date %}{{ doc.date | isoDate }}{% else %}{{ 'date.unstated' | t }}{% endif %}</dd>
     <dt>{{ 'raw' | t }}</dt><dd><a href="{{ doc.raw }}">{{ doc.path }}</a> ({{ doc.bytes }} bytes)</dd>
     <dt>{{ 'sha512' | t }}</dt><dd><code class="hash">{{ doc.sha512 }}</code></dd>
     <dt>{{ 'sha3' | t }}</dt><dd><code class="hash">{{ doc.sha3_512 }}</code></dd>

@@ -5,7 +5,7 @@ description: Who drafted and reviewed the instruments, each model's maker, and e
 ---
 <p>Everyone and everything that took part in drafting or reviewing the instruments is listed here. For each model, its maker is named as the record names it. Each disclosed interest is quoted <em>verbatim</em>: the build copies the text from the named file and line of the <a href="/record/">record</a>; nothing is paraphrased or retyped. Where a quote is part of a longer passage, the link opens the whole passage.</p>
 {% for p in disclosure.participants %}
-<div class="participant">
+<div class="participant glass">
   <h2 id="p-{{ loop.index }}">{{ p.name }}{% if p.maker %} <small>— made by {{ p.maker }}</small>{% endif %}</h2>
   <p><strong>Role:</strong> {{ p.role }}.{% if p.note %} {{ p.note }}{% endif %}</p>
   {% if p.quotes.length %}

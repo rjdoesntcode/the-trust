@@ -4,6 +4,11 @@ All changes to the published texts, the record, the Register and the site. Instr
 
 ## Unreleased
 
+### Site
+- Redesign: light glass design system (`docs/design-system.md`), self-hosted Inter and Source Serif 4 (OFL, Latin subsets), new mark, five-item primary navigation with a native popover menu, no client-side JavaScript. axe 0 violations and html-validate 0 errors on every page.
+- Roadmap for globalisation (`docs/roadmap.md`): language directories, `Accept-Language` routing at the edge, translation pipeline.
+- Cloudflare: production workers.dev URL off, preview URLs on, observability on without per-request invocation logs.
+
 ### Repository
 - Domain `trust.forum` registered (2026-09-18); it is the canonical URL. Root `package.json` added as the build entry point for Cloudflare Pages.
 - Repository created: layout, licences (CC BY-SA 4.0 text, Apache-2.0 code), NOTICE, SECURITY.md, CODEOWNERS, Dependabot.

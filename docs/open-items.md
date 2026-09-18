@@ -27,6 +27,12 @@ Review before first release. Items are in order of importance.
 16. **`form-action 'none'`** in the CSP: the adoption "form" is a printable document and template, not a submitted web form, because there is no server and no data collection.
 17. The `¶` permalink after each anchored block is presentation, not wording; it is hidden in print.
 
+## Design stage (2026-09-18)
+
+26. **Redesign shipped**: see `docs/design-system.md`. Decisions made for you: Inter + Source Serif 4 as the typefaces (both OFL, self-hosted, ~920 KB for four variable faces, italics load only when used); a new mark (two points on one line joined by an arc) replacing the placeholder; primary navigation cut to five items with the rest in a native popover menu; light only (no dark theme, as asked). Cross-document view transitions, scroll-driven header shadow and card entry animations are enhancements behind `prefers-reduced-motion`; glass falls back to solid panels under `prefers-reduced-transparency` and in browsers without `backdrop-filter`.
+27. **Globalisation** is scoped in `docs/roadmap.md` and not started, as asked.
+28. **Cloudflare observability**: enabled in `wrangler.toml` without invocation logs (privacy). I cannot read Cloudflare logs or metrics from a session; the dashboard is the place.
+
 ## Could not do from this environment
 
 18. **Registrar lookup for domains.** Every RDAP/WHOIS/registrar host was blocked by the egress proxy. `docs/domain-research.md` has DNS and search evidence only, plus the exact commands for you to run.
