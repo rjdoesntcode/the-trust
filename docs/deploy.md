@@ -2,7 +2,25 @@
 
 The site is built by `scripts/build.sh` into `site/_site/`. Every deploy target builds from `main` with that one command, so all mirrors are byte-identical.
 
-## Cloudflare Pages (primary) — trust.forum
+## Cloudflare — trust.forum (primary)
+
+The repository was connected to Cloudflare as a **Worker** ("Workers Builds: the-trust"), not as a Pages project. Either works; the repository now supports both. For the Worker, `wrangler.toml` at the root declares an assets-only Worker serving `site/_site`, and `wrangler` is pinned in the root `package.json`.
+
+### As a Worker (Workers Builds) — current setup
+
+Worker → Settings → Build:
+
+| Setting | Value |
+|---|---|
+| Git repository / production branch | `rjdoesntcode/the-trust`, `main` |
+| Build command | `npm run build` |
+| Deploy command | `npx wrangler deploy` |
+| Root directory | `/` |
+| Build variables | `NODE_VERSION` = `22` |
+
+The first build failed instantly because no `wrangler.toml` existed; after this change the same settings succeed. Custom domain: Worker → Settings → Domains & Routes → add `trust.forum` (and `www.trust.forum`). Static-asset Workers honour `_headers` and `_redirects` in the asset directory, so the CSP and caching headers apply. Verify after deploy: `curl -sI https://trust.forum/ | grep -i content-security-policy`.
+
+### As a Pages project (alternative)
 
 Workers & Pages → Create → Pages → Connect to Git → `rjdoesntcode/the-trust`. Use exactly these values; Cloudflare's framework auto-detection guesses wrong for this layout (it sees Eleventy inside `site/` and builds from the wrong directory without the hash check).
 

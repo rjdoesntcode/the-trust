@@ -1,0 +1,19 @@
+# Cloudflare Workers configuration: an assets-only Worker that serves the
+# built static site. There is no Worker script; every request is answered
+# from site/_site. Headers come from site/_site/_headers (copied from
+# site/src/_headers at build time).
+#
+# Workers Builds settings (dashboard → the Worker → Settings → Build):
+#   Build command:   npm run build
+#   Deploy command:  npx wrangler deploy
+#   Root directory:  /
+name = "the-trust"
+compatibility_date = "2026-09-01"
+
+[assets]
+directory = "./site/_site"
+not_found_handling = "404-page"
+html_handling = "auto-trailing-slash"
+
+[build]
+command = "npm run build"
