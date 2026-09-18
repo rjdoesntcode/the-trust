@@ -17,7 +17,7 @@ the entry it corrects. The full history stays visible.
 
 ## Submitting an entry
 
-1. Fill in a Declaration of Adoption (see `/adopt/` on the site).
+1. Complete the Bridge's own Declaration of Adoption (Article 14; the form is the last section of the Bridge and is reproduced at `/adopt/` on the site).
 2. Compute the SHA-512 (and SHA3-512) of the signed declaration document.
 3. Write the entry as a single line of JSON that validates against
    `schema.json`.

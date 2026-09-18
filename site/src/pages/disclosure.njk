@@ -3,19 +3,21 @@ title: Disclosure
 permalink: /disclosure/
 description: Who drafted and reviewed the instruments, each model's maker, and each maker's disclosed interest, quoted verbatim from the record.
 ---
-<p>Everyone and everything that took part in drafting or reviewing the instruments is listed here. For each model, its maker is named. Each maker's disclosed interest is quoted <em>verbatim</em> from the file in the <a href="/record/">record</a> named in the last column; nothing is paraphrased.</p>
-<table>
-  <thead><tr><th scope="col">Role</th><th scope="col">Participant</th><th scope="col">Maker</th><th scope="col">Disclosed interest (verbatim)</th><th scope="col">Source</th></tr></thead>
-  <tbody>
-  {% for p in disclosure.participants %}
-  <tr>
-    <td>{{ p.role }}</td>
-    <td>{{ p.name }}{% if p.note %} <small>({{ p.note }})</small>{% endif %}</td>
-    <td>{{ p.maker or '—' }}</td>
-    <td>{% if p.disclosed_interest %}<blockquote>{{ p.disclosed_interest }}</blockquote>{% else %}<em>Not yet quoted: the record containing this disclosure has not been added to the repository.</em>{% endif %}</td>
-    <td>{% if p.source %}<a href="/record/{{ p.source }}">{{ p.source }}</a>{% else %}—{% endif %}</td>
-  </tr>
+<p>Everyone and everything that took part in drafting or reviewing the instruments is listed here. For each model, its maker is named as the record names it. Each disclosed interest is quoted <em>verbatim</em>: the build copies the text from the named file and line of the <a href="/record/">record</a>; nothing is paraphrased or retyped. Where a quote is part of a longer passage, the link opens the whole passage.</p>
+{% for p in disclosure.participants %}
+<div class="participant">
+  <h2 id="p-{{ loop.index }}">{{ p.name }}{% if p.maker %} <small>— made by {{ p.maker }}</small>{% endif %}</h2>
+  <p><strong>Role:</strong> {{ p.role }}.{% if p.note %} {{ p.note }}{% endif %}</p>
+  {% if p.quotes.length %}
+  <dl class="quotes">
+  {% for q in p.quotes %}
+    <dt>{{ q.label }}</dt>
+    <dd><blockquote>{{ q.text }}</blockquote><small><a href="{{ q.rendered }}">{{ q.file }}</a>, line {{ q.line }}{% if q.partial %} (excerpt){% endif %} · <a href="{{ q.raw }}">raw</a></small></dd>
   {% endfor %}
-  </tbody>
-</table>
-<p>The models' makers did not take part and have not endorsed anything. A model's review is a record of what that model said when asked. The maintainer of this repository has no financial relationship with any of the makers; if that changes it will be recorded here and in the <a href="/changelog/">changelog</a>.</p>
+  </dl>
+  {% else %}
+  <p><em>{{ p.absent }}</em></p>
+  {% endif %}
+</div>
+{% endfor %}
+<p>The models' makers did not take part and have not endorsed anything. A model's review is a record of what that model said when asked; the record itself states that none of the four systems can certify separation from its maker. The maintainer of this repository has no financial relationship with any of the makers; if that changes it will be recorded here and in the <a href="/changelog/">changelog</a>.</p>

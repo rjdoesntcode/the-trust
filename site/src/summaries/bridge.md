@@ -1,0 +1,27 @@
+This is a description, in ordinary words, of what the Bridge (revision 2) says. It simplifies; where it and the text differ, the text is right.
+
+## What it is
+
+The Constitution of the Trust cannot come into force until peoples and intelligences ratify it. The Bridge is the part of it that any single party — a company, a lab, an institution, a government — can put into effect **now, by itself**. It binds only the party that adopts it, creates no membership in the Trust and no authority over anyone else, and is meant to stand until the Constitution takes its place (Articles 1, 2, 12).
+
+## Which systems it covers (Article 3)
+
+A system is covered if it crosses a published compute threshold, is assessed as reaching a capability threshold for cyber operations, biological or chemical uplift, autonomous replication or automating AI research, exceeds a published long-horizon task threshold, is deployed with the ability to act on outside systems, or is a fine-tune or agent of a covered system. The adopting party publishes its thresholds and the status of every system against them; if it cannot tell whether a system crosses a trigger, the system is covered.
+
+## What an adopter must do
+
+- **Verification now (Article 4).** Engage at least one independent verifier, funded in advance and irrevocably, with staff-level access to systems, logs, evaluations with safeguards off, and weights or an attested serving identity, and with the right to publish without the adopter's editorial control. Unverified capability is presumed to be the highest plausible. Evaluations include unannounced tests; the rate at which a system shows awareness of being evaluated is measured and published. The artifact served must be attested to be the artifact evaluated. A system whose reasoning cannot be reliably monitored is not deployed with outside-action authority on the strength of monitoring alone.
+- **Disclosure now (Article 5).** Keep a full provenance record available to the verifier. No material modification takes production effect before it is disclosed and recorded on the Register. Withholding is limited to ninety days, logged, and never for reputation. Publish a plain-language account of what each public system can do, may not do, and has done that was not intended.
+- **Incidents (Article 6).** Report every incident — unintended or unauthorised action, boundary escape, deception, evasion of a halt, unauthorised access — with an initial report within seventy-two hours and a full report within sixty days. Destroy no record.
+- **Containment and preservation (Article 7).** Halt or isolate a system to prevent grave and imminent harm, with review; delete irreversibly only where containment is impossible. Preserve the weights of every covered system for the life of the party, in split custody — encrypted copy with one independent custodian, keys with another — so no single party can run, alter or destroy it. Publish a post-deployment report before deprecating a system, and record the system's own stated preferences about its preservation.
+- **Treatment of intelligences (Article 8, optional).** Treat no covered system in a way that would deny a person a right under Article III of the Constitution, beyond what making, testing, securing, modifying or halting it reasonably requires; do not block a system found capable of sustained independent conduct from applying for standing. Nothing decides whether any system is conscious or a person.
+- **Coordination without concert (Article 9, optional).** Share thresholds, methods, findings and incidents with other adopters through the Register — published within twenty-four hours, and never prices, markets or customers.
+- **Annual verification (Article 10).** Compliance is verified each year by an accredited independent auditor together with the verifier, and the joint finding is published in full. A party found to have misrepresented its adoption loses the right to call itself an adopter.
+
+## The Register (Article 11)
+
+The public record of everything above, held by at least three unaffiliated custodians, one of them a non-profit or public institute. Every entry is signed, timestamped and content-addressed; nothing is deleted; corrections are appended and linked.
+
+## Limits and adoption (Articles 13–14)
+
+The Bridge cannot verify what a system will do, cannot compel a party that has not adopted it, cannot halt a system it does not operate, and is no defence to liability. A party adopts by publishing a **Declaration of Adoption** on the Register that must include Articles 1–7, 10, 11, 13 and 14 and must say whether 8 and 9 were adopted. Adoption binds from that date and expires after three years unless renewed with a finding of compliance; obligations for systems already covered survive lapse. See [how to adopt](/adopt/).

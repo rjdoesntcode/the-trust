@@ -1,0 +1,43 @@
+---
+title: Adopting the Bridge
+permalink: /adopt/
+description: How a party adopts the Bridge — its own Declaration of Adoption, what Article 14 requires, and how the declaration is entered on the Register.
+---
+{% set bridge = canonical.bySlug.bridge.latest %}
+<p>Adoption of the Bridge is a public, unilateral act. Under Article 14 a party adopts by publishing on the <a href="/register/">Register</a> a declaration in the form the Bridge itself provides. Nothing else counts as adoption, and no party may represent adoption or endorsement that the Register does not show (see the repository <code>NOTICE</code> and Bridge Article 13.2).</p>
+
+<p class="notice" role="note"><strong>Read the Bridge first.</strong> The declaration binds the party from its date (Article 14.2) and expires after three years unless renewed with a compliance finding (Article 14.3). Read <a href="{{ bridge.url }}">the Bridge, revision {{ bridge.rev }}</a> — in particular <a href="{{ bridge.url }}#art-3">Article 3</a> (triggers), <a href="{{ bridge.url }}#art-4">4</a> (verifier), <a href="{{ bridge.url }}#art-7">7</a> (custodians), <a href="{{ bridge.url }}#art-10">10</a> (auditor), <a href="{{ bridge.url }}#art-11">11</a> (the Register) and <a href="{{ bridge.url }}#art-14">14</a> (adoption).</p>
+
+<h2>The Declaration of Adoption</h2>
+<p>This is the declaration as it appears in the Bridge, revision {{ bridge.rev }}, reproduced verbatim from <a href="{{ bridge.raw }}">{{ bridge.file }}</a> (SHA-512 <code class="hash">{{ bridge.sha512 }}</code>). A plain-text copy for completion is at <a href="/adopt/declaration-of-adoption.md">declaration-of-adoption.md</a>.</p>
+<div class="canonical quoted-canonical">
+{{ bridge.declaration.html | safe }}
+</div>
+
+<h2>What the declaration must name (Article 14.1)</h2>
+<p>In the Bridge's words, the declaration names:</p>
+<ul>
+  <li>the Articles adopted, <q>which shall include Articles 1 through 7, 10, 11, 13, and 14</q>;</li>
+  <li><q>the thresholds it applies under Article 3 and the covered systems they reach</q>;</li>
+  <li><q>the verifier it has engaged and the terms of engagement</q>;</li>
+  <li><q>the custodians holding its preserved weights and keys</q> — two custodians, not Affiliated with the party or with each other (Article 7.3);</li>
+  <li><q>the auditor conducting its annual verification</q>.</li>
+</ul>
+<p><q>Every public claim of adoption shall state conspicuously whether Articles 8 and 9 were adopted; "full adoption" may be used only where every Article was adopted.</q> Every declaration <q>states the date on which it expires unless renewed</q> (Article 14.4).</p>
+
+<h2>Entering the declaration on this Register</h2>
+<p>This repository's Register is a plain, public copy of the Bridge Register as described in Article 11: append-only, every entry signed, timestamped and content-addressed, corrections appended and linked. It is not yet held by three unaffiliated custodians (Article 11.2); see <a href="/register/">the Register page</a> for its status.</p>
+<ol>
+  <li>Complete and sign the declaration. Keep the signed declaration as one file (PDF or Markdown).</li>
+  <li>Compute its digests: <code>sha512sum declaration.pdf</code> and <code>openssl dgst -sha3-512 declaration.pdf</code>.</li>
+  <li>Write one Register entry as a single line of JSON that validates against <a href="/register/schema.json">schema.json</a>, with <code>entry_type</code> <code>declaration</code>. The <a href="/register/#example">worked example</a> shows the shape; its fields mirror the declaration's columns.</li>
+  <li>Sign the entry: canonicalise the JSON (RFC 8785) with the <code>submitter_signature</code> member removed, sign with a published key, and put the signature in <code>submitter_signature</code>.</li>
+  <li>Open a pull request against the <a href="{{ site.repository }}">repository</a> that <strong>appends</strong> the line to <code>register/register.jsonl</code> and adds the signed declaration under <code>register/documents/&lt;sha512&gt;.&lt;ext&gt;</code>. Do not edit any existing line.</li>
+  <li>The build validates the entry, including that the Articles adopted include 1–7, 10, 11, 13 and 14 and that the expiry is within three years. The maintainer merges entries that validate and publishes them within seventy-two hours of receipt (Article 11.2). Merging records the declaration; it is not an endorsement, a verification, or a judgement.</li>
+</ol>
+
+<h2>After adoption</h2>
+<p>Later events are further appended entries, each naming the entry it follows in <code>supersedes</code>: thresholds published under Article 3; modifications disclosed before effect (Article 5.2); withholdings (5.4); incident reports — initial within seventy-two hours, full within sixty days (6.2); findings and refusals under Article 8.2; verifier findings (4.7); annual verifications (10); renewal, lapse (14.3); and corrections (11.2).</p>
+
+<h2>What adoption does not do</h2>
+<p>In the Bridge's words (Article 13.2): <q>No adopting party shall describe adoption as membership in the Trust, as compliance with the Constitution, as endorsement by the Trust, or as a substitute for law.</q> See also <a href="/not/">what this is not</a>.</p>
