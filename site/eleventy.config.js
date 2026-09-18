@@ -19,6 +19,7 @@ export default function (eleventyConfig) {
     '../HASHES.txt': 'HASHES.txt',
     '../HASHES.sha3-512.txt': 'HASHES.sha3-512.txt',
     'src/css': 'css',
+    'src/fonts': 'fonts',
     'src/_headers': '_headers',
     'src/.nojekyll': '.nojekyll',
     'src/static': '/',
@@ -27,6 +28,7 @@ export default function (eleventyConfig) {
   // Files under src/static are copied verbatim, never rendered as templates.
   eleventyConfig.ignores.add('src/static/**');
   eleventyConfig.ignores.add('src/summaries/**');
+  eleventyConfig.ignores.add('src/fonts/**');
 
   eleventyConfig.addFilter('json', (v) => JSON.stringify(v, null, 2));
   eleventyConfig.addFilter('isoDate', (v) => (v ? String(v).slice(0, 10) : ''));

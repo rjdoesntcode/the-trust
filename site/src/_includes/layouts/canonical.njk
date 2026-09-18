@@ -2,24 +2,23 @@
 layout: layouts/base.njk
 ---
 <div class="canonical-wrap">
-  <aside class="toc" aria-labelledby="toc-heading">
+  <aside class="toc glass" aria-labelledby="toc-heading">
     <h2 id="toc-heading">{{ 'contents' | t }}</h2>
     {% if doc.tocTree.length %}
     <ol class="toc-list">
       {% for e in doc.tocTree %}<li class="toc-l1"><a href="#{{ e.id }}">{{ e.label }}</a>{% if e.children.length %}
-        <details><summary>{{ e.children.length }} sections</summary>
+        <details><summary>{{ e.children.length }} {{ 'sections' | t }}</summary>
         <ol class="toc-sub">{% for c in e.children %}<li class="toc-l2"><a href="#{{ c.id }}">{{ c.label }}</a></li>{% endfor %}</ol>
         </details>{% endif %}</li>{% endfor %}
     </ol>
     {% else %}<p>No headings found.</p>{% endif %}
   </aside>
-  <article class="canonical" aria-labelledby="doc-title">
+  <article class="canonical glass" aria-label="{{ doc.title }}">
     <header class="doc-header">
-      <h1 id="doc-title">{{ doc.instrumentTitle }} <span class="rev">revision {{ doc.rev }}</span></h1>
-      <p class="doc-meta">
-        {% if doc.status != 'current' %}<strong>Superseded revision.</strong> {% endif %}
-        Canonical text, rendered byte-for-byte from <a href="{{ doc.raw }}">{{ doc.file }}</a>. Git tag <code>{{ doc.tag }}</code>.
-        {% if doc.date %}Revision date {{ doc.date | isoDate }}.{% else %}<em>Revision date not yet recorded.</em>{% endif %}
+      <p class="eyebrow">{{ 'canonical.text' | t }} · {{ doc.instrumentTitle }} · {{ 'revision' | t }} {{ doc.rev }} {% if doc.status == 'current' %}<span class="chip ok">{{ 'status.current' | t }}</span>{% elif doc.status == 'closed' %}<span class="chip muted">{{ 'status.closed' | t }}</span>{% else %}<span class="chip muted">{{ 'status.superseded' | t }}</span>{% endif %}</p>
+      <p class="meta">
+        {{ 'rendered.from' | t }} <a href="{{ doc.raw }}">{{ doc.file }}</a> · {{ 'tag' | t }} <code>{{ doc.tag }}</code> ·
+        {% if doc.date %}{{ doc.date | isoDate }}{% else %}{{ 'date.unstated' | t }}{% endif %}
       </p>
     </header>
     {{ doc.html | safe }}

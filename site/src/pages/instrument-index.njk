@@ -1,4 +1,5 @@
 ---
+layout: layouts/base.njk
 pagination:
   data: canonical.list
   size: 1
@@ -8,11 +9,17 @@ eleventyComputed:
   title: "{{ inst.title }}"
   description: "Every published revision of the {{ inst.title }}, with digests and signed tags."
 ---
+<article class="page glass">
+<p class="eyebrow">{{ 'canonical.text' | t }}</p>
+<h1>{{ inst.title }}</h1>
+<div class="prose">
 {% if inst.note %}<p class="notice" role="note">{{ inst.note }}{% if inst.successor %} Continue at the <a href="/{{ inst.successor }}/">{{ canonical.bySlug[inst.successor].title }}</a>.{% endif %}{% if inst.predecessor %} Earlier revisions are under the <a href="/{{ inst.predecessor }}/">{{ canonical.bySlug[inst.predecessor].title }}</a>.{% endif %}</p>{% endif %}
 {% if inst.missing.length %}<p class="notice" role="note"><strong>Expected, not yet published:</strong> {% for e in inst.missing %}<code>canonical/{{ e.file }}</code> (revision {{ e.rev }}, tag <code>{{ e.tag }}</code>{% if e.status == 'current' %}, stated by the maintainer to be the current revision{% endif %}){% if not loop.last %}; {% endif %}{% endfor %}. Until the file is in the repository with a listed digest, it has no published text and cannot be cited; the latest <em>published</em> revision is shown below.</p>{% endif %}
 <p>Every revision of the {{ inst.title }} is a separate file under <code>/canonical/</code>, never edited after upload.{% if inst.latest and not inst.closed %} The latest published revision is <a href="{{ inst.latest.url }}">revision {{ inst.latest.rev }}</a>{% if inst.missing.length %} (a later revision is expected, see above){% endif %}.{% endif %} A <a href="/{{ inst.slug }}/summary/">plain-language summary</a> (not canonical) is also available.</p>
 
 {% if inst.revisions.length %}
+</div>
+<div class="table-card glass revisions">
 <table>
   <caption>Published revisions</caption>
   <thead><tr><th scope="col">Revision</th><th scope="col">Status</th><th scope="col">Date</th><th scope="col">Tag</th><th scope="col">SHA-512</th><th scope="col">SHA3-512</th><th scope="col">Raw</th></tr></thead>
@@ -30,16 +37,18 @@ eleventyComputed:
   {% endfor %}
   </tbody>
 </table>
+</div>
 {% for d in inst.revisions %}{% if d.note or d.uploadedAs %}<p><small><strong>rev {{ d.rev }}:</strong> {% if d.uploadedAs %}uploaded as <code>{{ d.uploadedAs }}</code>. {% endif %}{{ d.note }}</small></p>{% endif %}{% endfor %}
 {% else %}
 <p class="notice" role="note"><strong>No revision of the {{ inst.title }} has been placed in this repository yet.</strong>
 {% if inst.expected.length %}Expected: {% for e in inst.expected %}<code>canonical/{{ e.file }}</code> (tag <code>{{ e.tag }}</code>){% if not loop.last %}, {% endif %}{% endfor %}.{% endif %}</p>
 {% endif %}
 
-<h2>How to cite</h2>
+<div class="prose">
+<h2 id="how-to-cite">How to cite</h2>
 <p>Cite by revision and digest, not by URL alone: <q>{{ inst.title }}, revision N, tag <code>{{ inst.tagPrefix }}-revN</code>, SHA-512 <code>…</code></q>, with the article and paragraph anchor (for example <code>#art-iii-12-c</code>). The digest, not the site, is the authority.</p>
 
-<h2>How to verify</h2>
+<h2 id="how-to-verify">How to verify</h2>
 <ol>
   <li>Download the raw file linked above.</li>
   <li>Run <code>sha512sum &lt;file&gt;</code> and <code>openssl dgst -sha3-512 &lt;file&gt;</code>.</li>
@@ -52,3 +61,5 @@ eleventyComputed:
 <p>Kept separate from the instrument, served exactly as uploaded and hashed like it. Readable versions are on the <a href="/record/">record</a> pages.</p>
 <ul>{% for d in recs %}<li><a href="{{ d.raw }}">{{ d.file }}</a> — SHA-512 <code class="hash">{{ d.sha512 }}</code></li>{% endfor %}</ul>
 {% endif %}
+</div>
+</article>

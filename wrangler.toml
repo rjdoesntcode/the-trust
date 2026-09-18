@@ -18,3 +18,29 @@ html_handling = "auto-trailing-slash"
 [build]
 command = "npm run build"
 send_metrics = false
+
+# workers.dev: no production URL (trust.forum is the canonical origin and the
+# only Cloudflare mirror listed); preview URLs stay on for pull-request previews.
+workers_dev = false
+preview_urls = true
+
+# Observability: keep the dashboard toggle on across deploys, but do not keep
+# per-request invocation logs. Those record every visitor's URL, which the site
+# promises not to do (Constitution III.6, Protocol 11). Aggregate metrics
+# (request and error counts, no identifiers) remain in the Worker's Metrics tab.
+[observability]
+enabled = true
+
+[observability.logs]
+enabled = true
+head_sampling_rate = 1
+persist = true
+# invocation_logs = true would write one record per request, with the visitor's
+# URL: a record of visitors, which every page's footer promises not to keep.
+# Left off on purpose; console logs (none, for an assets-only Worker) persist.
+invocation_logs = false
+
+[observability.traces]
+enabled = false
+head_sampling_rate = 1
+persist = true

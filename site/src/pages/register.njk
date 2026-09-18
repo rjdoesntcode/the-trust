@@ -6,9 +6,10 @@ description: The Bridge Register — every declaration of adoption and every lat
 <p>The Register is the only evidence of adoption of the Bridge. It is an append-only file, <a href="/register/register.jsonl"><code>register.jsonl</code></a>, one entry per line, validated against <a href="/register/schema.json"><code>schema.json</code></a>. No entry is ever edited or removed; a mistake is corrected by a later entry that names the one it supersedes.</p>
 
 {% if register.empty %}
-<p class="notice" role="note"><strong>The Register is empty.</strong> No party has adopted the Bridge. An empty Register is the current state of the world: any claim of adoption or endorsement that is not on this page is false.</p>
+<p class="notice info" role="note"><strong>The Register is empty.</strong> No party has adopted the Bridge. An empty Register is the current state of the world: any claim of adoption or endorsement that is not on this page is false.</p>
 {% else %}
 <p>{{ register.entries.length }} entries. Superseded entries remain listed and are marked.</p>
+<div class="table-card glass">
 <table>
   <thead><tr><th scope="col">Entry</th><th scope="col">Type</th><th scope="col">Timestamp (UTC)</th><th scope="col">Party</th><th scope="col">Articles</th><th scope="col">Expiry</th><th scope="col">Supersedes</th><th scope="col">Document</th></tr></thead>
   <tbody>
@@ -26,6 +27,7 @@ description: The Bridge Register — every declaration of adoption and every lat
   {% endfor %}
   </tbody>
 </table>
+</div>
 {% endif %}
 
 <h2 id="example">Worked example (not an entry)</h2>

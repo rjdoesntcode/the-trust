@@ -1,8 +1,11 @@
 ---
 layout: layouts/base.njk
 ---
-<article class="page">
+<article class="page glass">
+  {% if eyebrow %}<p class="eyebrow">{{ eyebrow }}</p>{% endif %}
   <h1>{{ title }}</h1>
   {% if noncanonical %}<p class="notice" role="note"><strong>Not canonical.</strong> {{ 'noncanonical' | t }}</p>{% endif %}
+  <div class="prose">
   {{ content | safe }}
+  </div>
 </article>

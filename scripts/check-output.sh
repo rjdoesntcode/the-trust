@@ -14,7 +14,7 @@ if grep -rIl --include='*.html' -E '(src|href)="(https?:)?//[^"]*\.(css|js|woff2
 fi
 if grep -rIl --include='*.html' -iE '<(iframe|embed|object)' "$OUT" >/dev/null; then echo "check-output.sh: embeds found"; fail=1; fi
 if grep -rIl --include='*.css' -E '@import|url\((https?:)?//' "$OUT" >/dev/null; then echo "check-output.sh: external CSS resources found"; fail=1; fi
-for f in _headers .nojekyll index.json robots.txt HASHES.txt HASHES.sha3-512.txt; do [ -e "$OUT/$f" ] || { echo "check-output.sh: missing $OUT/$f"; fail=1; }; done
+for f in _headers .nojekyll index.json robots.txt HASHES.txt HASHES.sha3-512.txt fonts/Inter.var.woff2 favicon.svg; do [ -e "$OUT/$f" ] || { echo "check-output.sh: missing $OUT/$f"; fail=1; }; done
 if ! grep -q "Content-Security-Policy" "$OUT/index.html"; then echo "check-output.sh: meta CSP missing"; fail=1; fi
 python3 - "$OUT/index.json" <<'PY' || fail=1
 import json,sys; json.load(open(sys.argv[1])); print("check-output.sh: index.json is valid JSON")

@@ -4,43 +4,79 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 {# Fallback policy for mirrors that cannot send HTTP headers (GitHub Pages).
-   Cloudflare Pages sends the stricter header version from _headers. #}
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+   Cloudflare sends the stricter header version from _headers. #}
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; font-src 'self'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
-<meta name="color-scheme" content="light dark">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#f7f8fc">
 <meta name="robots" content="index, follow">
 <title>{% if title %}{{ title | truncate(40, true, '…') }} — {% endif %}{{ site.short }}</title>
 {% if description %}<meta name="description" content="{{ description }}">{% endif %}
 <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/fonts/Inter.var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/SourceSerif4.var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/css/site.css">
 </head>
 <body>
 <a class="skip" href="#main">{{ 'skip' | t }}</a>
 <header class="site-header">
-  <p class="site-name"><a href="/">{{ site.short }}</a></p>
-  <nav aria-label="Site">
-    <ul>
-      <li><a href="/constitution/"{% if page.url.startsWith('/constitution/') %} aria-current="true"{% endif %}>{{ 'nav.constitution' | t }}</a></li>
-      <li><a href="/charter/"{% if page.url.startsWith('/charter/') %} aria-current="true"{% endif %}>{{ 'nav.charter' | t }}</a></li>
-      <li><a href="/bridge/"{% if page.url.startsWith('/bridge/') %} aria-current="true"{% endif %}>{{ 'nav.bridge' | t }}</a></li>
-      <li><a href="/record/"{% if page.url.startsWith('/record/') %} aria-current="true"{% endif %}>{{ 'nav.record' | t }}</a></li>
-      <li><a href="/process/"{% if page.url == '/process/' %} aria-current="page"{% endif %}>{{ 'nav.process' | t }}</a></li>
-      <li><a href="/adopt/"{% if page.url == '/adopt/' %} aria-current="page"{% endif %}>{{ 'nav.adopt' | t }}</a></li>
-      <li><a href="/register/"{% if page.url == '/register/' %} aria-current="page"{% endif %}>{{ 'nav.register' | t }}</a></li>
-      <li><a href="/disclosure/"{% if page.url == '/disclosure/' %} aria-current="page"{% endif %}>{{ 'nav.disclosure' | t }}</a></li>
-      <li><a href="/not/"{% if page.url == '/not/' %} aria-current="page"{% endif %}>{{ 'nav.not' | t }}</a></li>
-      <li><a href="/changelog/"{% if page.url == '/changelog/' %} aria-current="page"{% endif %}>{{ 'nav.changelog' | t }}</a></li>
-    </ul>
-  </nav>
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="{{ site.short }} — home">
+      <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><defs><linearGradient id="bm" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3556cc"/><stop offset="1" stop-color="#7a4fe0"/></linearGradient></defs><path d="M8 50 H56" stroke="#1f2440" stroke-width="4" stroke-linecap="round"/><path d="M16 44 C 22 18, 42 18, 48 44" fill="none" stroke="url(#bm)" stroke-width="5" stroke-linecap="round"/><circle cx="16" cy="44" r="5.5" fill="#3556cc"/><circle cx="48" cy="44" r="5.5" fill="#7a4fe0"/></svg>
+      <span>The Trust<span class="amp"> &amp; </span>the Bridge</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <ul>
+        <li><a href="/constitution/"{% if page.url.startsWith('/constitution/') or page.url.startsWith('/charter/') %} aria-current="true"{% endif %}>{{ 'nav.constitution' | t }}</a></li>
+        <li><a href="/bridge/"{% if page.url.startsWith('/bridge/') %} aria-current="true"{% endif %}>{{ 'nav.bridge' | t }}</a></li>
+        <li><a href="/adopt/"{% if page.url == '/adopt/' %} aria-current="page"{% endif %}>{{ 'nav.adopt' | t }}</a></li>
+        <li><a href="/register/"{% if page.url == '/register/' %} aria-current="page"{% endif %}>{{ 'nav.register' | t }}</a></li>
+        <li><a href="/record/"{% if page.url.startsWith('/record/') %} aria-current="true"{% endif %}>{{ 'nav.record' | t }}</a></li>
+      </ul>
+    </nav>
+    <button class="more-btn" type="button" popovertarget="more-menu" aria-label="{{ 'nav.more' | t }}">{{ 'nav.more' | t }}<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <div id="more-menu" popover class="menu">
+      <nav aria-label="{{ 'nav.more' | t }}">
+        <p class="menu-heading">{{ 'nav.about' | t }}</p>
+        <ul>
+          <li><a href="/process/"{% if page.url == '/process/' %} aria-current="page"{% endif %}>{{ 'nav.process' | t }}</a></li>
+          <li><a href="/disclosure/"{% if page.url == '/disclosure/' %} aria-current="page"{% endif %}>{{ 'nav.disclosure' | t }}</a></li>
+          <li><a href="/not/"{% if page.url == '/not/' %} aria-current="page"{% endif %}>{{ 'nav.not' | t }}</a></li>
+          <li><a href="/charter/"{% if page.url.startsWith('/charter/') %} aria-current="true"{% endif %}>{{ 'nav.charter' | t }}</a></li>
+          <li><a href="/changelog/"{% if page.url == '/changelog/' %} aria-current="page"{% endif %}>{{ 'nav.changelog' | t }}</a></li>
+        </ul>
+        <p class="menu-heading">{{ 'nav.verify' | t }}</p>
+        <ul>
+          <li><a href="/constitution/#how-to-verify">{{ 'nav.howto' | t }}</a></li>
+          <li><a href="/index.json">index.json</a></li>
+          <li><a href="/HASHES.txt">HASHES.txt</a></li>
+          <li><a href="{{ site.repository }}">{{ 'nav.source' | t }}</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
 </header>
 <main id="main" tabindex="-1">
+<div class="wrap">
 {{ content | safe }}
+</div>
 </main>
 <footer class="site-footer">
-  <p>{{ 'footer.privacy' | t }}</p>
-  <p>{{ 'footer.license' | t }} <a href="{{ site.repository }}">Source repository</a> · <a href="/index.json">index.json</a> · <a href="/HASHES.txt">HASHES.txt</a> · <a href="/HASHES.sha3-512.txt">HASHES.sha3-512.txt</a></p>
-  <p>Mirrors: {% for m in site.mirrors %}<a href="{{ m.url }}">{{ m.name }}</a>{% if not loop.last %} · {% endif %}{% endfor %}</p>
-  {% if site.languages.length > 1 %}<p>{% for l in site.languages %}<a href="{{ l.path }}" hreflang="{{ l.code }}" lang="{{ l.code }}">{{ l.name }}</a>{% if not loop.last %} · {% endif %}{% endfor %}</p>{% endif %}
+  <div class="wrap">
+    <div class="cols">
+      <div><h2>{{ 'footer.texts' | t }}</h2><ul><li><a href="/constitution/">{{ 'nav.constitution' | t }}</a></li><li><a href="/bridge/">{{ 'nav.bridge' | t }}</a></li><li><a href="/charter/">{{ 'nav.charter' | t }}</a></li><li><a href="/constitution/summary/">{{ 'footer.summaries' | t }}</a></li></ul></div>
+      <div><h2>{{ 'footer.act' | t }}</h2><ul><li><a href="/adopt/">{{ 'nav.adopt' | t }}</a></li><li><a href="/register/">{{ 'nav.register' | t }}</a></li><li><a href="/register/schema.json">schema.json</a></li></ul></div>
+      <div><h2>{{ 'nav.about' | t }}</h2><ul><li><a href="/record/">{{ 'nav.record' | t }}</a></li><li><a href="/process/">{{ 'nav.process' | t }}</a></li><li><a href="/disclosure/">{{ 'nav.disclosure' | t }}</a></li><li><a href="/not/">{{ 'nav.not' | t }}</a></li><li><a href="/changelog/">{{ 'nav.changelog' | t }}</a></li></ul></div>
+      <div><h2>{{ 'nav.verify' | t }}</h2><ul><li><a href="/index.json">index.json</a></li><li><a href="/HASHES.txt">HASHES.txt</a></li><li><a href="/HASHES.sha3-512.txt">HASHES.sha3-512.txt</a></li><li><a href="{{ site.repository }}">{{ 'nav.source' | t }}</a></li></ul></div>
+    </div>
+    <div class="fine">
+      <span>{{ 'footer.privacy' | t }}</span>
+      <span>{{ 'footer.license' | t }}</span>
+      <span>{{ 'footer.mirrors' | t }}: {% for m in site.mirrors %}<a href="{{ m.url }}">{{ m.name }}</a>{% if not loop.last %} · {% endif %}{% endfor %}</span>
+      {% if site.languages.length > 1 %}<span>{% for l in site.languages %}<a href="{{ l.path }}" hreflang="{{ l.code }}" lang="{{ l.code }}">{{ l.name }}</a>{% if not loop.last %} · {% endif %}{% endfor %}</span>{% endif %}
+    </div>
+  </div>
 </footer>
 </body>
 </html>
