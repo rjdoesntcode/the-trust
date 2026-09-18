@@ -9,7 +9,8 @@ eleventyComputed:
   description: "Every published revision of the {{ inst.title }}, with digests and signed tags."
 ---
 {% if inst.note %}<p class="notice" role="note">{{ inst.note }}{% if inst.successor %} Continue at the <a href="/{{ inst.successor }}/">{{ canonical.bySlug[inst.successor].title }}</a>.{% endif %}{% if inst.predecessor %} Earlier revisions are under the <a href="/{{ inst.predecessor }}/">{{ canonical.bySlug[inst.predecessor].title }}</a>.{% endif %}</p>{% endif %}
-<p>Every revision of the {{ inst.title }} is a separate file under <code>/canonical/</code>, never edited after upload.{% if inst.latest and not inst.closed %} The revision in force for citation is <a href="{{ inst.latest.url }}">revision {{ inst.latest.rev }}</a>.{% endif %} A <a href="/{{ inst.slug }}/summary/">plain-language summary</a> (not canonical) is also available.</p>
+{% if inst.missing.length %}<p class="notice" role="note"><strong>Expected, not yet published:</strong> {% for e in inst.missing %}<code>canonical/{{ e.file }}</code> (revision {{ e.rev }}, tag <code>{{ e.tag }}</code>{% if e.status == 'current' %}, stated by the maintainer to be the current revision{% endif %}){% if not loop.last %}; {% endif %}{% endfor %}. Until the file is in the repository with a listed digest, it has no published text and cannot be cited; the latest <em>published</em> revision is shown below.</p>{% endif %}
+<p>Every revision of the {{ inst.title }} is a separate file under <code>/canonical/</code>, never edited after upload.{% if inst.latest and not inst.closed %} The latest published revision is <a href="{{ inst.latest.url }}">revision {{ inst.latest.rev }}</a>{% if inst.missing.length %} (a later revision is expected, see above){% endif %}.{% endif %} A <a href="/{{ inst.slug }}/summary/">plain-language summary</a> (not canonical) is also available.</p>
 
 {% if inst.revisions.length %}
 <table>
