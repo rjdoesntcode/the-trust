@@ -11,7 +11,7 @@
   "scripts": {
     "build": "npx @11ty/eleventy",
     "serve": "npx @11ty/eleventy --serve",
-    "test": "node --test test/",
+    "test": "node --test \"test/**/*.test.mjs\"",
     "validate-register": "node scripts/validate-register.mjs ../register/register.jsonl ../register/schema.json && node scripts/validate-register.mjs ../register/example-entry.jsonl ../register/schema.json"
   },
   "devDependencies": {
