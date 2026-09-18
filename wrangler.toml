@@ -33,5 +33,14 @@ enabled = true
 
 [observability.logs]
 enabled = true
-invocation_logs = false
 head_sampling_rate = 1
+persist = true
+# invocation_logs = true would write one record per request, with the visitor's
+# URL: a record of visitors, which every page's footer promises not to keep.
+# Left off on purpose; console logs (none, for an assets-only Worker) persist.
+invocation_logs = false
+
+[observability.traces]
+enabled = false
+head_sampling_rate = 1
+persist = true
