@@ -39,6 +39,7 @@ git clone https://github.com/rjdoesntcode/the-trust
 cd the-trust/site && npm ci && cd ..
 bash scripts/build.sh          # verifies hashes, validates the Register, builds site/_site, checks the output
 cd site && npm run serve       # preview at http://localhost:8080/
+# or, from the root: npm run build   (what Cloudflare Pages runs)
 ```
 
 `npm test` in `site/` runs the anchor-scheme tests.
@@ -95,7 +96,7 @@ Integrity, not secrecy. Signed commits, signed release tags (one per instrument 
 
 ## Mirrors and archives
 
-Primary: Cloudflare Pages from `main`. Mirror: GitHub Pages (`.github/workflows/build.yml`). A third mirror option and the procedure are in `docs/mirrors.md`. On every release `scripts/archive.sh` submits every canonical URL to the Internet Archive and the repository to Software Heritage, and the receipts are committed under `docs/archive-receipts/`. `scripts/verify-mirrors.sh` confirms all mirrors serve identical digests.
+Primary: **https://trust.forum** (Cloudflare Pages from `main`). Mirror: GitHub Pages (`.github/workflows/build.yml`). A third mirror option and the procedure are in `docs/mirrors.md`. On every release `scripts/archive.sh` submits every canonical URL to the Internet Archive and the repository to Software Heritage, and the receipts are committed under `docs/archive-receipts/`. `scripts/verify-mirrors.sh` confirms all mirrors serve identical digests.
 
 ## Translations
 

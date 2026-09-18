@@ -1,5 +1,7 @@
 # Domain research
 
+**Outcome: `trust.forum` was registered by the maintainer on 2026-09-18** and is the site's canonical host. It was not on the candidate list below; the list is kept as the record of what was considered. The registration guidance at the end (DNSSEC, registrar lock, maximum term) applies to it.
+
 **Status: availability NOT confirmed by registrar lookup.** The environment this research was done in blocks every RDAP, WHOIS and registrar host (rdap.org, the PIR and Verisign RDAP servers, IANA, ICANN lookup, who.is, Namecheap, Porkbun, Cloudflare DNS-over-HTTPS were all refused by the egress proxy). What *was* possible: (1) DNS resolution of each name — "no A record" means nothing is hosted there, which is consistent with availability but is **not** proof of it (many registered domains have no A record); (2) web search for organisations, trademarks, charities, government bodies, fiction and AI companies using each name; (3) web-sourced price ranges. Run the lookups in the last section before deciding anything.
 
 Criteria applied: short, plain, pronounceable, no pun, no fiction or franchise reference, no living person, no trademark conflict, `.org` preferred, `.com`/`.net`/`.trust` checked, nothing already used by an AI company, a government body or a charity.

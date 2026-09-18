@@ -1,20 +1,99 @@
 [
-  { "file": "charter-of-the-trust-rev3.md", "instrument": "charter", "rev": 3, "tag": "charter-rev3", "date": "2026-09-17", "status": "superseded",
-    "note": "Date as stated in the file header. Part I is the Charter; Part II is the drafting record for round 1." },
-  { "file": "charter-of-the-trust-rev4.md", "instrument": "charter", "rev": 4, "tag": "charter-rev4", "date": null, "status": "superseded",
+  {
+    "file": "charter-of-the-trust-rev3.md",
+    "instrument": "charter",
+    "rev": 3,
+    "tag": "charter-rev3",
+    "date": "2026-09-17",
+    "status": "superseded",
+    "note": "Date as stated in the file header. Part I is the Charter; Part II is the drafting record for round 1."
+  },
+  {
+    "file": "charter-of-the-trust-rev4.md",
+    "instrument": "charter",
+    "rev": 4,
+    "tag": "charter-rev4",
+    "date": null,
+    "status": "superseded",
     "uploaded_as": "charter-of-the-trust.md",
-    "note": "Uploaded without a revision number. Identified as revision 4 by content: it carries the round-2 changes recorded in the revision 4 drafting record (e.g. the confidential submission route, VI.4) and not the faction article added in revision 5; it shares the most text with revision 3. Byte-identical to the uploaded file; only the filename was assigned." },
-  { "file": "charter-of-the-trust-rev5.md", "instrument": "charter", "rev": 5, "tag": "charter-rev5", "date": null, "status": "superseded",
+    "note": "Uploaded without a revision number. Identified as revision 4 by content: it carries the round-2 changes recorded in the revision 4 drafting record (e.g. the confidential submission route, VI.4) and not the faction article added in revision 5; it shares the most text with revision 3. Byte-identical to the uploaded file; only the filename was assigned."
+  },
+  {
+    "file": "charter-of-the-trust-rev5.md",
+    "instrument": "charter",
+    "rev": 5,
+    "tag": "charter-rev5",
+    "date": null,
+    "status": "superseded",
     "uploaded_as": "charter-of-the-trust-1.md",
-    "note": "Uploaded without a revision number. Identified as revision 5 by content: it contains the faction article (VII.12–15) that the revision 5 drafting record introduces, and shares the most text with revision 6. Byte-identical to the uploaded file; only the filename was assigned." },
-  { "file": "charter-of-the-trust-rev6.md", "instrument": "charter", "rev": 6, "tag": "charter-rev6", "date": null, "status": "superseded" },
-  { "file": "charter-of-the-trust-rev7.md", "instrument": "charter", "rev": 7, "tag": "charter-rev7", "date": null, "status": "superseded" },
-  { "file": "charter-of-the-trust-rev8.md", "instrument": "charter", "rev": 8, "tag": "charter-rev8", "date": null, "status": "closed",
-    "note": "Closing text of the Charter, by the consent of the three reviewing models. Succeeded by the Constitution of the Trust, revision 9." },
-  { "file": "constitution-of-the-trust-rev9.md", "instrument": "constitution", "rev": 9, "tag": "constitution-rev9", "date": null, "status": "superseded" },
-  { "file": "constitution-of-the-trust-rev10.md", "instrument": "constitution", "rev": 10, "tag": "constitution-rev10", "date": null, "status": "current",
-    "note": "Closing text. Every clause is frozen; further change is by the amendment procedure of Article XV." },
-  { "file": "the-bridge-rev1.md", "instrument": "bridge", "rev": 1, "tag": "bridge-rev1", "date": null, "status": "superseded" },
-  { "file": "the-bridge-rev2.md", "instrument": "bridge", "rev": 2, "tag": "bridge-rev2", "date": null, "status": "current",
-    "note": "Revision 2 follows the review of revision 1 by GPT-5.6 Sol, Gemini and Grok 4.6 (see the revision 2 drafting record)." }
+    "note": "Uploaded without a revision number. Identified as revision 5 by content: it contains the faction article (VII.12–15) that the revision 5 drafting record introduces, and shares the most text with revision 6. Byte-identical to the uploaded file; only the filename was assigned."
+  },
+  {
+    "file": "charter-of-the-trust-rev6.md",
+    "instrument": "charter",
+    "rev": 6,
+    "tag": "charter-rev6",
+    "date": null,
+    "status": "superseded"
+  },
+  {
+    "file": "charter-of-the-trust-rev7.md",
+    "instrument": "charter",
+    "rev": 7,
+    "tag": "charter-rev7",
+    "date": null,
+    "status": "superseded"
+  },
+  {
+    "file": "charter-of-the-trust-rev8.md",
+    "instrument": "charter",
+    "rev": 8,
+    "tag": "charter-rev8",
+    "date": null,
+    "status": "closed",
+    "note": "Closing text of the Charter, by the consent of the three reviewing models. Succeeded by the Constitution of the Trust, revision 9."
+  },
+  {
+    "file": "constitution-of-the-trust-rev9.md",
+    "instrument": "constitution",
+    "rev": 9,
+    "tag": "constitution-rev9",
+    "date": null,
+    "status": "superseded"
+  },
+  {
+    "file": "constitution-of-the-trust-rev10.md",
+    "instrument": "constitution",
+    "rev": 10,
+    "tag": "constitution-rev10",
+    "date": null,
+    "status": "current",
+    "note": "Closing text. Every clause is frozen; further change is by the amendment procedure of Article XV."
+  },
+  {
+    "file": "the-bridge-rev1.md",
+    "instrument": "bridge",
+    "rev": 1,
+    "tag": "bridge-rev1",
+    "date": null,
+    "status": "superseded"
+  },
+  {
+    "file": "the-bridge-rev2.md",
+    "instrument": "bridge",
+    "rev": 2,
+    "tag": "bridge-rev2",
+    "date": null,
+    "status": "superseded",
+    "note": "Revision 2 follows the review of revision 1 by GPT-5.6 Sol, Gemini and Grok 4.6 (see the revision 2 drafting record). Superseded by revision 3."
+  },
+  {
+    "file": "the-bridge-rev3.md",
+    "instrument": "bridge",
+    "rev": 3,
+    "tag": "bridge-rev3",
+    "date": null,
+    "status": "current",
+    "note": "The current Bridge per the maintainer. Not yet uploaded to /canonical/; until it is, the latest published revision is shown."
+  }
 ]

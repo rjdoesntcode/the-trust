@@ -5,6 +5,8 @@ All changes to the published texts, the record, the Register and the site. Instr
 ## Unreleased
 
 ### Repository
+- Domain `trust.forum` registered (2026-09-18); it is the canonical URL. Root `package.json` added as the build entry point for Cloudflare Pages.
+- The Bridge, revision 3, registered as the expected current revision (file pending upload).
 - Repository created: layout, licences (CC BY-SA 4.0 text, Apache-2.0 code), NOTICE, SECURITY.md, CODEOWNERS, Dependabot.
 - Integrity scripts: `scripts/hash.sh` (SHA-512 and SHA3-512 manifests), `scripts/verify-mirrors.sh`, `scripts/archive.sh`.
 - Register: `register/schema.json`, empty `register/register.jsonl`, one worked example.
