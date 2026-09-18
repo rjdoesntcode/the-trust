@@ -15,7 +15,7 @@ body:
     validations: { required: true }
   - type: input
     id: party
-    attributes: { label: Adopting party (legal name), placeholder: Example Organisation }
+    attributes: { label: Adopting party (legal name), placeholder: Example Organization }
     validations: { required: true }
   - type: input
     id: party_url
@@ -64,9 +64,9 @@ body:
     attributes:
       label: Representations
       options:
-        - label: I am authorised to act for the party named.
+        - label: I am authorized to act for the party named.
           required: true
-        - label: The entry is accurate and not misleading, and does not state that any person or organisation has adopted or endorsed any instrument unless that is true.
+        - label: The entry is accurate and not misleading, and does not state that any person or organization has adopted or endorsed any instrument unless that is true.
           required: true
         - label: The submission infringes no rights and breaks no law, and I license it under CC BY-SA 4.0.
           required: true

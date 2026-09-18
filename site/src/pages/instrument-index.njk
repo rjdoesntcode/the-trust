@@ -15,11 +15,11 @@ eleventyComputed:
 <div class="prose">
 {% if inst.note %}<p class="notice" role="note">{{ inst.note }}{% if inst.successor %} Continue at the <a href="/{{ inst.successor }}/">{{ canonical.bySlug[inst.successor].title }}</a>.{% endif %}{% if inst.predecessor %} Earlier revisions are under the <a href="/{{ inst.predecessor }}/">{{ canonical.bySlug[inst.predecessor].title }}</a>.{% endif %}</p>{% endif %}
 {% if inst.missing.length %}<p class="notice" role="note"><strong>Expected, not yet published:</strong> {% for e in inst.missing %}<code>canonical/{{ e.file }}</code> (revision {{ e.rev }}, tag <code>{{ e.tag }}</code>{% if e.status == 'current' %}, stated by the maintainer to be the current revision{% endif %}){% if not loop.last %}; {% endif %}{% endfor %}. Until the file is in the repository with a listed digest, it has no published text and cannot be cited; the latest <em>published</em> revision is shown below.</p>{% endif %}
-<p>Every revision of the {{ inst.title }} is a separate file under <code>/canonical/</code>, never edited after upload.{% if inst.latest %} The current text is <a href="/{{ inst.slug }}/">revision {{ inst.latest.rev }}</a>{% if inst.missing.length %} (a later revision is expected, see above){% endif %}.{% endif %} A <a href="/{{ inst.slug }}/summary/">plain-language summary</a> (not canonical) is also available.</p>
+<p>Every revision of {% if inst.title.startsWith("The ") %}{{ inst.title }}{% else %}the {{ inst.title }}{% endif %} is a separate file under <code>/canonical/</code>, never edited after upload.{% if inst.latest %} The current text is <a href="/{{ inst.slug }}/">revision {{ inst.latest.rev }}</a>{% if inst.missing.length %} (a later revision is expected, see above){% endif %}.{% endif %} A <a href="/{{ inst.slug }}/summary/">plain-language summary</a> (not canonical) is also available.</p>
 
 {% if inst.revisions.length %}
 </div>
-<div class="table-card glass revisions">
+<div class="table-card glass revisions" role="group" aria-label="Published revisions" tabindex="0">
 <table>
   <caption>Published revisions</caption>
   <thead><tr><th scope="col">Revision</th><th scope="col">Published as</th><th scope="col">Status</th><th scope="col">Date</th><th scope="col">Tag</th><th scope="col">SHA-512</th><th scope="col">SHA3-512</th><th scope="col">Raw</th></tr></thead>

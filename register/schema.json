@@ -46,7 +46,7 @@
     },
     "adopting_party": {
       "$ref": "#/$defs/party",
-      "description": "The organisation or person making the declaration, or to which this entry relates."
+      "description": "The organization or person making the declaration, or to which this entry relates."
     },
     "articles_adopted": {
       "type": "array",

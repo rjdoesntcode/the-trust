@@ -70,7 +70,7 @@ Anchors are stable for the life of a revision: `#art-iii` (Article III), `#art-i
 
 ## How to adopt the Bridge
 
-Adoption is a public declaration entered on the Register. Read the Bridge, complete and sign the Declaration of Adoption (site `/adopt/`, template at `/adopt/declaration-template.md`), compute its digests, write one line of JSON that validates against `register/schema.json`, sign it, and open a pull request that **appends** it to `register/register.jsonl` and adds the document under `register/documents/`. The build validates it. Merging records the declaration; it is not an endorsement, verification or judgement. Details: `register/README.md`.
+Adoption is a public declaration entered on the Register. Read the Bridge, complete and sign the Declaration of Adoption (site `/adopt/`, template at `/adopt/declaration-template.md`), compute its digests, write one line of JSON that validates against `register/schema.json`, sign it, and open a pull request that **appends** it to `register/register.jsonl` and adds the document under `register/documents/`. The build validates it. Merging records the declaration; it is not an endorsement, verification or judgment. Details: `register/README.md`.
 
 ## How to propose an amendment
 
@@ -102,6 +102,6 @@ Primary: **https://trust.forum** (Cloudflare Pages from `main`). Mirror: GitHub 
 
 English is the only language now. The site is structured so that a translation drops in as `/es/`, `/zh/`, etc. without touching `/canonical/`; a translated instrument is never canonical and says so. See `docs/translations.md`.
 
-## Licences
+## Licenses
 
 Text (instruments, record, Register, site prose): [CC BY-SA 4.0](LICENSE-TEXT). Code (site, scripts, configuration): [Apache-2.0](LICENSE). See `NOTICE` for the rule on representing adoption or endorsement.

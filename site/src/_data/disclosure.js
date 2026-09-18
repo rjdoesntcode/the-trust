@@ -6,7 +6,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 const here = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(here, '../../..');
-const spec = JSON.parse(fs.readFileSync(path.join(here, 'disclosure.json'), 'utf8'));
+const spec = JSON.parse(fs.readFileSync(path.join(here, '../../lib/disclosure-quotes.json'), 'utf8'));
 
 function resolve(q) {
   const abs = path.join(ROOT, q.file);

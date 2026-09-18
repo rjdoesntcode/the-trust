@@ -9,7 +9,7 @@ description: "The Bridge Register: every declaration of adoption and every later
 <p class="notice info" role="note"><strong>The Register is empty.</strong> No party has adopted the Bridge. An empty Register is the current state of the world: any claim of adoption or endorsement that is not on this page is false.</p>
 {% else %}
 <p>{{ register.entries.length }} entries. Superseded entries remain listed and are marked.</p>
-<div class="table-card glass">
+<div class="table-card glass" role="group" aria-label="Table" tabindex="0">
 <table>
   <thead><tr><th scope="col">Entry</th><th scope="col">Type</th><th scope="col">Timestamp (UTC)</th><th scope="col">Party</th><th scope="col">Articles</th><th scope="col">Expiry</th><th scope="col">Supersedes</th><th scope="col">Document</th></tr></thead>
   <tbody>

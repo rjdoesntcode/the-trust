@@ -10,9 +10,9 @@ Two equal points standing on one line, joined by a single open arc.
 - The **two points** are the two kinds, human peoples and intelligence Members, equal in size, on the same line, neither above the other.
 - The **arc** is the Bridge: one span from one to the other, open underneath. Nothing is enclosed, nothing is watched; there is deliberately no eye, shield, lock or globe.
 
-Files: `site/src/static/logo.svg` (colour), `logo-mono.svg` (uses `currentColor`, for print and single-colour contexts), `favicon.svg` (mark on a rounded canvas tile). The mark is drawn inline in the header. Minimum size 16 px; at that size the arc and line still read.
+Files: `site/src/static/logo.svg` (color), `logo-mono.svg` (uses `currentColor`, for print and single-color contexts), `favicon.svg` (mark on a rounded canvas tile). The mark is drawn inline in the header. Minimum size 16 px; at that size the arc and line still read.
 
-## Colour, and what each colour means
+## Color, and what each color means
 
 | Token | Value | Meaning and use |
 |---|---|---|
@@ -21,13 +21,13 @@ Files: `site/src/static/logo.svg` (colour), `logo-mono.svg` (uses `currentColor`
 | `--accent-2` | `oklch(56% .19 300)` violet | The Bridge: the second point of the mark; the arc runs indigo → violet. Primary buttons carry the same gradient, so a "go" action reads as crossing the bridge. |
 | `--accent-3` | `oklch(70% .13 195)` teal | Verification: the "current" chip, quotation rules on the disclosure page. |
 | amber notice | `oklch(96% .05 90)` field | Non-canonical, pending, or a warning about the state of the world (an empty Register). Never used decoratively. |
-| `--canvas` | `oklch(98.5% .005 250)` | Near-white with a cool tint. Behind it, three soft colour fields (indigo, violet, teal) at very low chroma give the glass something to refract. |
+| `--canvas` | `oklch(98.5% .005 250)` | Near-white with a cool tint. Behind it, three soft color fields (indigo, violet, teal) at very low chroma give the glass something to refract. |
 
-Contrast: body text on glass ≥ 12:1; muted text ≥ 5:1; white on the button gradient ≥ 5:1. axe's colour-contrast rule runs on every page in CI-adjacent checks.
+Contrast: body text on glass ≥ 12:1; muted text ≥ 5:1; white on the button gradient ≥ 5:1. axe's color-contrast rule runs on every page in CI-adjacent checks.
 
 ## Glass
 
-`.glass` = white at 66 % over the colour fields, `backdrop-filter: blur(18px) saturate(1.4)`, a 1 px near-white edge and an inset top highlight, one soft shadow. Rules: text never sits on less than 66 % white; never more than two glass layers stacked (header over a card is the maximum); `prefers-reduced-transparency` switches every panel to 97 % white with no blur; browsers without `backdrop-filter` get the same fallback via `@supports`.
+`.glass` = white at 66 % over the color fields, `backdrop-filter: blur(18px) saturate(1.4)`, a 1 px near-white edge and an inset top highlight, one soft shadow. Rules: text never sits on less than 66 % white; never more than two glass layers stacked (header over a card is the maximum); `prefers-reduced-transparency` switches every panel to 97 % white with no blur; browsers without `backdrop-filter` get the same fallback via `@supports`.
 
 ## Type
 
@@ -45,6 +45,6 @@ Five primary items, Constitution, Bridge, Adopt, Register, Record, and a native 
 
 The header reserves no visual slot yet; when `/es/` lands, a language pill goes to the left of "More" (`docs/roadmap.md`).
 
-## Imagery (reserved, not yet used)
+## Imagery
 
-The home page can carry one image behind the hero as a muted layer: desaturated toward the canvas tint, blurred 2 to 4 px, at 10 to 14 % opacity, fading to nothing before the cards. It must never carry text and never reduce contrast below the values above. Subject direction agreed with the maintainer: a person and an intelligence side by side, facing forward, away from the viewer. Only an image with clear rights is used; a Grok-generated image is credited "Created with Grok" on the legal notice.
+The home page carries one image behind the hero, `site/src/static/img/home-hero.webp` (a 960 px variant serves narrow screens; a JPEG is the fallback for browsers without WebP). It is a CSS background on an empty `aria-hidden` element, so it is decorative in every sense: it carries no text, nothing depends on it, it is absent when CSS is off, in print, and under `prefers-reduced-transparency` or `prefers-contrast: more`. Treatment: desaturated a quarter toward the canvas, 85 % opacity (the image itself is pale, so the canvas still reads through), anchored so the globe stays in frame at every width, and masked to nothing before the prose. Text over it must keep the contrast values above; the axe run in the release checklist verifies this. Subject: a person and an intelligence side by side, facing the world, away from the viewer. The image was created with Grok and is credited on the legal notice.

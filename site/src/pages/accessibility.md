@@ -18,7 +18,7 @@ The texts on this site are meant to be read by anyone. The site is built so that
 
 ## What has been tested
 
-Every page is checked with [axe-core](https://github.com/dequelabs/axe-core) against the WCAG 2.0, 2.1 and 2.2 A and AA rule sets, at phone and desktop widths, and with an HTML validator; the site is not released while either reports a problem. Manual checks with a screen reader, at 200 % zoom and with keyboard only are done by a person before a release and recorded in the changelog.
+Every page is checked with [axe-core](https://github.com/dequelabs/axe-core) against the WCAG 2.0, 2.1 and 2.2 A and AA rule sets, at phone and desktop widths, and with an HTML validator; the site is not released while either reports a problem. Manual checks with a screen reader, at 200% zoom and with keyboard only are done by a person before a release and recorded in the changelog.
 
 ## Known limitations
 

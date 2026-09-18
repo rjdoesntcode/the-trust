@@ -1,6 +1,6 @@
 # Release checklist
 
-One release per instrument revision. Nothing is released until every box is ticked, in order.
+One release per instrument revision. Nothing is released until every box is checked, in order.
 
 ## 0. Before
 - [ ] The new revision is a **new file** under `/canonical/` with the revision number in its name. No existing file changed (`git status` shows only additions).
