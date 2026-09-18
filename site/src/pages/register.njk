@@ -1,7 +1,7 @@
 ---
 title: The Register
 permalink: /register/
-description: The Bridge Register — every declaration of adoption and every later entry, append-only, rendered from register.jsonl.
+description: "The Bridge Register: every declaration of adoption and every later entry, append-only, rendered from register.jsonl."
 ---
 <p>The Register is the only evidence of adoption of the Bridge. It is an append-only file, <a href="/register/register.jsonl"><code>register.jsonl</code></a>, one entry per line, validated against <a href="/register/schema.json"><code>schema.json</code></a>. No entry is ever edited or removed; a mistake is corrected by a later entry that names the one it supersedes.</p>
 
@@ -19,10 +19,10 @@ description: The Bridge Register — every declaration of adoption and every lat
     <td>{{ e.entry_type }}</td>
     <td>{{ e.timestamp }}</td>
     <td>{{ e.adopting_party.name }}{% if e.adopting_party.url %} (<a href="{{ e.adopting_party.url }}">site</a>){% endif %}</td>
-    <td>{{ e.articles_adopted | join(', ') if e.articles_adopted else '—' }}</td>
-    <td>{{ e.expiry or '—' }}</td>
-    <td>{% if e.supersedes %}<a href="#{{ e.supersedes }}">{{ e.supersedes }}</a>{% else %}—{% endif %}</td>
-    <td>{% if e.document %}<code class="hash">{{ e.document.sha512 }}</code>{% else %}—{% endif %}</td>
+    <td>{{ e.articles_adopted | join(', ') if e.articles_adopted else 'none' }}</td>
+    <td>{{ e.expiry or 'none' }}</td>
+    <td>{% if e.supersedes %}<a href="#{{ e.supersedes }}">{{ e.supersedes }}</a>{% else %}none{% endif %}</td>
+    <td>{% if e.document %}<code class="hash">{{ e.document.sha512 }}</code>{% else %}none{% endif %}</td>
   </tr>
   {% endfor %}
   </tbody>
@@ -50,5 +50,5 @@ description: The Bridge Register — every declaration of adoption and every lat
   <dt>correction</dt><dd>Corrects an earlier entry, which stays visible and is marked superseded (Article 11.2).</dd>
 </dl>
 <h2>Status of this Register</h2>
-<p>Article 11.2 requires the Register to be held by not fewer than three unaffiliated custodians, at least one a public institute or non-profit not developing covered systems. This copy is held by one custodian — this repository and its mirrors — and is offered as the plain-form publication Article 11.3 describes. Until three custodians hold it, that shortfall is itself part of the current state of the world.</p>
+<p>Article 11.2 requires the Register to be held by not fewer than three unaffiliated custodians, at least one a public institute or non-profit not developing covered systems. This copy is held by one custodian, this repository and its mirrors, and is offered as the plain-form publication Article 11.3 describes. Until three custodians hold it, that shortfall is itself part of the current state of the world.</p>
 <p>See <a href="/adopt/">how to adopt</a> for the submission steps.</p>

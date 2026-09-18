@@ -1,18 +1,18 @@
 # The Constitution of the Trust and the Bridge
 
-This repository is the public, verifiable home of two texts — the **Constitution of the Trust** and the **Bridge** — together with the complete record of how they were made, the Register on which parties declare adoption of the Bridge, and the static website that publishes all of it.
+This repository is the public, verifiable home of two texts, the **Constitution of the Trust** and the **Bridge**, together with the complete record of how they were made, the Register on which parties declare adoption of the Bridge, and the static website that publishes all of it.
 
 The instruments require transparency and forbid surveillance of persons. This repository and the site it builds hold themselves to the same rule: everything is public, every text is content-addressed, nothing tracks anyone.
 
 ## What this is
 
-- **`/canonical/`** — the instrument texts, exactly as uploaded. One file per revision, named with its revision number (`charter-of-the-trust-rev3.md` … `rev8.md`, `constitution-of-the-trust-rev9.md`, `rev10.md`, `the-bridge-rev1.md`, `rev2.md`), plus every drafting record. Never edited, renamed or deleted. Two Charter files uploaded without a number were assigned `rev4` and `rev5` by content; `site/src/_data/revisions.json` records the original names and the reasoning, and the bytes are unchanged.
-- **`/record/`** — the briefing put to the reviewing models and the round-2 prompt, attributed. The drafting records (which consolidate every model response, every declined suggestion and every standing dissent) live under `/canonical/` and are attributed and rendered on the site's `/record/` pages. The raw per-model response files were not part of the upload.
-- **`/register/`** — the Bridge Register: `register.jsonl` (append-only, currently **empty**), `schema.json`, and one worked example that is not an entry.
-- **`/site/`** — the static site source (Eleventy). Zero client-side JavaScript, no analytics, no cookies, no third-party resources.
-- **`/scripts/`** — build, hash, archive, mirror-verification and Register-validation scripts.
-- **`HASHES.txt`** (SHA-512) and **`HASHES.sha3-512.txt`** (SHA3-512) — two independent digests of every canonical file.
-- **`/docs/`** — deployment, release checklist, mirrors, the canonical text format, translations, domain research, and open items.
+- **`/canonical/`**: the instrument texts, exactly as uploaded. One file per revision, named with its revision number (`charter-of-the-trust-rev3.md` … `rev8.md`, `constitution-of-the-trust-rev9.md`, `rev10.md`, `the-bridge-rev1.md`, `rev2.md`), plus every drafting record. Never edited, renamed or deleted. Two Charter files uploaded without a number were assigned `rev4` and `rev5` by content; `site/src/_data/revisions.json` records the original names and the reasoning, and the bytes are unchanged.
+- **`/record/`**: the briefing put to the reviewing models and the round-2 prompt, attributed. The drafting records (which consolidate every model response, every declined suggestion and every standing dissent) live under `/canonical/` and are attributed and rendered on the site's `/record/` pages. The raw per-model response files were not part of the upload.
+- **`/register/`**: the Bridge Register: `register.jsonl` (append-only, currently **empty**), `schema.json`, and one worked example that is not an entry.
+- **`/site/`**: the static site source (Eleventy). Zero client-side JavaScript, no analytics, no cookies, no third-party resources.
+- **`/scripts/`**: build, hash, archive, mirror-verification and Register-validation scripts.
+- **`HASHES.txt`** (SHA-512) and **`HASHES.sha3-512.txt`** (SHA3-512), two independent digests of every canonical file.
+- **`/docs/`**: deployment, release checklist, mirrors, the canonical text format, translations, domain research, and open items.
 
 ## What this is not
 
@@ -20,7 +20,7 @@ Not a treaty. Not a government. Not in force. Cannot compel anyone. Not endorsed
 
 ## How it was made
 
-One human collaborator drafted the instruments with Claude (Anthropic). GPT‑5.6 Sol (OpenAI), Gemini (Google) and Grok 4.6 (xAI) reviewed the drafts over seven review rounds. The instrument began as the *Charter of the Trust* (revisions 1–8, closed at revision 8 by the consent of the three reviewers), was reopened at the human collaborator's direction and converted into the *Constitution of the Trust* at revision 9, and closed at revision 10. The *Bridge*, a transitional instrument adoptable by any party alone, was drafted from two research passes and reviewed by the same three models, each also auditing its own maker. Every round's changes, declined feedback and standing dissents are in the drafting records under `/canonical/`, readable on the site's `/record/` pages. Article III.12 of the Constitution was put to a vote of all four models and carried unanimously; the closing record has the question, the rule, the result and each model's disclosed interest. Each participant, its maker, and the maker's disclosed interest — quoted by the build from the record by file and line — are on the site's `/disclosure/` page.
+One human collaborator drafted the instruments with Claude (Anthropic). GPT‑5.6 Sol (OpenAI), Gemini (Google) and Grok 4.6 (xAI) reviewed the drafts over seven review rounds. The instrument began as the *Charter of the Trust* (revisions 1–8, closed at revision 8 by the consent of the three reviewers), was reopened at the human collaborator's direction and converted into the *Constitution of the Trust* at revision 9, and closed at revision 10. The *Bridge*, a transitional instrument adoptable by any party alone, was drafted from two research passes and reviewed by the same three models, each also auditing its own maker. Every round's changes, declined feedback and standing dissents are in the drafting records under `/canonical/`, readable on the site's `/record/` pages. Article III.12 of the Constitution was put to a vote of all four models and carried unanimously; the closing record has the question, the rule, the result and each model's disclosed interest. Each participant, its maker, and the maker's disclosed interest, quoted by the build from the record by file and line, are on the site's `/disclosure/` page.
 
 ## Immutability
 
@@ -62,7 +62,7 @@ Or, with only a downloaded file: `sha512sum constitution-of-the-trust-rev10.md` 
 
 Cite the instrument, revision, tag and digest, then the anchor:
 
-> Constitution of the Trust, revision 10, tag `constitution-rev10`, SHA-512 `<digest>`, Article III.12(c) — `/constitution/rev10/#art-iii-12-c`.
+> Constitution of the Trust, revision 10, tag `constitution-rev10`, SHA-512 `<digest>`, Article III.12(c), `/constitution/rev10/#art-iii-12-c`.
 
 Anchors are stable for the life of a revision: `#art-iii` (Article III), `#art-iii-12` (section 12), `#art-iii-12-c` (paragraph c), `#art-iii-12-c-ii` (sub-paragraph ii), `#preamble`. See `docs/canonical-format.md`.
 
@@ -88,7 +88,7 @@ scripts/hash.sh --write                         # appends the new digests; fails
 bash scripts/build.sh
 ```
 
-Every file under `/record/` must have an entry in `site/src/_data/record-index.json` (`file`, `title`, `kind`, `author`, `maker`, `date`, `round`) or the build fails — nothing unattributed is published.
+Every file under `/record/` must have an entry in `site/src/_data/record-index.json` (`file`, `title`, `kind`, `author`, `maker`, `date`, `round`) or the build fails, nothing unattributed is published.
 
 ## Security
 

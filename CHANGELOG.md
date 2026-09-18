@@ -5,6 +5,7 @@ All changes to the published texts, the record, the Register and the site. Instr
 ## Unreleased
 
 ### Site
+- Privacy, Terms of use and Accessibility pages added (`/privacy/`, `/terms/`, `/accessibility/`); LICENSE, LICENSE-TEXT and NOTICE served at the site root. Terms carry a visible pending note for governing law and a contact address.
 - Redesign: light glass design system (`docs/design-system.md`), self-hosted Inter and Source Serif 4 (OFL, Latin subsets), new mark, five-item primary navigation with a native popover menu, no client-side JavaScript. axe 0 violations and html-validate 0 errors on every page.
 - Roadmap for globalisation (`docs/roadmap.md`): language directories, `Accept-Language` routing at the edge, translation pipeline.
 - Cloudflare: production workers.dev URL off, preview URLs on, observability on without per-request invocation logs.

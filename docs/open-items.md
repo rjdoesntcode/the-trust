@@ -1,22 +1,22 @@
-# Open items — things not done, or decided without you
+# Open items: things not done, or decided without you
 
 Review before first release. Items are in order of importance.
 
 ## Source texts: now in the repository (2026-09-18 upload)
 
 1. **Placed.** 18 files under `/canonical/` (10 instrument revisions, 8 drafting records) and 2 under `/record/` (briefing, round-2 prompt), byte-identical to the upload (`docs/initial-upload.zip` is kept as the upload artifact). Every page that depended on them now renders from them.
-2. **Two files were uploaded without a revision number** (`charter-of-the-trust.md`, `charter-of-the-trust-1.md`) and were assigned `rev4` and `rev5` by content — the round-2 changes of the revision 4 record are in both, the faction article of the revision 5 record is only in the second, and each is textually closest to its neighbour. Confirm later (the maintainer has deferred prior versions); if wrong, only the filename and `revisions.json` change.
+2. **Two files were uploaded without a revision number** (`charter-of-the-trust.md`, `charter-of-the-trust-1.md`) and were assigned `rev4` and `rev5` by content, the round-2 changes of the revision 4 record are in both, the faction article of the revision 5 record is only in the second, and each is textually closest to its neighbour. Confirm later (the maintainer has deferred prior versions); if wrong, only the filename and `revisions.json` change.
 3. **Bridge revision 3 (publication text) and its drafting record were uploaded on 2026-09-18 and are published**; revision 3 is current, revisions 1 and 2 superseded. The revision 3 record's audit of Anthropic and each model's published answer on adoption are quoted on `/disclosure/`.
 4. **Revision dates are unknown for all but Charter revision 3** (its header says 17 September 2026). The other files state no date and the zip's timestamps are the upload time. Pages say "not stated in the record". Supply dates for `site/src/_data/revisions.json` if you have them.
 5. **Not in the upload:** the drafting record for Charter revision 8 (round 6); Charter revisions 1 and 2 as files (revision 2 is embedded in the briefing's Section 5); the raw per-model response files (the drafting records consolidate them); the research reports the records cite ("two research passes"). The site says so on `/process/` and `/record/`.
 6. **The human collaborator's interest is not disclosed anywhere in the record.** `/disclosure/` says so. Add a statement to the record if you want one published.
 7. **Article III.12's lettered paragraphs are continuation lines inside list item 12** in the real text; the parser was extended so `#art-iii-12-c` (and IX.10(f), Bridge 3.1(a) …) resolve, with each paragraph on its own line. Wording untouched; tested on the real file.
 8. **The Register schema now follows the Bridge**: weight custodian and key custodian (Article 7.3, Declaration table) replace the single "custodian" of the brief; thresholds (3.3), modification (5.2), withholding (5.4), incident fields (6.2–6.3), the Article 14.1 minimum set of Articles and the three-year expiry are validated. `/adopt/` reproduces the Bridge's own Declaration of Adoption verbatim instead of an invented template.
-9. **Summaries written** for the Constitution (rev 10), the Bridge (rev 2) and the closed Charter — all marked non-canonical. Review them: they are my reading of the texts.
+9. **Summaries written** for the Constitution (rev 10), the Bridge (rev 2) and the closed Charter, all marked non-canonical. Review them: they are my reading of the texts.
 
 ## Decided without you
 
-8. **Hashing is SHA-512 + SHA3-512, not SHA-256**, per your later instruction. `HASHES.txt` is `sha512sum -c` compatible; `HASHES.sha3-512.txt` is the second, independent family. Register `document` digests are `sha512` (required) + `sha3_512` (recommended). Git object ids remain SHA-1 (GitHub does not host SHA-256 repositories), which is why content digests and signed tags — not commit ids — are the citation unit.
+8. **Hashing is SHA-512 + SHA3-512, not SHA-256**, per your later instruction. `HASHES.txt` is `sha512sum -c` compatible; `HASHES.sha3-512.txt` is the second, independent family. Register `document` digests are `sha512` (required) + `sha3_512` (recommended). Git object ids remain SHA-1 (GitHub does not host SHA-256 repositories), which is why content digests and signed tags, not commit ids, are the citation unit.
 9. **Repository name.** The remote already exists as `rjdoesntcode/the-trust`, so that name is used throughout. If you want the name to carry both instruments, `trust-and-bridge` is the plain option; renaming on GitHub keeps redirects, but do it before the first tag and update `site/src/_data/site.json`.
 10. **Domain: `trust.forum`** (registered 2026-09-18) is the canonical URL in `site/src/_data/site.json`, the schema `$id`, `robots.txt` and the sitemap. GitHub Pages remains the mirror. Cloudflare Pages settings are in `docs/deploy.md`; the first deploy attempt failed before these settings were documented.
 11. **Static site generator: Eleventy 3.1.2**, as preferred. It emits no JavaScript, has no runtime, and the whole build is three pinned packages (`@11ty/eleventy`, `markdown-it`, `ajv` + `ajv-formats` for Register validation).
@@ -33,6 +33,8 @@ Review before first release. Items are in order of importance.
 27. **Globalisation** is scoped in `docs/roadmap.md` and not started, as asked.
 28. **Cloudflare observability**: enabled in `wrangler.toml` without invocation logs (privacy). I cannot read Cloudflare logs or metrics from a session; the dashboard is the place.
 
+29. **Terms of use and Privacy** are drafted and published. Two fields are yours and are marked *pending* on the page: the **governing law and forum** (section 11) and a **contact address** (a role address, e.g. `contact@trust.forum`, since the site promises no personal addresses). Tell me both and I will fill them in. The privacy page's factual claims (no cookies, no scripts, no logs; Cloudflare invocation logs off) are true of the current configuration and would need updating if that changes.
+
 ## Could not do from this environment
 
 18. **Registrar lookup for domains.** Every RDAP/WHOIS/registrar host was blocked by the egress proxy. `docs/domain-research.md` has DNS and search evidence only, plus the exact commands for you to run.
@@ -41,12 +43,12 @@ Review before first release. Items are in order of importance.
 21. **Cloudflare Pages project** and custom domain, DNSSEC, and keeping Web Analytics off (an edge-injected beacon would violate the no-scripts rule; see `docs/deploy.md`).
 22. **Signing.** The repository is worked only through Claude Code sessions; commits and tags are signed by the session's key under the `claude` GitHub account. Pull requests are merged with a merge commit (squash is disabled in the repository settings); PR #8 merged under the ruleset, so the session's commits are accepted. Confirm the first release tag shows *Verified* after pushing it; see docs/deploy.md.
 23. **Archive receipts.** `scripts/archive.sh` was written but not run (archive.org and softwareheritage.org were blocked, and there is nothing to archive yet).
-24. **Accessibility** was checked automatically (axe-core 4 with the WCAG 2.0/2.1/2.2 A+AA and best-practice rule sets, every built page including a fixture-rendered canonical page, served over HTTP at phone width: 0 violations) and the HTML validated (html-validate recommended + a11y presets: 0 errors). Manual checks — screen reader, 200% zoom, keyboard-only, print preview, CSS off — remain to be done by a person.
+24. **Accessibility** was checked automatically (axe-core 4 with the WCAG 2.0/2.1/2.2 A+AA and best-practice rule sets, every built page including a fixture-rendered canonical page, served over HTTP at phone width: 0 violations) and the HTML validated (html-validate recommended + a11y presets: 0 errors). Manual checks, screen reader, 200% zoom, keyboard-only, print preview, CSS off, remain to be done by a person.
 25. **CC BY-SA 4.0 text** was taken from the SPDX license-list-data mirror on GitHub because creativecommons.org was blocked. Compare `LICENSE-TEXT` with https://creativecommons.org/licenses/by-sa/4.0/legalcode.txt once.
 
 ## Inconsistencies found in the instruments or record (reported, not fixed)
 
-- **Closing record, Section C, table row "Exceptions never for the institution (round 9 direction)"** — there were seven rounds; "round 9" appears to mean the revision 9 direction. `canonical/constitution-of-the-trust-drafting-record-rev10-closing.md`.
+- **Closing record, Section C, table row "Exceptions never for the institution (round 9 direction)"**: there were seven rounds; "round 9" appears to mean the revision 9 direction. `canonical/constitution-of-the-trust-drafting-record-rev10-closing.md`.
 - **Charter revision 3, Part II, Section C.7** misrecords Grok's round-1 disclosure; the revision 4 record, Section A.1, withdraws it. Both stand in the record; `/disclosure/` shows the original and the correction together.
 - **The brief named `the-bridge-rev1.md` as the Bridge to publish; the upload contains a later revision 2** whose record supersedes revision 1 (item 3 above).
 - **The brief and my scaffold named Gemini's maker "Google DeepMind"; the record says "Google"** throughout. The site now uses the record's wording.

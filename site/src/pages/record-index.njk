@@ -3,7 +3,7 @@ title: The record
 permalink: /record/
 description: Every research report, the briefing, and every model response from the drafting and review of the instruments, attributed to its author, model and lab.
 ---
-<p>The record holds the briefing and prompts put to the reviewing models and the drafting record of every revision. Each drafting record consolidates the reviewing models' responses for that round — what each contributed, what was declined and why, the disagreements that remain — and the drafter's own position. Each file is served exactly as uploaded, attributed to its author (for a model, its name and maker), and hashed; the drafting records are kept under <code>/canonical/</code> and are listed here so that they can be read. Nothing is edited after upload; a correction is a new file. <strong>Not in the repository:</strong> the raw response files returned by each model, the research reports the records cite, and the drafting record for Charter revision 8.</p>
+<p>The record holds the briefing and prompts put to the reviewing models and the drafting record of every revision. Each drafting record consolidates the reviewing models' responses for that round (what each contributed, what was declined and why, the disagreements that remain) and the drafter's own position. Each file is served exactly as uploaded, attributed to its author (for a model, its name and maker), and hashed; the drafting records are kept under <code>/canonical/</code> and are listed here so that they can be read. Nothing is edited after upload; a correction is a new file. <strong>Not in the repository:</strong> the raw response files returned by each model, the research reports the records cite, and the drafting record for Charter revision 8.</p>
 {% if record.items.length == 0 %}
 <p class="notice" role="note"><strong>The record is not yet in this repository.</strong></p>
 {% else %}
@@ -14,7 +14,7 @@ description: Every research report, the briefing, and every model response from 
   <thead><tr><th scope="col">Document</th><th scope="col">Kind</th><th scope="col">Author / model</th><th scope="col">Maker / lab</th><th scope="col">Date</th></tr></thead>
   <tbody>
   {% for it in items %}
-  <tr><td><a href="{{ it.url }}">{{ it.title }}</a></td><td>{{ it.kind }}</td><td>{{ it.author }}</td><td>{{ it.maker or '—' }}</td><td>{{ it.date | isoDate or '—' }}</td></tr>
+  <tr><td><a href="{{ it.url }}">{{ it.title }}</a></td><td>{{ it.kind }}</td><td>{{ it.author }}</td><td>{{ it.maker or 'none' }}</td><td>{{ it.date | isoDate or 'not stated' }}</td></tr>
   {% endfor %}
   </tbody>
 </table>

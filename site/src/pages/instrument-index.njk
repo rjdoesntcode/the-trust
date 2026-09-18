@@ -59,7 +59,7 @@ eleventyComputed:
 {% if recs.length %}
 <h2>Drafting records</h2>
 <p>Kept separate from the instrument, served exactly as uploaded and hashed like it. Readable versions are on the <a href="/record/">record</a> pages.</p>
-<ul>{% for d in recs %}<li><a href="{{ d.raw }}">{{ d.file }}</a> — SHA-512 <code class="hash">{{ d.sha512 }}</code></li>{% endfor %}</ul>
+<ul>{% for d in recs %}<li><a href="{{ d.raw }}">{{ d.file }}</a>, SHA-512 <code class="hash">{{ d.sha512 }}</code></li>{% endfor %}</ul>
 {% endif %}
 </div>
 </article>
