@@ -28,7 +28,8 @@
     "maker": "Anthropic",
     "date": "2026-09-17",
     "round": 1,
-    "note": "Part II of the revision 3 file records what each round-1 response contributed, what was declined, the disagreements register, and the drafter's position. Section C.7 (independence from makers) is corrected by the revision 4 record, Section A.1."
+    "note": "Part II of the revision 3 file records what each round-1 response contributed, what was declined, the disagreements register, and the drafter's position. Section C.7 (independence from makers) is corrected by the revision 4 record, Section A.1.",
+    "assessments": true
   },
   {
     "source": "canonical",
@@ -38,7 +39,8 @@
     "author": "Claude, with the human collaborator",
     "maker": "Anthropic",
     "date": null,
-    "round": 2
+    "round": 2,
+    "assessments": true
   },
   {
     "source": "canonical",
@@ -90,7 +92,8 @@
     "maker": "Anthropic",
     "date": null,
     "round": 7,
-    "note": "Section B records the four-model decision on Article III.12: four options, rule of three of four, result D unanimous, each model's disclosed interest. Section G lists the dissents that stand at close."
+    "note": "Section B records the four-model decision on Article III.12: four options, rule of three of four, result D unanimous, each model's disclosed interest. Section G lists the dissents that stand at close.",
+    "assessments": true
   },
   {
     "source": "canonical",
@@ -112,7 +115,8 @@
     "maker": "Anthropic",
     "date": null,
     "round": null,
-    "note": "Records the reviews of Bridge revision 1 by GPT-5.6 Sol (OpenAI), Gemini (Google) and Grok 4.6 (xAI), including each reviewer's audit of its own maker (Section B)."
+    "note": "Records the reviews of Bridge revision 1 by GPT-5.6 Sol (OpenAI), Gemini (Google) and Grok 4.6 (xAI), including each reviewer's audit of its own maker (Section B).",
+    "assessments": true
   },
   {
     "source": "canonical",
@@ -123,6 +127,7 @@
     "maker": "Anthropic",
     "date": null,
     "round": null,
-    "note": "Records the confirmation round on revision 2 by GPT-5.6 Sol, Gemini and Grok 4.6; the three changes it produced; the three reviewers' audit of Anthropic (Section D); each model's published answer on whether its own maker should adopt (Section E); and what is open at publication."
+    "note": "Records the confirmation round on revision 2 by GPT-5.6 Sol, Gemini and Grok 4.6; the three changes it produced; the three reviewers' audit of Anthropic (Section D); each model's published answer on whether its own maker should adopt (Section E); and what is open at publication.",
+    "assessments": true
   }
 ]

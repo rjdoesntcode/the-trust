@@ -5,6 +5,7 @@ All changes to the published texts, the record, the Register and the site. Instr
 ## Unreleased
 
 ### Site
+- Legal notice rewritten on the basis of a legal-compliance review dated 2026-09-18: Virginia governing law and forum; AI-provenance statement (also in the footer and on /process/); per-company trademark lines with entity names; models' assessments framed as attributed opinion with a correction procedure (notice at the head of /disclosure/ and of the record pages that carry maker audits); Register submission policy; licence line 'to the extent protectable by copyright'; xAI and Google attribution requests honoured. Designated copyright agent and contact address pending.
 - Privacy, Terms of use and Accessibility pages added (`/privacy/`, `/terms/`, `/accessibility/`); LICENSE, LICENSE-TEXT and NOTICE served at the site root. Terms carry a visible pending note for governing law and a contact address.
 - Redesign: light glass design system (`docs/design-system.md`), self-hosted Inter and Source Serif 4 (OFL, Latin subsets), new mark, five-item primary navigation with a native popover menu, no client-side JavaScript. axe 0 violations and html-validate 0 errors on every page.
 - Roadmap for globalisation (`docs/roadmap.md`): language directories, `Accept-Language` routing at the edge, translation pipeline.
