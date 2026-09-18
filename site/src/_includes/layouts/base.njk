@@ -75,7 +75,7 @@
     </div>
     <div class="fine">
       <span>{{ 'footer.privacy' | t }}</span>
-      <span>{{ 'footer.marks' | t }} <a href="/terms/#9-names-trademarks-and-third-party-rights">{{ 'footer.more' | t }}</a></span>
+      <span>{{ 'footer.marks' | t }} <a href="/terms/#s-9-names-trademarks-and-third-party-rights">{{ 'footer.more' | t }}</a></span>
       <span>{{ 'footer.license' | t }} <a href="/terms/">{{ 'nav.terms' | t }}</a> · <a href="/privacy/">{{ 'nav.privacy' | t }}</a> · <a href="/accessibility/">{{ 'nav.accessibility' | t }}</a></span>
       <span>{{ 'footer.mirrors' | t }}: {% for m in site.mirrors %}<a href="{{ m.url }}">{{ m.name }}</a>{% if not loop.last %} · {% endif %}{% endfor %}</span>
       {% if site.languages.length > 1 %}<span>{% for l in site.languages %}<a href="{{ l.path }}" hreflang="{{ l.code }}" lang="{{ l.code }}">{{ l.name }}</a>{% if not loop.last %} · {% endif %}{% endfor %}</span>{% endif %}
