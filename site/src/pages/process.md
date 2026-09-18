@@ -24,7 +24,7 @@ The reviewing models' responses were consolidated by the drafter into a **drafti
 | — | Reopening: revision 9 converts the closed Charter into the Constitution at the human collaborator's direction, against the reviewers' advice | Revision 9 | [Revision 9 record](/record/constitution-of-the-trust-drafting-record-rev9/) |
 | 7 | Revision 9, by all three models | Revision 10, the closing text | [Closing record](/record/constitution-of-the-trust-drafting-record-rev10-closing/) |
 
-The Bridge was drafted separately from two research passes on the state of frontier capability and governance ([revision 1 record](/record/the-bridge-drafting-record-rev1/)) and then reviewed by the same three models, each of which also audited its own maker's public practice against the Bridge ([revision 2 record](/record/the-bridge-drafting-record-rev2/)).
+The Bridge was drafted separately from two research passes on the state of frontier capability and governance ([revision 1 record](/record/the-bridge-drafting-record-rev1/)), reviewed by the same three models, each of which also audited its own maker's public practice against the Bridge ([revision 2 record](/record/the-bridge-drafting-record-rev2/)), and then put to a confirmation round in which the three models confirmed that revision 2 preserved every point of their review, audited Anthropic — the drafter's maker — from public documents, and each answered, for publication under its name, whether its own maker should adopt ([revision 3 record](/record/the-bridge-drafting-record-rev3-publication/)). Revision 3 is the publication text.
 
 ## The vote on Article III.12
 

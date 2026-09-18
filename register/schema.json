@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://rjdoesntcode.github.io/the-trust/register/schema.json",
+  "$id": "https://trust.forum/register/schema.json",
   "title": "Bridge Register entry",
   "description": "One line of /register/register.jsonl. The Register is append-only (Bridge Article 11.2): an entry is never edited or removed; a mistake is corrected by appending a new entry whose `supersedes` names the superseded entry. Entry types follow what Article 11.1 says the Register holds. Field requirements follow Article 14.1 (declaration), 3.3 (thresholds), 5.2 and 5.4 (modification, withholding), 6.2 (incidents), 4.7 and 8.2 (findings), 10 (annual verification) and 14.3 (renewal, lapse). The Register records what parties have declared; it does not itself confer, verify or enforce anything.",
   "type": "object",

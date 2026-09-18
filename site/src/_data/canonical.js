@@ -94,7 +94,8 @@ export default function () {
     const revs = instrumentDocs.filter((d) => d.instrument === inst.slug);
     const expected = revisions.filter((r) => r.instrument === inst.slug).sort((a, b) => b.rev - a.rev);
     const latest = revs.find((d) => d.status === 'current') || revs[0] || null;
-    return { ...inst, revisions: revs, latest, expected };
+    const missing = expected.filter((e) => !revs.some((d) => d.file === e.file));
+    return { ...inst, revisions: revs, latest, expected, missing };
   });
   const bySlug = Object.fromEntries(list.map((i) => [i.slug, i]));
   return { documents, instrumentDocs, list, bySlug, draftingRecords: documents.filter((d) => d.kind === 'drafting-record'), others: documents.filter((d) => d.kind === 'other') };

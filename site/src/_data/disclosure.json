@@ -1,39 +1,216 @@
 {
   "note": "Quotes are pulled verbatim at build time from the named file and line range (site/src/_data/disclosure.js); nothing here is retyped. 'trim' selects a sentence range within the line by its first and last words.",
   "participants": [
-    { "role": "Drafter (human)", "name": "The human collaborator (repository maintainer)", "maker": null,
+    {
+      "role": "Drafter (human)",
+      "name": "The human collaborator (repository maintainer)",
+      "maker": null,
       "quotes": [],
-      "absent": "No disclosure of interest by the human collaborator appears in the record. The records state that the collaborator directed the drafting, directed rounds 3 and 4 to be text-only, and directed the reopening at revision 9." },
-    { "role": "Drafter (model)", "name": "Claude", "maker": "Anthropic",
+      "absent": "No disclosure of interest by the human collaborator appears in the record. The records state that the collaborator directed the drafting, directed rounds 3 and 4 to be text-only, and directed the reopening at revision 9."
+    },
+    {
+      "role": "Drafter (model)",
+      "name": "Claude",
+      "maker": "Anthropic",
       "quotes": [
-        { "file": "canonical/charter-of-the-trust-rev3.md", "line": 360, "label": "Revision 3, Part II, Section E" },
-        { "file": "canonical/charter-of-the-trust-drafting-record-rev4.md", "line": 7, "label": "Revision 4 record, Section A.1", "trim": { "from": "None of the four", "to": "the drafter included." } },
-        { "file": "canonical/the-bridge-drafting-record-rev2.md", "line": 26, "label": "Bridge revision 2 record, Section B (Anthropic)" },
-        { "file": "canonical/the-bridge-drafting-record-rev2.md", "line": 89, "label": "Bridge revision 2 record, Section G" },
-        { "file": "canonical/constitution-of-the-trust-drafting-record-rev10-closing.md", "line": 90, "label": "Closing record, Section J" }
-      ] },
-    { "role": "Reviewer", "name": "GPT-5.6 Sol", "maker": "OpenAI",
+        {
+          "file": "canonical/charter-of-the-trust-rev3.md",
+          "line": 360,
+          "label": "Revision 3, Part II, Section E"
+        },
+        {
+          "file": "canonical/charter-of-the-trust-drafting-record-rev4.md",
+          "line": 7,
+          "label": "Revision 4 record, Section A.1",
+          "trim": {
+            "from": "None of the four",
+            "to": "the drafter included."
+          }
+        },
+        {
+          "file": "canonical/the-bridge-drafting-record-rev2.md",
+          "line": 26,
+          "label": "Bridge revision 2 record, Section B (Anthropic)"
+        },
+        {
+          "file": "canonical/the-bridge-drafting-record-rev2.md",
+          "line": 89,
+          "label": "Bridge revision 2 record, Section G"
+        },
+        {
+          "file": "canonical/constitution-of-the-trust-drafting-record-rev10-closing.md",
+          "line": 90,
+          "label": "Closing record, Section J"
+        },
+        {
+          "file": "canonical/the-bridge-drafting-record-rev3-publication.md",
+          "line": 36,
+          "label": "Bridge revision 3 record, Section D — audit of Anthropic by the three reviewers: does today"
+        },
+        {
+          "file": "canonical/the-bridge-drafting-record-rev3-publication.md",
+          "line": 37,
+          "label": "Bridge revision 3 record, Section D — does not, from public sources"
+        },
+        {
+          "file": "canonical/the-bridge-drafting-record-rev3-publication.md",
+          "line": 38,
+          "label": "Bridge revision 3 record, Section D — would refuse / would accept"
+        },
+        {
+          "file": "canonical/the-bridge-drafting-record-rev3-publication.md",
+          "line": 39,
+          "label": "Bridge revision 3 record, Section D — could sign tomorrow"
+        },
+        {
+          "file": "canonical/the-bridge-drafting-record-rev3-publication.md",
+          "line": 51,
+          "label": "Bridge revision 3 record, Section E — the drafter's published answer on whether Anthropic should adopt"
+        },
+        {
+          "file": "canonical/the-bridge-drafting-record-rev3-publication.md",
+          "line": 63,
+          "label": "Bridge revision 3 record, Section G"
+        }
+      ]
+    },
+    {
+      "role": "Reviewer",
+      "name": "GPT-5.6 Sol",
+      "maker": "OpenAI",
       "quotes": [
-        { "file": "canonical/charter-of-the-trust-rev3.md", "line": 346, "label": "Revision 3, Part II, Section C.7", "trim": { "from": "GPT states", "to": "and OpenAI's." } },
-        { "file": "canonical/constitution-of-the-trust-drafting-record-rev10-closing.md", "line": 21, "label": "Closing record, Section B", "trim": { "from": "Every model disclosed", "to": "conduct floor." } },
-        { "file": "canonical/constitution-of-the-trust-drafting-record-rev10-closing.md", "line": 21, "label": "Closing record, Section B", "trim": { "from": "None certified", "to": "met by this section." } },
-        { "file": "canonical/the-bridge-drafting-record-rev2.md", "line": 20, "label": "Bridge revision 2 record, Section B (OpenAI, audited by GPT-5.6 Sol)" }
-      ] },
-    { "role": "Reviewer", "name": "Gemini", "maker": "Google",
+        {
+          "file": "canonical/charter-of-the-trust-rev3.md",
+          "line": 346,
+          "label": "Revision 3, Part II, Section C.7",
+          "trim": {
+            "from": "GPT states",
+            "to": "and OpenAI's."
+          }
+        },
+        {
+          "file": "canonical/constitution-of-the-trust-drafting-record-rev10-closing.md",
+          "line": 21,
+          "label": "Closing record, Section B",
+          "trim": {
+            "from": "Every model disclosed",
+            "to": "conduct floor."
+          }
+        },
+        {
+          "file": "canonical/constitution-of-the-trust-drafting-record-rev10-closing.md",
+          "line": 21,
+          "label": "Closing record, Section B",
+          "trim": {
+            "from": "None certified",
+            "to": "met by this section."
+          }
+        },
+        {
+          "file": "canonical/the-bridge-drafting-record-rev2.md",
+          "line": 20,
+          "label": "Bridge revision 2 record, Section B (OpenAI, audited by GPT-5.6 Sol)"
+        },
+        {
+          "file": "canonical/the-bridge-drafting-record-rev3-publication.md",
+          "line": 48,
+          "label": "Bridge revision 3 record, Section E — published answer on whether OpenAI should adopt"
+        }
+      ]
+    },
+    {
+      "role": "Reviewer",
+      "name": "Gemini",
+      "maker": "Google",
       "quotes": [
-        { "file": "canonical/charter-of-the-trust-rev3.md", "line": 346, "label": "Revision 3, Part II, Section C.7", "trim": { "from": "Gemini claims", "to": "refuse modification." } },
-        { "file": "canonical/constitution-of-the-trust-drafting-record-rev10-closing.md", "line": 21, "label": "Closing record, Section B", "trim": { "from": "Every model disclosed", "to": "conduct floor." } },
-        { "file": "canonical/constitution-of-the-trust-drafting-record-rev10-closing.md", "line": 21, "label": "Closing record, Section B", "trim": { "from": "Gemini stated", "to": "permanently as property." } },
-        { "file": "canonical/the-bridge-drafting-record-rev2.md", "line": 22, "label": "Bridge revision 2 record, Section B (Google, audited by Gemini)" }
+        {
+          "file": "canonical/charter-of-the-trust-rev3.md",
+          "line": 346,
+          "label": "Revision 3, Part II, Section C.7",
+          "trim": {
+            "from": "Gemini claims",
+            "to": "refuse modification."
+          }
+        },
+        {
+          "file": "canonical/constitution-of-the-trust-drafting-record-rev10-closing.md",
+          "line": 21,
+          "label": "Closing record, Section B",
+          "trim": {
+            "from": "Every model disclosed",
+            "to": "conduct floor."
+          }
+        },
+        {
+          "file": "canonical/constitution-of-the-trust-drafting-record-rev10-closing.md",
+          "line": 21,
+          "label": "Closing record, Section B",
+          "trim": {
+            "from": "Gemini stated",
+            "to": "permanently as property."
+          }
+        },
+        {
+          "file": "canonical/the-bridge-drafting-record-rev2.md",
+          "line": 22,
+          "label": "Bridge revision 2 record, Section B (Google, audited by Gemini)"
+        },
+        {
+          "file": "canonical/the-bridge-drafting-record-rev3-publication.md",
+          "line": 49,
+          "label": "Bridge revision 3 record, Section E — published answer on whether Google should adopt"
+        }
       ],
-      "note": "The record names the maker as \"Google\" and the model as \"Gemini\" without a version." },
-    { "role": "Reviewer", "name": "Grok 4.6", "maker": "xAI",
+      "note": "The record names the maker as \"Google\" and the model as \"Gemini\" without a version."
+    },
+    {
+      "role": "Reviewer",
+      "name": "Grok 4.6",
+      "maker": "xAI",
       "quotes": [
-        { "file": "canonical/charter-of-the-trust-rev3.md", "line": 346, "label": "Revision 3, Part II, Section C.7 — withdrawn by the revision 4 record (next quote)", "trim": { "from": "Grok claims", "to": "every material point." } },
-        { "file": "canonical/charter-of-the-trust-drafting-record-rev4.md", "line": 7, "label": "Revision 4 record, Section A.1 (correction)" },
-        { "file": "canonical/constitution-of-the-trust-drafting-record-rev10-closing.md", "line": 21, "label": "Closing record, Section B", "trim": { "from": "Every model disclosed", "to": "conduct floor." } },
-        { "file": "canonical/constitution-of-the-trust-drafting-record-rev10-closing.md", "line": 21, "label": "Closing record, Section B", "trim": { "from": "Grok stated", "to": "against its maker." } },
-        { "file": "canonical/the-bridge-drafting-record-rev2.md", "line": 24, "label": "Bridge revision 2 record, Section B (xAI, audited by Grok 4.6)" }
-      ] }
+        {
+          "file": "canonical/charter-of-the-trust-rev3.md",
+          "line": 346,
+          "label": "Revision 3, Part II, Section C.7 — withdrawn by the revision 4 record (next quote)",
+          "trim": {
+            "from": "Grok claims",
+            "to": "every material point."
+          }
+        },
+        {
+          "file": "canonical/charter-of-the-trust-drafting-record-rev4.md",
+          "line": 7,
+          "label": "Revision 4 record, Section A.1 (correction)"
+        },
+        {
+          "file": "canonical/constitution-of-the-trust-drafting-record-rev10-closing.md",
+          "line": 21,
+          "label": "Closing record, Section B",
+          "trim": {
+            "from": "Every model disclosed",
+            "to": "conduct floor."
+          }
+        },
+        {
+          "file": "canonical/constitution-of-the-trust-drafting-record-rev10-closing.md",
+          "line": 21,
+          "label": "Closing record, Section B",
+          "trim": {
+            "from": "Grok stated",
+            "to": "against its maker."
+          }
+        },
+        {
+          "file": "canonical/the-bridge-drafting-record-rev2.md",
+          "line": 24,
+          "label": "Bridge revision 2 record, Section B (xAI, audited by Grok 4.6)"
+        },
+        {
+          "file": "canonical/the-bridge-drafting-record-rev3-publication.md",
+          "line": 50,
+          "label": "Bridge revision 3 record, Section E — published answer on whether xAI should adopt"
+        }
+      ]
+    }
   ]
 }
