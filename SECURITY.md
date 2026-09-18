@@ -13,11 +13,20 @@ change is attributable.
   signed tag: `constitution-rev10`, `bridge-rev1`, and so on. A tag is
   never moved or deleted. Tags are the citation unit (see README, "How to
   cite").
-- **Branch protection on `main`.** Direct pushes are disabled. Changes
-  arrive by pull request, require review by a code owner, require the
-  build check (which verifies canonical hashes) to pass, and require signed
-  commits. Force pushes and branch deletion are disabled.
-- **CODEOWNERS.** Every path requires the maintainer's review.
+- **Branch protection on `main`** (a GitHub ruleset, applied by
+  `scripts/github-setup.sh`). Direct pushes are disabled. Changes arrive by
+  pull request, require the `build` check (which verifies canonical hashes)
+  to pass, require signed commits, and require review threads to be
+  resolved. Force pushes, deletion and non-linear history are disabled.
+  Nobody can bypass the ruleset, the owner included. While the repository
+  has one maintainer, no approval count is required (a person cannot
+  approve their own pull request); when a second maintainer exists, the
+  ruleset is raised to one approval with code-owner review.
+- **Tag protection.** Release tags (`constitution-*`, `bridge-*`) cannot be
+  moved, deleted or created unsigned.
+- **CODEOWNERS.** Every path names the maintainer as reviewer.
+- **Secret scanning and push protection** are enabled even though nothing
+  here is secret, so that nothing secret can be committed by mistake.
 - **Pinned dependencies.** `site/package.json` pins exact versions;
   `site/package-lock.json` is committed; CI installs with `npm ci`.
   GitHub Actions are pinned to full commit SHAs.
