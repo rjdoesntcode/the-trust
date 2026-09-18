@@ -32,7 +32,7 @@ jobs:
         working-directory: site
       - name: Verify canonical hashes, validate Register, build, check output
         run: bash scripts/build.sh
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: site/_site
   deploy-github-pages:
