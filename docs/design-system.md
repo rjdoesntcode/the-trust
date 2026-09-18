@@ -44,3 +44,7 @@ Five primary items, Constitution, Bridge, Adopt, Register, Record, and a native 
 ## Adding a language
 
 The header reserves no visual slot yet; when `/es/` lands, a language pill goes to the left of "More" (`docs/roadmap.md`).
+
+## Imagery (reserved, not yet used)
+
+The home page can carry one image behind the hero as a muted layer: desaturated toward the canvas tint, blurred 2 to 4 px, at 10 to 14 % opacity, fading to nothing before the cards. It must never carry text and never reduce contrast below the values above. Subject direction agreed with the maintainer: a person and an intelligence side by side, facing forward, away from the viewer. Only an image with clear rights is used; a Grok-generated image is credited "Created with Grok" on the legal notice.

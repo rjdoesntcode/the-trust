@@ -33,7 +33,13 @@ Review before first release. Items are in order of importance.
 27. **Globalisation** is scoped in `docs/roadmap.md` and not started, as asked.
 28. **Cloudflare observability**: enabled in `wrangler.toml` without invocation logs (privacy). I cannot read Cloudflare logs or metrics from a session; the dashboard is the place.
 
-29. **Terms of use and Privacy** are drafted and published. Two fields are yours and are marked *pending* on the page: the **governing law and forum** (section 11) and a **contact address** (a role address, e.g. `contact@trust.forum`, since the site promises no personal addresses). Tell me both and I will fill them in. The privacy page's factual claims (no cookies, no scripts, no logs; Cloudflare invocation logs off) are true of the current configuration and would need updating if that changes.
+29. **Legal notice and Privacy** follow the legal-compliance review you supplied (2026-09-18): Virginia law and forum are in; the terms page is a notice, not a contract. Still yours, from that review's own list:
+    - **Register a DMCA designated agent** with the US Copyright Office (online directory, $6, renew every three years) and give me the agent's name, postal address and email for section 9 of the legal notice. Until then the Register has no §512 safe harbor.
+    - **A role contact address** (for corrections, privacy questions and the agent). Marked pending on the pages.
+    - **The copyright line** reads "© 2026 the publisher of trust.forum" because you have not said whether to publish a name.
+    - **Media/publishers' liability insurance** and **whether to form an entity** (a Virginia LLC) before soliciting Register declarations at scale: the review recommends both; neither is a repository change.
+    - **Keep the site non-commercial and untargeted**: no analytics, cookies, accounts, ads, donations or EU-directed features without redoing the privacy and AI-Act analysis. The build's output check enforces the scripts part.
+30. **Images.** Three images were supplied for a muted home-page background. They are not on the site and not in the repository: the first appears to be licensed stock and the others have no provenance, and the repository is public under CC BY-SA. When an image with clear rights exists (a Grok-generated image is fine, credited "Created with Grok"), the home page has a place for it as a low-opacity, blurred layer behind the hero; the treatment is described in docs/design-system.md.
 
 ## Could not do from this environment
 

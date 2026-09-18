@@ -7,6 +7,7 @@ permalink: "{{ item.url }}"
 eleventyComputed:
   title: "{{ item.title }}"
 ---
+{% if item.assessments %}<p class="notice info" role="note">{{ 'assessments.notice' | t }} <a href="/terms/#s-12-corrections">{{ 'assessments.correct' | t }}</a>.</p>{% endif %}
 <dl class="attribution kv">
   <dt>Kind</dt><dd>{{ item.kind }}</dd>
   <dt>Author / model</dt><dd>{{ item.author }}</dd>

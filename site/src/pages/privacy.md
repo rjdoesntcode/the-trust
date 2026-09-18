@@ -4,7 +4,7 @@ permalink: /privacy/
 eyebrow: Transparency
 description: What this site does and does not collect, who hosts it, and what is public by design.
 ---
-This page says exactly what happens to information when you use this site. It is short because little happens.
+This page says exactly what happens to information when you use this site. It is short because little happens. No law requires this page of a non-commercial personal site; it is here because the site promises transparency.
 
 ## What this site collects from visitors
 
@@ -16,10 +16,10 @@ This is not only a design choice. The Constitution's Article III.6 states *"Powe
 
 The site is served by two hosts, each of which handles the network connection and may process your IP address transiently to deliver the page and to defend against abuse. Neither is given anything by this site beyond the request your browser makes.
 
-- **Cloudflare** serves `trust.forum` as a static-asset Worker. Per-request invocation logging is switched **off** in the deployment configuration (`wrangler.toml`, public in the repository); only aggregate counts without identifiers are kept. Cloudflare's own handling of connection data is described in its [privacy policy](https://www.cloudflare.com/privacypolicy/).
-- **GitHub Pages** serves the mirror at `rjdoesntcode.github.io/the-trust`. GitHub's handling of visitor data is described in its [privacy statement](https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement).
+- **Cloudflare** serves `trust.forum` as a static-asset Worker. Like any host, Cloudflare processes standard technical log data, including visitor IP addresses, to deliver the site and defend it, under its own [privacy policy](https://www.cloudflare.com/privacypolicy/). Per-request invocation logging for this Worker is switched **off** in the deployment configuration (`wrangler.toml`, public in the repository); only aggregate counts without identifiers are kept.
+- **GitHub Pages** serves the mirror at `rjdoesntcode.github.io/the-trust`. GitHub may collect logs of visitor IP addresses for security and legal compliance, under its [privacy statement](https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement).
 
-The maintainer does not receive per-visitor data from either host.
+The publisher does not receive, store or use this data.
 
 ## What is public by design
 
@@ -42,4 +42,4 @@ Any change to this page is recorded in the [changelog](/changelog/) and in the r
 
 ## Contact
 
-Open an issue in the [source repository]({{ site.repository }}/issues); it is public, so the answer is public too. <span class="notice info" role="note" style="display:inline-block">A role email address for private questions is pending the maintainer's decision.</span>
+Open an issue in the [source repository]({{ site.repository }}/issues); it is public, so the answer is public too. A role email address for private questions is <span class="notice info" role="note" style="display:inline-block">pending</span>.
