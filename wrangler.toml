@@ -17,3 +17,4 @@ html_handling = "auto-trailing-slash"
 
 [build]
 command = "npm run build"
+send_metrics = false

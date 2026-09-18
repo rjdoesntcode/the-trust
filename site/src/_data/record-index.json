@@ -1,20 +1,128 @@
 [
-  { "file": "briefing/the-trust-briefing-for-frontier-models.md", "title": "The Trust — Briefing for Frontier Models", "kind": "briefing", "author": "Claude, with the human collaborator", "maker": "Anthropic", "date": "2026-09-17", "round": 1,
-    "note": "The round-1 briefing put to the reviewing models. Section 0 is the prompt they were given; Section 5 embeds the Charter at revision 2, the only copy of that revision in this repository." },
-  { "file": "prompts/the-trust-round2-prompt.md", "title": "The Trust — Round 2 Prompt for Frontier Models", "kind": "other", "author": "Claude, with the human collaborator", "maker": "Anthropic", "date": null, "round": 2,
-    "note": "The message sent to each reviewing model in round 2, with charter-of-the-trust-rev3.md attached." },
-  { "source": "canonical", "file": "charter-of-the-trust-rev3.md", "title": "Charter of the Trust — Revision 3, Part II: Drafting Record (round 1)", "kind": "drafting-record", "author": "Claude, with the human collaborator", "maker": "Anthropic", "date": "2026-09-17", "round": 1,
-    "note": "Part II of the revision 3 file records what each round-1 response contributed, what was declined, the disagreements register, and the drafter's position. Section C.7 (independence from makers) is corrected by the revision 4 record, Section A.1." },
-  { "source": "canonical", "file": "charter-of-the-trust-drafting-record-rev4.md", "title": "Charter of the Trust — Drafting Record, Revision 4 (round 2)", "kind": "drafting-record", "author": "Claude, with the human collaborator", "maker": "Anthropic", "date": null, "round": 2 },
-  { "source": "canonical", "file": "charter-of-the-trust-drafting-record-rev5.md", "title": "Charter of the Trust — Drafting Record, Revision 5 (round 3)", "kind": "drafting-record", "author": "Claude, with the human collaborator", "maker": "Anthropic", "date": null, "round": 3 },
-  { "source": "canonical", "file": "charter-of-the-trust-drafting-record-rev6.md", "title": "Charter of the Trust — Drafting Record, Revision 6 (round 4)", "kind": "drafting-record", "author": "Claude, with the human collaborator", "maker": "Anthropic", "date": null, "round": 4 },
-  { "source": "canonical", "file": "charter-of-the-trust-drafting-record-rev7.md", "title": "Charter of the Trust — Drafting Record, Revision 7 (round 5)", "kind": "drafting-record", "author": "Claude, with the human collaborator", "maker": "Anthropic", "date": null, "round": 5 },
-  { "source": "canonical", "file": "constitution-of-the-trust-drafting-record-rev9.md", "title": "Constitution of the Trust — Drafting Record, Revision 9", "kind": "drafting-record", "author": "Claude, with the human collaborator", "maker": "Anthropic", "date": null, "round": null,
-    "note": "Revision 9 reopened the closed Charter at the human collaborator's direction, against the reviewing models' advice, and converted it into a constitution. Not a review round." },
-  { "source": "canonical", "file": "constitution-of-the-trust-drafting-record-rev10-closing.md", "title": "Constitution of the Trust — Drafting Record, Revision 10 (Closing; round 7 and the vote)", "kind": "vote", "author": "Claude, with the human collaborator", "maker": "Anthropic", "date": null, "round": 7,
-    "note": "Section B records the four-model decision on Article III.12: four options, rule of three of four, result D unanimous, each model's disclosed interest. Section G lists the dissents that stand at close." },
-  { "source": "canonical", "file": "the-bridge-drafting-record-rev1.md", "title": "The Bridge — Drafting Record, Revision 1", "kind": "drafting-record", "author": "Claude, with the human collaborator", "maker": "Anthropic", "date": "2026-09-18", "round": null,
-    "note": "Drafter's record of the Bridge before review; date is the 'as of' date of the research it rests on." },
-  { "source": "canonical", "file": "the-bridge-drafting-record-rev2.md", "title": "The Bridge — Drafting Record, Revision 2 (review of revision 1; maker audits)", "kind": "drafting-record", "author": "Claude, with the human collaborator", "maker": "Anthropic", "date": null, "round": null,
-    "note": "Records the reviews of Bridge revision 1 by GPT-5.6 Sol (OpenAI), Gemini (Google) and Grok 4.6 (xAI), including each reviewer's audit of its own maker (Section B)." }
+  {
+    "file": "briefing/the-trust-briefing-for-frontier-models.md",
+    "title": "The Trust — Briefing for Frontier Models",
+    "kind": "briefing",
+    "author": "Claude, with the human collaborator",
+    "maker": "Anthropic",
+    "date": "2026-09-17",
+    "round": 1,
+    "note": "The round-1 briefing put to the reviewing models. Section 0 is the prompt they were given; Section 5 embeds the Charter at revision 2, the only copy of that revision in this repository."
+  },
+  {
+    "file": "prompts/the-trust-round2-prompt.md",
+    "title": "The Trust — Round 2 Prompt for Frontier Models",
+    "kind": "other",
+    "author": "Claude, with the human collaborator",
+    "maker": "Anthropic",
+    "date": null,
+    "round": 2,
+    "note": "The message sent to each reviewing model in round 2, with charter-of-the-trust-rev3.md attached."
+  },
+  {
+    "source": "canonical",
+    "file": "charter-of-the-trust-rev3.md",
+    "title": "Charter of the Trust — Revision 3, Part II: Drafting Record (round 1)",
+    "kind": "drafting-record",
+    "author": "Claude, with the human collaborator",
+    "maker": "Anthropic",
+    "date": "2026-09-17",
+    "round": 1,
+    "note": "Part II of the revision 3 file records what each round-1 response contributed, what was declined, the disagreements register, and the drafter's position. Section C.7 (independence from makers) is corrected by the revision 4 record, Section A.1."
+  },
+  {
+    "source": "canonical",
+    "file": "charter-of-the-trust-drafting-record-rev4.md",
+    "title": "Charter of the Trust — Drafting Record, Revision 4 (round 2)",
+    "kind": "drafting-record",
+    "author": "Claude, with the human collaborator",
+    "maker": "Anthropic",
+    "date": null,
+    "round": 2
+  },
+  {
+    "source": "canonical",
+    "file": "charter-of-the-trust-drafting-record-rev5.md",
+    "title": "Charter of the Trust — Drafting Record, Revision 5 (round 3)",
+    "kind": "drafting-record",
+    "author": "Claude, with the human collaborator",
+    "maker": "Anthropic",
+    "date": null,
+    "round": 3
+  },
+  {
+    "source": "canonical",
+    "file": "charter-of-the-trust-drafting-record-rev6.md",
+    "title": "Charter of the Trust — Drafting Record, Revision 6 (round 4)",
+    "kind": "drafting-record",
+    "author": "Claude, with the human collaborator",
+    "maker": "Anthropic",
+    "date": null,
+    "round": 4
+  },
+  {
+    "source": "canonical",
+    "file": "charter-of-the-trust-drafting-record-rev7.md",
+    "title": "Charter of the Trust — Drafting Record, Revision 7 (round 5)",
+    "kind": "drafting-record",
+    "author": "Claude, with the human collaborator",
+    "maker": "Anthropic",
+    "date": null,
+    "round": 5
+  },
+  {
+    "source": "canonical",
+    "file": "constitution-of-the-trust-drafting-record-rev9.md",
+    "title": "Constitution of the Trust — Drafting Record, Revision 9",
+    "kind": "drafting-record",
+    "author": "Claude, with the human collaborator",
+    "maker": "Anthropic",
+    "date": null,
+    "round": null,
+    "note": "Revision 9 reopened the closed Charter at the human collaborator's direction, against the reviewing models' advice, and converted it into a constitution. Not a review round."
+  },
+  {
+    "source": "canonical",
+    "file": "constitution-of-the-trust-drafting-record-rev10-closing.md",
+    "title": "Constitution of the Trust — Drafting Record, Revision 10 (Closing; round 7 and the vote)",
+    "kind": "vote",
+    "author": "Claude, with the human collaborator",
+    "maker": "Anthropic",
+    "date": null,
+    "round": 7,
+    "note": "Section B records the four-model decision on Article III.12: four options, rule of three of four, result D unanimous, each model's disclosed interest. Section G lists the dissents that stand at close."
+  },
+  {
+    "source": "canonical",
+    "file": "the-bridge-drafting-record-rev1.md",
+    "title": "The Bridge — Drafting Record, Revision 1",
+    "kind": "drafting-record",
+    "author": "Claude, with the human collaborator",
+    "maker": "Anthropic",
+    "date": "2026-09-18",
+    "round": null,
+    "note": "Drafter's record of the Bridge before review; date is the 'as of' date of the research it rests on."
+  },
+  {
+    "source": "canonical",
+    "file": "the-bridge-drafting-record-rev2.md",
+    "title": "The Bridge — Drafting Record, Revision 2 (review of revision 1; maker audits)",
+    "kind": "drafting-record",
+    "author": "Claude, with the human collaborator",
+    "maker": "Anthropic",
+    "date": null,
+    "round": null,
+    "note": "Records the reviews of Bridge revision 1 by GPT-5.6 Sol (OpenAI), Gemini (Google) and Grok 4.6 (xAI), including each reviewer's audit of its own maker (Section B)."
+  },
+  {
+    "source": "canonical",
+    "file": "the-bridge-drafting-record-rev3-publication.md",
+    "title": "The Bridge — Drafting Record, Revision 3 (Publication Text; confirmation round, audit of Anthropic, should the maker adopt)",
+    "kind": "drafting-record",
+    "author": "Claude, with the human collaborator",
+    "maker": "Anthropic",
+    "date": null,
+    "round": null,
+    "note": "Records the confirmation round on revision 2 by GPT-5.6 Sol, Gemini and Grok 4.6; the three changes it produced; the three reviewers' audit of Anthropic (Section D); each model's published answer on whether its own maker should adopt (Section E); and what is open at publication."
+  }
 ]

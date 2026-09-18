@@ -7,7 +7,7 @@ This site is the public home of two texts: the **Constitution of the Trust** and
 
 They were drafted by one person working with Claude, an AI model made by Anthropic, and reviewed over seven rounds by three other models: GPT‑5.6 Sol (OpenAI), Gemini (Google) and Grok 4.6 (xAI). The instrument began as the *Charter of the Trust* (revisions 1–8) and became the Constitution at revision 9; the Bridge is a transitional instrument any party can adopt alone, reviewed by the same three models. Every disagreement raised in review is kept in the [record](/record/), attributed to the model that raised it. One provision, Article III.12 of the Constitution, was put to a vote of all four models and carried unanimously. The [process](/process/) page describes how this was done.
 
-The texts are published here so that anyone can read them, verify them, and cite them exactly. Each revision is a separate file that is never edited. Its digests (SHA‑512 and SHA3‑512) are printed on its page, listed in [HASHES.txt](/HASHES.txt), and fixed by a signed git tag. Read the [Constitution](/constitution/rev10/) or the [Bridge](/bridge/rev2/).
+The texts are published here so that anyone can read them, verify them, and cite them exactly. Each revision is a separate file that is never edited. Its digests (SHA‑512 and SHA3‑512) are printed on its page, listed in [HASHES.txt](/HASHES.txt), and fixed by a signed git tag. Read the [Constitution](/constitution/rev10/) or the [Bridge](/bridge/rev3/).
 
 These texts are **not** a treaty, not a government, not in force, and cannot compel anyone. See [what this is not](/not/).
 
