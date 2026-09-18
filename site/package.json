@@ -15,9 +15,9 @@
     "validate-register": "node scripts/validate-register.mjs ../register/register.jsonl ../register/schema.json && node scripts/validate-register.mjs ../register/example-entry.jsonl ../register/schema.json"
   },
   "devDependencies": {
-    "@11ty/eleventy": "3.1.2",
-    "ajv": "8.17.1",
+    "@11ty/eleventy": "3.1.6",
+    "ajv": "8.20.0",
     "ajv-formats": "3.0.1",
-    "markdown-it": "14.3.2"
+    "markdown-it": "15.0.2"
   }
 }
