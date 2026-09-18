@@ -5,12 +5,20 @@ import { anchorsPlugin, slugify } from './anchors.mjs';
 // and punctuation are preserved exactly), no autolinking, raw HTML allowed
 // through because the texts are trusted repository content.
 export function canonicalMarkdown() {
-  return new MarkdownIt({ html: true, linkify: false, typographer: false, breaks: false }).use(anchorsPlugin);
+  return new MarkdownIt({ html: true, linkify: false, typographer: false, breaks: false }).use(anchorsPlugin).use(tableWrap);
 }
 
 // Renderer for site prose and records: same conservative settings.
 export function proseMarkdown() {
-  return new MarkdownIt({ html: true, linkify: false, typographer: false, breaks: false }).use(headingIds);
+  return new MarkdownIt({ html: true, linkify: false, typographer: false, breaks: false }).use(headingIds).use(tableWrap);
+}
+
+// Wide tables scroll inside their own box instead of overflowing the page.
+// Presentation only: the table markup and its content are unchanged.
+function tableWrap(md) {
+  const open = md.renderer.rules.table_open, close = md.renderer.rules.table_close;
+  md.renderer.rules.table_open = (t, i, o, e, self) => '<div class="table-wrap" role="group" aria-label="Table" tabindex="0">' + (open ? open(t, i, o, e, self) : self.renderToken(t, i, o));
+  md.renderer.rules.table_close = (t, i, o, e, self) => (close ? close(t, i, o, e, self) : self.renderToken(t, i, o)) + '</div>';
 }
 
 // Stable ids on prose headings so that sections of ordinary pages can be linked.

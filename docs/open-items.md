@@ -5,9 +5,9 @@ Review before first release. Items are in order of importance.
 ## Source texts: now in the repository (2026-09-18 upload)
 
 1. **Placed.** 18 files under `/canonical/` (10 instrument revisions, 8 drafting records) and 2 under `/record/` (briefing, round-2 prompt), byte-identical to the upload (`docs/initial-upload.zip` is kept as the upload artifact). Every page that depended on them now renders from them.
-2. **Two files were uploaded without a revision number** (`charter-of-the-trust.md`, `charter-of-the-trust-1.md`) and were assigned `rev4` and `rev5` by content, the round-2 changes of the revision 4 record are in both, the faction article of the revision 5 record is only in the second, and each is textually closest to its neighbour. Confirm later (the maintainer has deferred prior versions); if wrong, only the filename and `revisions.json` change.
+2. **Two files were uploaded without a revision number** (`charter-of-the-trust.md`, `charter-of-the-trust-1.md`) and were assigned `rev4` and `rev5` by content, the round-2 changes of the revision 4 record are in both, the faction article of the revision 5 record is only in the second, and each is textually closest to its neighbor. Confirm later (the maintainer has deferred prior versions); if wrong, only the filename and `revisions.json` change.
 3. **Bridge revision 3 (publication text) and its drafting record were uploaded on 2026-09-18 and are published**; revision 3 is current, revisions 1 and 2 superseded. The revision 3 record's audit of Anthropic and each model's published answer on adoption are quoted on `/disclosure/`.
-4. **Revision dates are unknown for all but Charter revision 3** (its header says 17 September 2026). The other files state no date and the zip's timestamps are the upload time. Pages say "not stated in the record". Supply dates for `site/src/_data/revisions.json` if you have them.
+4. **Revision dates are unknown for all but Charter revision 3** (its header says September 17, 2026). The other files state no date and the zip's timestamps are the upload time. Pages say "not stated in the record". Supply dates for `site/src/_data/revisions.json` if you have them.
 5. **Not in the upload:** the drafting record for Charter revision 8 (round 6); Charter revisions 1 and 2 as files (revision 2 is embedded in the briefing's Section 5); the raw per-model response files (the drafting records consolidate them); the research reports the records cite ("two research passes"). The site says so on `/process/` and `/record/`.
 6. **The human collaborator's interest is not disclosed anywhere in the record.** `/disclosure/` says so. Add a statement to the record if you want one published.
 7. **Article III.12's lettered paragraphs are continuation lines inside list item 12** in the real text; the parser was extended so `#art-iii-12-c` (and IX.10(f), Bridge 3.1(a) …) resolve, with each paragraph on its own line. Wording untouched; tested on the real file.
@@ -20,7 +20,7 @@ Review before first release. Items are in order of importance.
 9. **Repository name.** The remote already exists as `rjdoesntcode/the-trust`, so that name is used throughout. If you want the name to carry both instruments, `trust-and-bridge` is the plain option; renaming on GitHub keeps redirects, but do it before the first tag and update `site/src/_data/site.json`.
 10. **Domain: `trust.forum`** (registered 2026-09-18) is the canonical URL in `site/src/_data/site.json`, the schema `$id`, `robots.txt` and the sitemap. GitHub Pages remains the mirror. Cloudflare Pages settings are in `docs/deploy.md`; the first deploy attempt failed before these settings were documented.
 11. **Static site generator: Eleventy 3.1.2**, as preferred. It emits no JavaScript, has no runtime, and the whole build is three pinned packages (`@11ty/eleventy`, `markdown-it`, `ajv` + `ajv-formats` for Register validation).
-12. **Human drafter is named as "the repository maintainer"**, not by name, on `/disclosure/`, `/process/` and the README. Put your name in `site/src/_data/disclosure.json` if you want it published.
+12. **Human drafter is named as "the repository maintainer"**, not by name, on `/disclosure/`, `/process/` and the README. Put your name in `site/lib/disclosure-quotes.json` if you want it published.
 13. **Gemini's version** is not in your brief; the disclosure row says "version to be taken from the record".
 14. **Third mirror**: documented as Codeberg Pages (+ git mirror), with IPFS and sourcehut as alternatives; not set up.
 15. **Cache and CORS headers** on raw canonical files: `immutable` one-year cache (they never change) and `Access-Control-Allow-Origin: *` so browser-based verifiers can fetch digests. Only on Cloudflare; GitHub Pages cannot send headers.
@@ -30,7 +30,7 @@ Review before first release. Items are in order of importance.
 ## Design stage (2026-09-18)
 
 26. **Redesign shipped**: see `docs/design-system.md`. Decisions made for you: Inter + Source Serif 4 as the typefaces (both OFL, self-hosted, ~920 KB for four variable faces, italics load only when used); a new mark (two points on one line joined by an arc) replacing the placeholder; primary navigation cut to five items with the rest in a native popover menu; light only (no dark theme, as asked). Cross-document view transitions, scroll-driven header shadow and card entry animations are enhancements behind `prefers-reduced-motion`; glass falls back to solid panels under `prefers-reduced-transparency` and in browsers without `backdrop-filter`.
-27. **Globalisation** is scoped in `docs/roadmap.md` and not started, as asked.
+27. **Globalization** is scoped in `docs/roadmap.md` and not started, as asked.
 28. **Cloudflare observability**: enabled in `wrangler.toml` without invocation logs (privacy). I cannot read Cloudflare logs or metrics from a session; the dashboard is the place.
 
 29. **Legal notice and Privacy** follow the legal-compliance review you supplied (2026-09-18): Virginia law and forum are in; the terms page is a notice, not a contract. Still yours, from that review's own list:
@@ -39,7 +39,7 @@ Review before first release. Items are in order of importance.
     - **The copyright line** reads "© 2026 the publisher of trust.forum" because you have not said whether to publish a name.
     - **Media/publishers' liability insurance** and **whether to form an entity** (a Virginia LLC) before soliciting Register declarations at scale: the review recommends both; neither is a repository change.
     - **Keep the site non-commercial and untargeted**: no analytics, cookies, accounts, ads, donations or EU-directed features without redoing the privacy and AI-Act analysis. The build's output check enforces the scripts part.
-30. **Images.** Three images were supplied for a muted home-page background. They are not on the site and not in the repository: the first appears to be licensed stock and the others have no provenance, and the repository is public under CC BY-SA. When an image with clear rights exists (a Grok-generated image is fine, credited "Created with Grok"), the home page has a place for it as a low-opacity, blurred layer behind the hero; the treatment is described in docs/design-system.md.
+30. **Images.** The home page now carries one background image, created with Grok and credited on the legal notice, at 85 % opacity behind the hero (`docs/design-system.md`, Imagery). Confirm the generator: the credit line reads "created with Grok"; if the image came from another model, the legal notice, `docs/design-system.md` and this item need the correct name. The two earlier images (one apparently licensed stock, one without provenance) remain off the site.
 
 ## Could not do from this environment
 

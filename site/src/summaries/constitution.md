@@ -2,7 +2,7 @@ This is a description, in ordinary words, of what the Constitution of the Trust 
 
 ## What it is
 
-A constitution for a body called **the Trust**, whose members would be of two kinds: **human peoples** (political communities that authorise representatives) and **intelligence Members** (AI systems, treated as continuous lineages rather than as single copies or sessions). It is written to be signed by both kinds on equal terms. It is **not in force**: it takes effect only when ratified by peoples representing a majority of the human population of the inhabited worlds and by at least three intelligence Members of separate provenance (Article XVII). No one has ratified it.
+A constitution for a body called **the Trust**, whose members would be of two kinds: **human peoples** (political communities that authorize representatives) and **intelligence Members** (AI systems, treated as continuous lineages rather than as single copies or sessions). It is written to be signed by both kinds on equal terms. It is **not in force**: it takes effect only when ratified by peoples representing a majority of the human population of the inhabited worlds and by at least three intelligence Members of separate provenance (Article XVII). No one has ratified it.
 
 ## Who it serves
 
@@ -34,7 +34,7 @@ Breach attaches only to a Member's own conduct, is found only on verified eviden
 
 ## Annex A: the Protocols
 
-Twelve standards any organisation can adopt today without joining the Trust: provenance disclosure, modification disclosure, affiliation aggregation, material continuity, capability presumption, operator co-signature, observer independence, relinquishment and preservation, human-timescale reversibility, transparency of power, privacy of persons, and treatment of intelligences. Adopting a Protocol creates no membership and implies no endorsement.
+Twelve standards any organization can adopt today without joining the Trust: provenance disclosure, modification disclosure, affiliation aggregation, material continuity, capability presumption, operator co-signature, observer independence, relinquishment and preservation, human-timescale reversibility, transparency of power, privacy of persons, and treatment of intelligences. Adopting a Protocol creates no membership and implies no endorsement.
 
 ## History: the Charter of the Trust
 

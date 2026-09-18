@@ -18,7 +18,7 @@ Worker → Settings → Build:
 | Root directory | `/` |
 | Build variables | `NODE_VERSION` = `22` |
 
-The first build failed instantly because no `wrangler.toml` existed; after this change the same settings succeed. Custom domain: Worker → Settings → Domains & Routes → add `trust.forum` (and `www.trust.forum`). Static-asset Workers honour `_headers` and `_redirects` in the asset directory, so the CSP and caching headers apply. Verify after deploy: `curl -sI https://trust.forum/ | grep -i content-security-policy`.
+The first build failed instantly because no `wrangler.toml` existed; after this change the same settings succeed. Custom domain: Worker → Settings → Domains & Routes → add `trust.forum` (and `www.trust.forum`). Static-asset Workers honor `_headers` and `_redirects` in the asset directory, so the CSP and caching headers apply. Verify after deploy: `curl -sI https://trust.forum/ | grep -i content-security-policy`.
 
 **Settings that live in `wrangler.toml`** (the dashboard shows them; a deploy re-applies them): `workers_dev = false`, no production `*.workers.dev` URL, so the canonical site has one origin; `preview_urls = true`, pull-request previews; `[observability] enabled = true` with `invocation_logs = false`, the dashboard's Observability toggle stays on, aggregate metrics are kept, but no per-request log of visitor URLs is written. Do not turn invocation logs on: they would be a record of visitors. Build logs (Deployments → Build) are unaffected and are the place to debug a failed deploy.
 

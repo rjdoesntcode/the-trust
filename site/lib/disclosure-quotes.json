@@ -1,5 +1,5 @@
 {
-  "note": "Quotes are pulled verbatim at build time from the named file and line range (site/src/_data/disclosure.js); nothing here is retyped. 'trim' selects a sentence range within the line by its first and last words.",
+  "note": "Quotes are pulled verbatim at build time from the named file and line range (site/src/_data/disclosure.js, spec in site/lib/disclosure-quotes.json); nothing here is retyped. 'trim' selects a sentence range within the line by its first and last words.",
   "participants": [
     {
       "role": "Drafter (human)",

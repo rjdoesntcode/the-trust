@@ -6,7 +6,7 @@ Items in order. Nothing below changes a canonical text; every item is site, tool
 
 Light glassmorphism redesign, pure CSS, zero client-side JavaScript, no external resources. Self-hosted open-licensed typefaces (OFL) subset to Latin. Progressive enhancement only: `backdrop-filter`, `popover`, container queries, `text-wrap`, `@starting-style`, cross-document view transitions, each with a working fallback, and solid panels under `prefers-reduced-transparency`. Navigation reduced to five primary items plus a native popover "More" menu; a full site map in the footer.
 
-## 2. Globalisation (next)
+## 2. Globalization (next)
 
 Goal: a visitor arriving from a browser whose preferred language is Spanish lands on the Spanish site, automatically, with the canonical English text always one click away and never displaced.
 

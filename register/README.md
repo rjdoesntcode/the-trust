@@ -28,8 +28,8 @@ the entry it corrects. The full history stays visible.
    schema and the append-only property.
 
 The maintainer merges entries that validate. Merging records the declaration;
-it is not an endorsement, a verification, or a judgement of any kind.
+it is not an endorsement, a verification, or a judgment of any kind.
 
 ## Submission policy
 
-Entries are third-party content. A submitter represents that it is authorised to act for the party named; that the declaration is accurate and not misleading; that it does not state that any person or organisation has adopted or endorsed any instrument unless that is true; that the submission infringes no rights and breaks no law; and that it licenses the submission under CC BY-SA 4.0. Entries are recorded exactly as submitted or declined; they are never edited. Reports of infringing content go to the repository's issues and, once registered, to the designated copyright agent named on the site's legal notice.
+Entries are third-party content. A submitter represents that it is authorized to act for the party named; that the declaration is accurate and not misleading; that it does not state that any person or organization has adopted or endorsed any instrument unless that is true; that the submission infringes no rights and breaks no law; and that it licenses the submission under CC BY-SA 4.0. Entries are recorded exactly as submitted or declined; they are never edited. Reports of infringing content go to the repository's issues and, once registered, to the designated copyright agent named on the site's legal notice.

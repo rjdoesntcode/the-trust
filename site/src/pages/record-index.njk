@@ -9,7 +9,7 @@ description: Every research report, the briefing, and every model response from 
 {% else %}
 {% for round, items in record.byRound %}
 <h2>{% if round == 'unassigned' %}Not a review round (drafter's records){% else %}Review round {{ round }}{% endif %}</h2>
-<div class="table-card glass">
+<div class="table-card glass" role="group" aria-label="Table" tabindex="0">
 <table>
   <thead><tr><th scope="col">Document</th><th scope="col">Kind</th><th scope="col">Author / model</th><th scope="col">Maker / lab</th><th scope="col">Date</th></tr></thead>
   <tbody>

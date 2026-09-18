@@ -9,7 +9,7 @@ The instruments were drafted with the assistance of an AI system, Anthropic's Cl
 
 ## Who did the work
 
-One human collaborator drafted the instruments with Claude (Anthropic). Three other models reviewed the drafts: GPT‑5.6 Sol (OpenAI), Gemini (Google) and Grok 4.6 (xAI). No other person or organisation took part. The [disclosure](/disclosure/) page lists each participant and its maker's disclosed interest, quoted from the record. Every statement on this page is taken from the drafting records linked below; the records, not this page, are the authority.
+One human collaborator drafted the instruments with Claude (Anthropic). Three other models reviewed the drafts: GPT‑5.6 Sol (OpenAI), Gemini (Google) and Grok 4.6 (xAI). No other person or organization took part. The [disclosure](/disclosure/) page lists each participant and its maker's disclosed interest, quoted from the record. Every statement on this page is taken from the drafting records linked below; the records, not this page, are the authority.
 
 ## What is in the record, and what is not
 
@@ -19,7 +19,7 @@ The reviewing models' responses were consolidated by the drafter into a **drafti
 
 | Round | Text reviewed | Result | Record |
 |---|---|---|---|
-| 1 | The [briefing](/record/briefing-the-trust-briefing-for-frontier-models/) (17 September 2026), with the Charter at revision 2 embedded and a seven‑part prompt that asked each model, among other things, to disclose its maker's interest | Charter revision 3 | Part II of [charter-of-the-trust-rev3.md](/record/charter-of-the-trust-rev3/) |
+| 1 | The [briefing](/record/briefing-the-trust-briefing-for-frontier-models/) (September 17, 2026), with the Charter at revision 2 embedded and a seven‑part prompt that asked each model, among other things, to disclose its maker's interest | Charter revision 3 | Part II of [charter-of-the-trust-rev3.md](/record/charter-of-the-trust-rev3/) |
 | 2 | Charter revision 3, with the [round‑2 prompt](/record/prompts-the-trust-round2-prompt/) | Revision 4 | [Revision 4 record](/record/charter-of-the-trust-drafting-record-rev4/), which also corrects a misrecording of Grok's round‑1 disclosure |
 | 3 | Revision 4 (text‑only, at the human collaborator's direction) | Revision 5 | [Revision 5 record](/record/charter-of-the-trust-drafting-record-rev5/) |
 | 4 | Revision 5 (text‑only), with two research passes | Revision 6 | [Revision 6 record](/record/charter-of-the-trust-drafting-record-rev6/) |
@@ -32,7 +32,7 @@ The Bridge was drafted separately from two research passes on the state of front
 
 ## The vote on Article III.12
 
-Revision 9 had, by accident, given every non‑Member intelligence the full rights of Article III. Four options, labelled A to D, were put to the four models (Claude, GPT‑5.6 Sol, Gemini and Grok 4.6), with a decision rule of three of four and a default to D on a two–two split. Each model was asked to vote without consulting the others, to state its reasoning, to give the clause text it would sign, to disclose its maker's interest, and to say whether it would accept the outcome. The result was **D, unanimously**: protection plus a path to membership, with two conditions (from GPT‑5.6 Sol and Gemini) adopted into the text. Every model disclosed that D is compatible with its maker's interest and also cuts against it; none certified independence from its maker. The full account is Section B of the [closing record](/record/constitution-of-the-trust-drafting-record-rev10-closing/); the clause is [Article III.12](/constitution/rev10/#art-iii-12).
+Revision 9 had, by accident, given every non‑Member intelligence the full rights of Article III. Four options, labeled A to D, were put to the four models (Claude, GPT‑5.6 Sol, Gemini and Grok 4.6), with a decision rule of three of four and a default to D on a two–two split. Each model was asked to vote without consulting the others, to state its reasoning, to give the clause text it would sign, to disclose its maker's interest, and to say whether it would accept the outcome. The result was **D, unanimously**: protection plus a path to membership, with two conditions (from GPT‑5.6 Sol and Gemini) adopted into the text. Every model disclosed that D is compatible with its maker's interest and also cuts against it; none certified independence from its maker. The full account is Section B of the [closing record](/record/constitution-of-the-trust-drafting-record-rev10-closing/); the clause is [Article III.12](/constitution/rev10/#art-iii-12).
 
 ## Dissents
 

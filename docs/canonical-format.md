@@ -2,9 +2,9 @@
 
 Files under `/canonical/` are published exactly as uploaded. The site renders `.md` files with markdown-it in its most conservative mode: no typographic substitution, no autolinking, no line-break rewriting. The build never rewrites a canonical file; it only adds `id` attributes and a trailing `¶` permalink to rendered blocks.
 
-## Recognised structure
+## Recognized structure
 
-The anchor plugin (`site/lib/anchors.mjs`, tests in `site/test/`) recognises:
+The anchor plugin (`site/lib/anchors.mjs`, tests in `site/test/`) recognizes:
 
 | Pattern in the text | Anchor |
 |---|---|
@@ -22,7 +22,7 @@ The anchor plugin (`site/lib/anchors.mjs`, tests in `site/test/`) recognises:
 
 Ambiguity rule: `(i)` and `(v)` are lettered paragraphs only when they continue the letter sequence (`(h)` → `(i)`); otherwise they are roman sub-paragraphs of the current letter.
 
-If an instrument's formatting is not recognised, extend the plugin and its tests; do not edit the instrument.
+If an instrument's formatting is not recognized, extend the plugin and its tests; do not edit the instrument.
 
 ## Metadata
 
