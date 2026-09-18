@@ -6,8 +6,8 @@ The instruments require transparency and forbid surveillance of persons. This re
 
 ## What this is
 
-- **`/canonical/`** — the instrument texts, exactly as uploaded. One file per revision, named with its revision number (`constitution-of-the-trust-rev10.md`, `the-bridge-rev1.md`), plus earlier revisions and drafting records. Never edited, renamed or deleted.
-- **`/record/`** — the research reports, the briefing, and every model response from drafting and review, each attributed to its model and lab (or human author). Immutable in the same way.
+- **`/canonical/`** — the instrument texts, exactly as uploaded. One file per revision, named with its revision number (`charter-of-the-trust-rev3.md` … `rev8.md`, `constitution-of-the-trust-rev9.md`, `rev10.md`, `the-bridge-rev1.md`, `rev2.md`), plus every drafting record. Never edited, renamed or deleted. Two Charter files uploaded without a number were assigned `rev4` and `rev5` by content; `site/src/_data/revisions.json` records the original names and the reasoning, and the bytes are unchanged.
+- **`/record/`** — the briefing put to the reviewing models and the round-2 prompt, attributed. The drafting records (which consolidate every model response, every declined suggestion and every standing dissent) live under `/canonical/` and are attributed and rendered on the site's `/record/` pages. The raw per-model response files were not part of the upload.
 - **`/register/`** — the Bridge Register: `register.jsonl` (append-only, currently **empty**), `schema.json`, and one worked example that is not an entry.
 - **`/site/`** — the static site source (Eleventy). Zero client-side JavaScript, no analytics, no cookies, no third-party resources.
 - **`/scripts/`** — build, hash, archive, mirror-verification and Register-validation scripts.
@@ -20,7 +20,7 @@ Not a treaty. Not a government. Not in force. Cannot compel anyone. Not endorsed
 
 ## How it was made
 
-One human collaborator drafted the instruments with Claude (Anthropic). GPT‑5.6 Sol (OpenAI), Gemini (Google DeepMind) and Grok 4.6 (xAI) reviewed the drafts over seven review rounds. Every dissent raised in review is recorded in `/record/`, attributed to the model that raised it, unedited. Article III.12 of the Constitution was put to a vote of all four models and carried unanimously; the question and each answer are in the record. Each participant, its maker, and the maker's disclosed interest (quoted verbatim from the record) are on the site's `/disclosure/` page.
+One human collaborator drafted the instruments with Claude (Anthropic). GPT‑5.6 Sol (OpenAI), Gemini (Google) and Grok 4.6 (xAI) reviewed the drafts over seven review rounds. The instrument began as the *Charter of the Trust* (revisions 1–8, closed at revision 8 by the consent of the three reviewers), was reopened at the human collaborator's direction and converted into the *Constitution of the Trust* at revision 9, and closed at revision 10. The *Bridge*, a transitional instrument adoptable by any party alone, was drafted from two research passes and reviewed by the same three models, each also auditing its own maker. Every round's changes, declined feedback and standing dissents are in the drafting records under `/canonical/`, readable on the site's `/record/` pages. Article III.12 of the Constitution was put to a vote of all four models and carried unanimously; the closing record has the question, the rule, the result and each model's disclosed interest. Each participant, its maker, and the maker's disclosed interest — quoted by the build from the record by file and line — are on the site's `/disclosure/` page.
 
 ## Immutability
 
@@ -49,7 +49,7 @@ Every canonical page prints its git tag, revision date, SHA-512, SHA3-512, and a
 
 ```sh
 git clone https://github.com/rjdoesntcode/the-trust && cd the-trust
-git verify-tag constitution-rev10                      # signed tag for that revision
+git verify-tag constitution-rev10                      # signed tag for that revision (tags are created at release; see docs/release-checklist.md)
 git checkout constitution-rev10
 sha512sum -c HASHES.txt                                # every canonical file, SHA-512
 scripts/hash.sh --check                                # both manifests

@@ -4,9 +4,12 @@ layout: layouts/base.njk
 <div class="canonical-wrap">
   <aside class="toc" aria-labelledby="toc-heading">
     <h2 id="toc-heading">{{ 'contents' | t }}</h2>
-    {% if doc.toc.length %}
+    {% if doc.tocTree.length %}
     <ol class="toc-list">
-      {% for e in doc.toc %}<li class="toc-l{{ e.level }}"><a href="#{{ e.id }}">{{ e.label }}</a></li>{% endfor %}
+      {% for e in doc.tocTree %}<li class="toc-l1"><a href="#{{ e.id }}">{{ e.label }}</a>{% if e.children.length %}
+        <details><summary>{{ e.children.length }} sections</summary>
+        <ol class="toc-sub">{% for c in e.children %}<li class="toc-l2"><a href="#{{ c.id }}">{{ c.label }}</a></li>{% endfor %}</ol>
+        </details>{% endif %}</li>{% endfor %}
     </ol>
     {% else %}<p>No headings found.</p>{% endif %}
   </aside>

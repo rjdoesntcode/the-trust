@@ -10,5 +10,12 @@ All changes to the published texts, the record, the Register and the site. Instr
 - Register: `register/schema.json`, empty `register/register.jsonl`, one worked example.
 - Site: Eleventy source under `site/`, no client-side JavaScript, no third-party resources.
 
-### Instruments
-- None published yet. `constitution-of-the-trust-rev10.md` and `the-bridge-rev1.md` are expected under `/canonical/`; until they are added, hashed and tagged there is no published text.
+### Instruments (added 2026-09-18, not yet tagged)
+- Charter of the Trust, revisions 3–8 (`charter-of-the-trust-rev3.md` … `rev8.md`). Revisions 4 and 5 were uploaded as `charter-of-the-trust.md` and `charter-of-the-trust-1.md` and assigned their numbers by content (see `site/src/_data/revisions.json`).
+- Constitution of the Trust, revisions 9 and 10 (`constitution-of-the-trust-rev9.md`, `rev10.md`). Revision 10 is the closing text and the current revision.
+- The Bridge, revisions 1 and 2 (`the-bridge-rev1.md`, `rev2.md`). Revision 2 is current.
+- Drafting records: Charter revisions 4–7, Constitution revisions 9 and 10 (closing), Bridge revisions 1 and 2.
+- Digests of every file are in `HASHES.txt` (SHA-512) and `HASHES.sha3-512.txt` (SHA3-512). Release tags (`charter-rev3` … `bridge-rev2`) are created by the release checklist.
+
+### Record
+- `record/briefing/the-trust-briefing-for-frontier-models.md` (round 1, 17 September 2026) and `record/prompts/the-trust-round2-prompt.md` (round 2).

@@ -9,7 +9,7 @@
 <meta name="referrer" content="no-referrer">
 <meta name="color-scheme" content="light dark">
 <meta name="robots" content="index, follow">
-<title>{% if title %}{{ title }} — {% endif %}{{ site.short }}</title>
+<title>{% if title %}{{ title | truncate(40, true, '…') }} — {% endif %}{{ site.short }}</title>
 {% if description %}<meta name="description" content="{{ description }}">{% endif %}
 <link rel="canonical" href="{{ site.url }}{{ page.url }}">
 <link rel="stylesheet" href="/css/site.css">
@@ -21,6 +21,7 @@
   <nav aria-label="Site">
     <ul>
       <li><a href="/constitution/"{% if page.url.startsWith('/constitution/') %} aria-current="true"{% endif %}>{{ 'nav.constitution' | t }}</a></li>
+      <li><a href="/charter/"{% if page.url.startsWith('/charter/') %} aria-current="true"{% endif %}>{{ 'nav.charter' | t }}</a></li>
       <li><a href="/bridge/"{% if page.url.startsWith('/bridge/') %} aria-current="true"{% endif %}>{{ 'nav.bridge' | t }}</a></li>
       <li><a href="/record/"{% if page.url.startsWith('/record/') %} aria-current="true"{% endif %}>{{ 'nav.record' | t }}</a></li>
       <li><a href="/process/"{% if page.url == '/process/' %} aria-current="page"{% endif %}>{{ 'nav.process' | t }}</a></li>

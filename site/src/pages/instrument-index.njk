@@ -8,29 +8,31 @@ eleventyComputed:
   title: "{{ inst.title }}"
   description: "Every published revision of the {{ inst.title }}, with digests and signed tags."
 ---
-<p>Every revision of the {{ inst.title }} is a separate file under <code>/canonical/</code>, never edited after publication. The latest revision is the one in force for citation. A <a href="/{{ inst.slug }}/summary/">plain-language summary</a> (not canonical) is also available.</p>
+{% if inst.note %}<p class="notice" role="note">{{ inst.note }}{% if inst.successor %} Continue at the <a href="/{{ inst.successor }}/">{{ canonical.bySlug[inst.successor].title }}</a>.{% endif %}{% if inst.predecessor %} Earlier revisions are under the <a href="/{{ inst.predecessor }}/">{{ canonical.bySlug[inst.predecessor].title }}</a>.{% endif %}</p>{% endif %}
+<p>Every revision of the {{ inst.title }} is a separate file under <code>/canonical/</code>, never edited after upload.{% if inst.latest and not inst.closed %} The revision in force for citation is <a href="{{ inst.latest.url }}">revision {{ inst.latest.rev }}</a>.{% endif %} A <a href="/{{ inst.slug }}/summary/">plain-language summary</a> (not canonical) is also available.</p>
 
 {% if inst.revisions.length %}
 <table>
   <caption>Published revisions</caption>
-  <thead><tr><th scope="col">Revision</th><th scope="col">Date</th><th scope="col">Tag</th><th scope="col">SHA-512</th><th scope="col">SHA3-512</th><th scope="col">Files</th></tr></thead>
+  <thead><tr><th scope="col">Revision</th><th scope="col">Status</th><th scope="col">Date</th><th scope="col">Tag</th><th scope="col">SHA-512</th><th scope="col">SHA3-512</th><th scope="col">Raw</th></tr></thead>
   <tbody>
   {% for d in inst.revisions %}
   <tr>
-    <td><a href="{{ d.url }}">rev {{ d.rev }}</a>{% if d.status != 'current' %} (superseded){% endif %}</td>
-    <td>{% if d.date %}{{ d.date | isoDate }}{% else %}not yet recorded{% endif %}</td>
+    <td><a href="{{ d.url }}">rev {{ d.rev }}</a></td>
+    <td>{{ d.status }}</td>
+    <td>{% if d.date %}{{ d.date | isoDate }}{% else %}not stated in the record{% endif %}</td>
     <td><code>{{ d.tag }}</code></td>
     <td><code class="hash">{{ d.sha512 }}</code></td>
     <td><code class="hash">{{ d.sha3_512 }}</code></td>
-    <td><a href="{{ d.raw }}">raw</a></td>
+    <td><a href="{{ d.raw }}">{{ d.file }}</a></td>
   </tr>
   {% endfor %}
   </tbody>
 </table>
+{% for d in inst.revisions %}{% if d.note or d.uploadedAs %}<p><small><strong>rev {{ d.rev }}:</strong> {% if d.uploadedAs %}uploaded as <code>{{ d.uploadedAs }}</code>. {% endif %}{{ d.note }}</small></p>{% endif %}{% endfor %}
 {% else %}
 <p class="notice" role="note"><strong>No revision of the {{ inst.title }} has been placed in this repository yet.</strong>
-{% if inst.expected.length %}Expected: {% for e in inst.expected %}<code>canonical/{{ e.file }}</code> (tag <code>{{ e.tag }}</code>){% if not loop.last %}, {% endif %}{% endfor %}.{% endif %}
-Until a file is present under <code>/canonical/</code> with a listed digest and a signed tag, there is no published text to cite.</p>
+{% if inst.expected.length %}Expected: {% for e in inst.expected %}<code>canonical/{{ e.file }}</code> (tag <code>{{ e.tag }}</code>){% if not loop.last %}, {% endif %}{% endfor %}.{% endif %}</p>
 {% endif %}
 
 <h2>How to cite</h2>
@@ -43,8 +45,9 @@ Until a file is present under <code>/canonical/</code> with a listed digest and 
   <li>Compare with <a href="/HASHES.txt">HASHES.txt</a> and <a href="/HASHES.sha3-512.txt">HASHES.sha3-512.txt</a>, and with the same files at the signed tag in the <a href="{{ site.repository }}">repository</a> (<code>git verify-tag</code>).</li>
 </ol>
 
-{% if canonical.draftingRecords.length %}
+{% set recs = [] %}{% for d in canonical.draftingRecords %}{% if d.file.startsWith(inst.filePrefix) %}{% set recs = (recs.push(d), recs) %}{% endif %}{% endfor %}
+{% if recs.length %}
 <h2>Drafting records</h2>
-<p>Other files under <code>/canonical/</code>, served exactly as uploaded and hashed like the instruments:</p>
-<ul>{% for d in canonical.draftingRecords %}<li><a href="{{ d.raw }}">{{ d.file }}</a> — SHA-512 <code class="hash">{{ d.sha512 }}</code></li>{% endfor %}</ul>
+<p>Kept separate from the instrument, served exactly as uploaded and hashed like it. Readable versions are on the <a href="/record/">record</a> pages.</p>
+<ul>{% for d in recs %}<li><a href="{{ d.raw }}">{{ d.file }}</a> — SHA-512 <code class="hash">{{ d.sha512 }}</code></li>{% endfor %}</ul>
 {% endif %}

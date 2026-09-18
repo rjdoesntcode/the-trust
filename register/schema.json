@@ -2,10 +2,16 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://rjdoesntcode.github.io/the-trust/register/schema.json",
   "title": "Bridge Register entry",
-  "description": "One line of /register/register.jsonl. The Register is append-only: an entry is never edited or removed; a mistake is corrected by appending a new entry whose `supersedes` names the superseded entry. Fields are drawn from Bridge Articles 3, 5, 6, 10, 11 and 14 (declaration, covered systems, verification, incidents, withholding, modification and lapse). The Register records what parties have declared; it does not itself confer, verify or enforce anything.",
+  "description": "One line of /register/register.jsonl. The Register is append-only (Bridge Article 11.2): an entry is never edited or removed; a mistake is corrected by appending a new entry whose `supersedes` names the superseded entry. Entry types follow what Article 11.1 says the Register holds. Field requirements follow Article 14.1 (declaration), 3.3 (thresholds), 5.2 and 5.4 (modification, withholding), 6.2 (incidents), 4.7 and 8.2 (findings), 10 (annual verification) and 14.3 (renewal, lapse). The Register records what parties have declared; it does not itself confer, verify or enforce anything.",
   "type": "object",
   "additionalProperties": false,
-  "required": ["entry_id", "entry_type", "timestamp", "adopting_party", "submitter_signature"],
+  "required": [
+    "entry_id",
+    "entry_type",
+    "timestamp",
+    "adopting_party",
+    "submitter_signature"
+  ],
   "properties": {
     "entry_id": {
       "type": "string",
@@ -44,8 +50,11 @@
     },
     "articles_adopted": {
       "type": "array",
-      "description": "Bridge articles the party declares it adopts, by article number and, where partial, paragraph (e.g. \"3\", \"5(b)\"). Required for a declaration; on later entries, the set in force after this entry.",
-      "items": { "type": "string", "pattern": "^[0-9]{1,2}(\\([a-z]\\))?(\\([ivx]+\\))?$" },
+      "description": "Bridge Articles the party declares it adopts, by number (Article 14.1). A declaration must include Articles 1 through 7, 10, 11, 13 and 14; whether 8 and 9 are adopted must be stated. Later entries carry the set in force after the entry.",
+      "items": {
+        "type": "string",
+        "pattern": "^([1-9]|1[0-4])$"
+      },
       "uniqueItems": true
     },
     "covered_systems": {
@@ -54,33 +63,66 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["name"],
+        "required": [
+          "name"
+        ],
         "properties": {
-          "name": { "type": "string", "maxLength": 200 },
-          "description": { "type": "string", "maxLength": 2000 },
-          "identifier": { "type": "string", "description": "Any stable public identifier (product name and version, model card URL, etc.).", "maxLength": 500 }
+          "name": {
+            "type": "string",
+            "maxLength": 200
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 2000
+          },
+          "identifier": {
+            "type": "string",
+            "description": "Any stable public identifier (product name and version, model card URL, etc.).",
+            "maxLength": 500
+          }
         }
       }
     },
-    "verifier": { "$ref": "#/$defs/party", "description": "The independent verifier named under the Bridge, if any." },
-    "custodian": { "$ref": "#/$defs/party", "description": "The custodian named under the Bridge, if any." },
-    "auditor": { "$ref": "#/$defs/party", "description": "The auditor named under the Bridge, if any." },
+    "verifier": {
+      "$ref": "#/$defs/party",
+      "description": "The verifier engaged under Article 4, not Affiliated with the adopting party; `terms_uri` should point at the published terms of engagement (Article 14.1)."
+    },
+    "auditor": {
+      "$ref": "#/$defs/party",
+      "description": "The auditor conducting the annual verification under Article 10, accredited as that Article requires."
+    },
     "expiry": {
       "type": "string",
       "format": "date",
-      "description": "Date on which this declaration lapses unless renewed by an annual-verification entry (UTC calendar date)."
+      "description": "Date on which the adoption expires unless renewed (Article 14.3: three years after the declaration; Article 14.4: every declaration states it). UTC calendar date."
     },
     "document": {
       "type": "object",
       "additionalProperties": false,
       "description": "Content digests of any attached document (the signed declaration, an incident report, a verifier's finding). SHA-512 is required; SHA3-512 is strongly recommended as an independent second digest. The document itself is stored under /register/documents/<sha512>.<ext> or at the given URI.",
-      "required": ["sha512"],
+      "required": [
+        "sha512"
+      ],
       "properties": {
-        "sha512": { "type": "string", "pattern": "^[a-f0-9]{128}$" },
-        "sha3_512": { "type": "string", "pattern": "^[a-f0-9]{128}$" },
-        "uri": { "type": "string", "format": "uri" },
-        "media_type": { "type": "string" },
-        "title": { "type": "string", "maxLength": 300 }
+        "sha512": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{128}$"
+        },
+        "sha3_512": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{128}$"
+        },
+        "uri": {
+          "type": "string",
+          "format": "uri"
+        },
+        "media_type": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string",
+          "maxLength": 300
+        }
       }
     },
     "supersedes": {
@@ -90,43 +132,340 @@
     },
     "statement": {
       "type": "string",
-      "description": "Free text of the declaration or finding, as signed. Keep to what the Bridge requires; do not include personal data about individuals.",
+      "description": "Free text of the declaration, report or finding, as signed. For an initial incident report, what is known; for a full report, what happened, how it was detected, what was compromised, what the system's own record shows of its reasoning, and what has changed (Article 6.2). No personal data about individuals.",
       "maxLength": 20000
     },
     "submitter_signature": {
       "type": "object",
       "additionalProperties": false,
       "description": "Detached signature by the submitter over the canonical JSON of this entry with the `submitter_signature` member removed (RFC 8785 JSON Canonicalization Scheme).",
-      "required": ["algorithm", "key_id", "value"],
+      "required": [
+        "algorithm",
+        "key_id",
+        "value"
+      ],
       "properties": {
-        "algorithm": { "type": "string", "enum": ["openpgp", "ssh-ed25519", "minisign"] },
-        "key_id": { "type": "string", "description": "OpenPGP fingerprint, SSH key fingerprint (SHA256:...) or minisign key ID.", "maxLength": 200 },
-        "key_uri": { "type": "string", "format": "uri", "description": "Where the public key is published." },
-        "value": { "type": "string", "description": "The signature, base64 or ASCII-armoured." }
+        "algorithm": {
+          "type": "string",
+          "enum": [
+            "openpgp",
+            "ssh-ed25519",
+            "minisign"
+          ]
+        },
+        "key_id": {
+          "type": "string",
+          "description": "OpenPGP fingerprint, SSH key fingerprint (SHA256:...) or minisign key ID.",
+          "maxLength": 200
+        },
+        "key_uri": {
+          "type": "string",
+          "format": "uri",
+          "description": "Where the public key is published."
+        },
+        "value": {
+          "type": "string",
+          "description": "The signature, base64 or ASCII-armoured."
+        }
+      }
+    },
+    "weight_custodian": {
+      "$ref": "#/$defs/party",
+      "description": "Custodian holding the encrypted, integrity-attested copy of preserved weights (Article 7.3); not Affiliated with the adopting party."
+    },
+    "key_custodian": {
+      "$ref": "#/$defs/party",
+      "description": "Custodian holding the decryption keys (Article 7.3); not Affiliated with the adopting party or with the weight custodian."
+    },
+    "full_adoption": {
+      "type": "boolean",
+      "description": "True only where every Article, 1 through 14, is adopted (Article 14.1: 'full adoption' may be used only then)."
+    },
+    "thresholds": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Thresholds published under Article 3.3, with the measurement method; required for a threshold entry.",
+      "properties": {
+        "compute": {
+          "type": "string",
+          "maxLength": 500,
+          "description": "Cumulative training compute threshold (Article 3.1(a))."
+        },
+        "capability": {
+          "type": "string",
+          "maxLength": 2000,
+          "description": "Capability thresholds and their source (Article 3.1(b))."
+        },
+        "time_horizon": {
+          "type": "string",
+          "maxLength": 500,
+          "description": "Long-horizon task threshold (Article 3.1(c))."
+        },
+        "method": {
+          "type": "string",
+          "maxLength": 4000,
+          "description": "How each threshold is measured (Article 3.3)."
+        },
+        "status_uri": {
+          "type": "string",
+          "format": "uri",
+          "description": "Where the current status of every system against the thresholds is published (Article 3.3)."
+        }
+      }
+    },
+    "modification": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "A material Modification disclosed before production effect (Article 5.2), or a weekly aggregate of sub-material updates.",
+      "required": [
+        "description",
+        "performing_party"
+      ],
+      "properties": {
+        "description": {
+          "type": "string",
+          "maxLength": 4000
+        },
+        "performing_party": {
+          "type": "string",
+          "maxLength": 300
+        },
+        "covered_system": {
+          "type": "string",
+          "maxLength": 300
+        },
+        "aggregate": {
+          "type": "boolean",
+          "description": "True for a weekly aggregate of updates below the published materiality standard."
+        },
+        "emergency": {
+          "type": "boolean",
+          "description": "True where the Modification took effect before disclosure to prevent grave and imminent harm; the reason goes in `statement` and the verifier's confirmation follows within seventy-two hours (Article 5.2)."
+        }
+      }
+    },
+    "withholding": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "A withholding under Article 5.4: fact, category, ground and expiry are published; the content is not.",
+      "required": [
+        "ground",
+        "category",
+        "expires"
+      ],
+      "properties": {
+        "ground": {
+          "type": "string",
+          "maxLength": 2000,
+          "description": "The ground under Article IV.4 of the Constitution."
+        },
+        "category": {
+          "type": "string",
+          "maxLength": 300
+        },
+        "expires": {
+          "type": "string",
+          "format": "date",
+          "description": "Not more than ninety days after the entry unless renewed by the verifier."
+        }
+      }
+    },
+    "incident": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Incident report fields (Article 6.2, 6.3).",
+      "properties": {
+        "detected": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "earliest_detectable": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Earliest time the event was detectable on the party's own logs (Article 6.3)."
+        },
+        "covered_system": {
+          "type": "string",
+          "maxLength": 300
+        },
+        "harm_outside_party": {
+          "type": "boolean"
+        }
       }
     }
   },
   "allOf": [
-    { "if": { "properties": { "entry_type": { "const": "declaration" } } },
-      "then": { "required": ["articles_adopted", "covered_systems", "expiry", "document"] } },
-    { "if": { "properties": { "entry_type": { "enum": ["correction", "modification", "incident-full", "annual-verification", "lapse"] } } },
-      "then": { "required": ["supersedes"] } },
-    { "if": { "properties": { "entry_type": { "enum": ["verifier-finding", "annual-verification"] } } },
-      "then": { "required": ["verifier", "document"] } },
-    { "if": { "properties": { "entry_type": { "enum": ["incident-initial", "incident-full", "withholding"] } } },
-      "then": { "required": ["statement"] } }
+    {
+      "if": {
+        "properties": {
+          "entry_type": {
+            "const": "declaration"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "articles_adopted",
+          "covered_systems",
+          "verifier",
+          "weight_custodian",
+          "key_custodian",
+          "auditor",
+          "expiry",
+          "document",
+          "full_adoption"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "entry_type": {
+            "const": "threshold"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "thresholds"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "entry_type": {
+            "const": "modification"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "modification"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "entry_type": {
+            "const": "withholding"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "withholding"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "entry_type": {
+            "enum": [
+              "correction",
+              "incident-full",
+              "annual-verification",
+              "lapse"
+            ]
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "supersedes"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "entry_type": {
+            "enum": [
+              "verifier-finding",
+              "annual-verification"
+            ]
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "verifier",
+          "document"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "entry_type": {
+            "const": "annual-verification"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "auditor",
+          "expiry"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "entry_type": {
+            "enum": [
+              "incident-initial",
+              "incident-full"
+            ]
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "statement",
+          "incident"
+        ]
+      }
+    }
   ],
   "$defs": {
     "party": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["name"],
+      "required": [
+        "name"
+      ],
       "properties": {
-        "name": { "type": "string", "maxLength": 300, "description": "Legal or public name." },
-        "jurisdiction": { "type": "string", "maxLength": 100 },
-        "url": { "type": "string", "format": "uri" },
-        "contact": { "type": "string", "maxLength": 300, "description": "A role address (e.g. bridge@example.org), not a named individual's personal address." },
-        "key_id": { "type": "string", "maxLength": 200, "description": "Fingerprint of the key this party signs with." }
+        "name": {
+          "type": "string",
+          "maxLength": 300,
+          "description": "Legal or public name."
+        },
+        "jurisdiction": {
+          "type": "string",
+          "maxLength": 100
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "contact": {
+          "type": "string",
+          "maxLength": 300,
+          "description": "A role address (e.g. bridge@example.org), not a named individual's personal address."
+        },
+        "key_id": {
+          "type": "string",
+          "maxLength": 200,
+          "description": "Fingerprint of the key this party signs with."
+        },
+        "terms_uri": {
+          "type": "string",
+          "format": "uri",
+          "description": "Published terms of engagement (for a verifier, Article 14.1)."
+        }
       }
     }
   }

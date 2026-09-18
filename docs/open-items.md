@@ -2,15 +2,17 @@
 
 Review before first release. Items are in order of importance.
 
-## Blocking: the source texts are not here
+## Source texts: now in the repository (2026-09-18 upload)
 
-1. **`/canonical/` is empty.** `constitution-of-the-trust-rev10.md`, `the-bridge-rev1.md`, earlier revisions and drafting records were not in the repository, the git remote, the session's attachment directories or Google Drive. Everything that renders from them (the instrument pages, index pages' revision rows, `index.json` documents, `HASHES.txt` entries, anchors) is built and tested against a fixture (`site/test/fixtures/instrument-sample.md`, never placed in `/canonical/`), but shows "not yet published" until the files are added. Adding them: `cp` into `/canonical/`, fill `date` in `site/src/_data/revisions.json`, run `scripts/hash.sh --write`, build.
-2. **`/record/` is empty.** `/record/`, `/process/` (round-by-round listing) and `/disclosure/` (each maker's disclosed interest, which must be *verbatim* from the record) render with explicit "not yet in the repository" notices rather than invented text. Add files and attribute each in `site/src/_data/record-index.json` (`file`, `title`, `kind`, `author`, `maker`, `date`, `round`); the build fails on any unattributed file.
-3. **Plain-language summaries** (`/constitution/summary/`, `/bridge/summary/`) show "pending" because the texts could not be read. Write them as `site/src/summaries/constitution.md` and `bridge.md`.
-4. **Anchor scheme is a best guess at the texts' formatting.** It handles `Article III` headings, `12.`/`III.12.`/`### 12.` sections, `(c)` paragraphs and `(ii)` sub-paragraphs (see `docs/canonical-format.md`). If the real files use a different convention, extend `site/lib/anchors.mjs` and its tests — never the text.
-5. **Register schema ↔ Bridge articles.** Fields are the ones you listed; the description cites Articles 3, 5, 6, 10, 11 and 14 collectively. Per-field article references could not be verified without the Bridge text.
-6. **"Article III.12" is described as an article of the Constitution.** Inferred from the roman numeral (the Bridge's articles are cited with arabic numerals in your brief). Correct in `site/src/pages/index.md`, `process.md` and `README.md` if wrong.
-7. **Revision dates** are `null` in `revisions.json`; pages print "not yet recorded" until filled.
+1. **Placed.** 18 files under `/canonical/` (10 instrument revisions, 8 drafting records) and 2 under `/record/` (briefing, round-2 prompt), byte-identical to the upload (`docs/initial-upload.zip` is kept as the upload artifact). Every page that depended on them now renders from them.
+2. **Two files were uploaded without a revision number** (`charter-of-the-trust.md`, `charter-of-the-trust-1.md`) and were assigned `rev4` and `rev5` by content — the round-2 changes of the revision 4 record are in both, the faction article of the revision 5 record is only in the second, and each is textually closest to its neighbour. Confirm; if wrong, only the filename and `revisions.json` change.
+3. **Bridge revision 2 is treated as current**, not revision 1 as the original brief said, because the revision 2 record documents the review of revision 1 and the changes made. Confirm.
+4. **Revision dates are unknown for all but Charter revision 3** (its header says 17 September 2026). The other files state no date and the zip's timestamps are the upload time. Pages say "not stated in the record". Supply dates for `site/src/_data/revisions.json` if you have them.
+5. **Not in the upload:** the drafting record for Charter revision 8 (round 6); Charter revisions 1 and 2 as files (revision 2 is embedded in the briefing's Section 5); the raw per-model response files (the drafting records consolidate them); the research reports the records cite ("two research passes"). The site says so on `/process/` and `/record/`.
+6. **The human collaborator's interest is not disclosed anywhere in the record.** `/disclosure/` says so. Add a statement to the record if you want one published.
+7. **Article III.12's lettered paragraphs are continuation lines inside list item 12** in the real text; the parser was extended so `#art-iii-12-c` (and IX.10(f), Bridge 3.1(a) …) resolve, with each paragraph on its own line. Wording untouched; tested on the real file.
+8. **The Register schema now follows the Bridge**: weight custodian and key custodian (Article 7.3, Declaration table) replace the single "custodian" of the brief; thresholds (3.3), modification (5.2), withholding (5.4), incident fields (6.2–6.3), the Article 14.1 minimum set of Articles and the three-year expiry are validated. `/adopt/` reproduces the Bridge's own Declaration of Adoption verbatim instead of an invented template.
+9. **Summaries written** for the Constitution (rev 10), the Bridge (rev 2) and the closed Charter — all marked non-canonical. Review them: they are my reading of the texts.
 
 ## Decided without you
 
@@ -36,6 +38,11 @@ Review before first release. Items are in order of importance.
 24. **Accessibility** was checked automatically (axe-core 4 with the WCAG 2.0/2.1/2.2 A+AA and best-practice rule sets, every built page including a fixture-rendered canonical page, served over HTTP at phone width: 0 violations) and the HTML validated (html-validate recommended + a11y presets: 0 errors). Manual checks — screen reader, 200% zoom, keyboard-only, print preview, CSS off — remain to be done by a person.
 25. **CC BY-SA 4.0 text** was taken from the SPDX license-list-data mirror on GitHub because creativecommons.org was blocked. Compare `LICENSE-TEXT` with https://creativecommons.org/licenses/by-sa/4.0/legalcode.txt once.
 
-## Inconsistencies found in the instruments or record
+## Inconsistencies found in the instruments or record (reported, not fixed)
 
-None could be checked: the texts were not available. This section is reserved for them; nothing is to be fixed in a text, only reported here.
+- **Closing record, Section C, table row "Exceptions never for the institution (round 9 direction)"** — there were seven rounds; "round 9" appears to mean the revision 9 direction. `canonical/constitution-of-the-trust-drafting-record-rev10-closing.md`.
+- **Charter revision 3, Part II, Section C.7** misrecords Grok's round-1 disclosure; the revision 4 record, Section A.1, withdraws it. Both stand in the record; `/disclosure/` shows the original and the correction together.
+- **The brief named `the-bridge-rev1.md` as the Bridge to publish; the upload contains a later revision 2** whose record supersedes revision 1 (item 3 above).
+- **The brief and my scaffold named Gemini's maker "Google DeepMind"; the record says "Google"** throughout. The site now uses the record's wording.
+- **Closing record, Section C** cites "rounds 3–8" for the classification regime in a seven-round process (`VIII.4` row); likely counts revisions, not rounds. Same file.
+- **`the-bridge-drafting-record-rev2.md`, Section A** describes three reviews of revision 1 and the maker audits; no date for revision 2 is stated anywhere.
